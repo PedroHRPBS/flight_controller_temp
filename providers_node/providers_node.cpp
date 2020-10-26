@@ -102,13 +102,13 @@ int main(int argc, char **argv){
     rosunit_g2i_position->addCallbackMsgReceiver((MsgReceiver*)CsZ_PVConcatenator);
     rosunit_g2i_orientation->addCallbackMsgReceiver((MsgReceiver*)wrap_around_yaw);
 
-    myROSUnit_Xsens->addCallbackMsgReceiver((MsgReceiver*)CsYawRate_PVConcatenator, (int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_yaw_rate);
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_4_YAW_RATE]->addCallbackMsgReceiver((MsgReceiver*)CsYawRate_PVConcatenator);
     wrap_around_yaw->addCallbackMsgReceiver((MsgReceiver*)CsYaw_PVConcatenator);
     
-    myROSUnit_Xsens->addCallbackMsgReceiver((MsgReceiver*)CsRoll_PVConcatenator,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_attitude_rate);
-    myROSUnit_Xsens->addCallbackMsgReceiver((MsgReceiver*)CsPitch_PVConcatenator,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_attitude_rate);
-    myROSUnit_Xsens->addCallbackMsgReceiver((MsgReceiver*)CsRoll_PVConcatenator,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_orientation);
-    myROSUnit_Xsens->addCallbackMsgReceiver((MsgReceiver*)CsPitch_PVConcatenator,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_orientation);
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_2_ROLL_RATE]->addCallbackMsgReceiver((MsgReceiver*)CsRoll_PVConcatenator);
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_3_PITCH_RATE]->addCallbackMsgReceiver((MsgReceiver*)CsPitch_PVConcatenator);
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_0_ROLL]->addCallbackMsgReceiver((MsgReceiver*)CsRoll_PVConcatenator);
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_1_PITCH]->addCallbackMsgReceiver((MsgReceiver*)CsPitch_PVConcatenator);
 
     //TODO after adding G2I
     //
