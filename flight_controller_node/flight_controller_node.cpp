@@ -324,24 +324,24 @@ int main(int argc, char** argv) {
     myROSUpdateController->addCallbackMsgReceiver((MsgReceiver*)SM_x, (int)ROSUnit_UpdateController::unicast_addresses::sm);
     myROSUpdateController->addCallbackMsgReceiver((MsgReceiver*)SM_y, (int)ROSUnit_UpdateController::unicast_addresses::sm);
 
-    myROSResetController->addCallbackMsgReceiver((MsgReceiver*)PID_x);
-    myROSResetController->addCallbackMsgReceiver((MsgReceiver*)PID_y);
-    myROSResetController->addCallbackMsgReceiver((MsgReceiver*)PID_z);
-    myROSResetController->addCallbackMsgReceiver((MsgReceiver*)PID_z_identification);
-    // myROSResetController->addCallbackMsgReceiver((MsgReceiver*)((PIDController*)PID_z_identification)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)PID_x);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)PID_y);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)PID_z);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)PID_z_identification);
+    // myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)((PIDController*)PID_z_identification)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
 
-    myROSResetController->addCallbackMsgReceiver((MsgReceiver*)PID_roll);
-    myROSResetController->addCallbackMsgReceiver((MsgReceiver*)PID_pitch);
-    myROSResetController->addCallbackMsgReceiver((MsgReceiver*)PID_yaw);
-    myROSResetController->addCallbackMsgReceiver((MsgReceiver*)PID_yaw_rate);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)PID_roll);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)PID_pitch);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)PID_yaw);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)PID_yaw_rate);
 
-    myROSResetController->addCallbackMsgReceiver((MsgReceiver*)MRFT_x);
-    myROSResetController->addCallbackMsgReceiver((MsgReceiver*)MRFT_y);
-    myROSResetController->addCallbackMsgReceiver((MsgReceiver*)MRFT_z);
-    myROSResetController->addCallbackMsgReceiver((MsgReceiver*)MRFT_roll);
-    myROSResetController->addCallbackMsgReceiver((MsgReceiver*)MRFT_pitch);
-    myROSResetController->addCallbackMsgReceiver((MsgReceiver*)MRFT_yaw);
-    myROSResetController->addCallbackMsgReceiver((MsgReceiver*)MRFT_yaw_rate);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)MRFT_x);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)MRFT_y);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)MRFT_z);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)MRFT_roll);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)MRFT_pitch);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)MRFT_yaw);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)MRFT_yaw_rate);
 
     myROSSwitchBlock->addCallbackMsgReceiver((MsgReceiver*)X_ControlSystem);
     myROSSwitchBlock->addCallbackMsgReceiver((MsgReceiver*)Y_ControlSystem);
