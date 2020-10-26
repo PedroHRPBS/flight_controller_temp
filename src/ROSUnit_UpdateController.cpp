@@ -4,6 +4,9 @@
 ROSUnit_UpdateController* ROSUnit_UpdateController::_instance_ptr = NULL;
 ControllerMessage ROSUnit_UpdateController::_update_controller_msg;
 control_system ROSUnit_UpdateController::_id;
+Port* ROSUnit_UpdateController::_output_port_0;
+Port* ROSUnit_UpdateController::_output_port_1;
+Port* ROSUnit_UpdateController::_output_port_2;
 
 ROSUnit_UpdateController::ROSUnit_UpdateController(ros::NodeHandle& t_main_handler) : ROSUnit(t_main_handler) {
     _srv_update_controller_pid = t_main_handler.advertiseService("update_controller/pid", callbackUpdateControllerPID);
@@ -11,9 +14,26 @@ ROSUnit_UpdateController::ROSUnit_UpdateController(ros::NodeHandle& t_main_handl
     _srv_update_controller_sm = t_main_handler.advertiseService("update_controller/sm", callbackUpdateControllerSM);
 
     _instance_ptr = this;
+
+    _output_port_0 = new OutputPort(ports_id::OP_0_PID, this);
+    _output_port_1 = new OutputPort(ports_id::OP_1_MRFT, this);
+    _output_port_2 = new OutputPort(ports_id::OP_2_BB, this);
+    _ports = {_output_port_0, _output_port_1, _output_port_2};
 }   
 
 ROSUnit_UpdateController::~ROSUnit_UpdateController() {
+
+}
+
+void ROSUnit_UpdateController::process(DataMessage* t_msg, Port* t_port){
+
+}
+
+std::vector<Port*> ROSUnit_UpdateController::getPorts(){
+
+}
+
+DataMessage* ROSUnit_UpdateController::runTask(DataMessage*){
 
 }
 
@@ -37,8 +57,11 @@ bool ROSUnit_UpdateController::callbackUpdateControllerPID(flight_controller::Up
     pid_data.id = _id;
     
     _update_controller_msg.setPIDParam(pid_data);
-    _instance_ptr->emitMsgUnicast((DataMessage*) &_update_controller_msg, ROSUnit_UpdateController::unicast_addresses::pid);
+   
+    _instance_ptr->emitMsgUnicast((DataMessage*) &_update_controller_msg, ROSUnit_UpdateController::unicast_addresses::pid); //TODO remove
     
+    _instance_ptr->_output_port_0->receiveMsgData(&_update_controller_msg);
+
     return true;
 }
 
@@ -55,6 +78,9 @@ bool ROSUnit_UpdateController::callbackUpdateControllerMRFT(flight_controller::U
     
     _update_controller_msg.setMRFTParam(mrft_data);
     _instance_ptr->emitMsgUnicast((DataMessage*) &_update_controller_msg, ROSUnit_UpdateController::unicast_addresses::mrft);
+
+    _instance_ptr->_output_port_1->receiveMsgData(&_update_controller_msg);
+
 
     return true;
 }
@@ -73,6 +99,8 @@ bool ROSUnit_UpdateController::callbackUpdateControllerSM(flight_controller::Upd
 
     _update_controller_msg.setSMParam(sm_data);
     _instance_ptr->emitMsgUnicast((DataMessage*) &_update_controller_msg, ROSUnit_UpdateController::unicast_addresses::sm);
+
+    _instance_ptr->_output_port_2->receiveMsgData(&_update_controller_msg);
 
     return true;
 }

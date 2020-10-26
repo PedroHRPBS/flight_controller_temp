@@ -11,6 +11,7 @@
 #include <flight_controller/Update_Controller_SM.h>
 #include "common_types.hpp"
 #include "ControllerMessage.hpp"
+#include "OutputPort.hpp"
 
 class ROSUnit_UpdateController :  public ROSUnit{
 
@@ -30,10 +31,18 @@ class ROSUnit_UpdateController :  public ROSUnit{
                                              flight_controller::Update_Controller_SM::Response &res);
 
                                              
-        void receiveMsgData(DataMessage* t_msg);  
+        static Port* _output_port_0;
+        static Port* _output_port_1;
+        static Port* _output_port_2;
+        std::vector<Port*> _ports;
 
     public:
+        enum ports_id {OP_0_PID, OP_1_MRFT, OP_2_BB};
+        void process(DataMessage* t_msg, Port* t_port);
+        std::vector<Port*> getPorts();
+        DataMessage* runTask(DataMessage*);
         enum unicast_addresses {broadcast, pid, mrft, sm};
+        void receiveMsgData(DataMessage* t_msg);  
         ROSUnit_UpdateController(ros::NodeHandle&);
         ~ROSUnit_UpdateController();
 };
