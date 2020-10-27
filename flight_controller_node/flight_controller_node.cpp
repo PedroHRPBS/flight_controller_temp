@@ -43,14 +43,13 @@
 
 
 const int PWM_FREQUENCY = 200;
-const float SATURATION_VALUE_XY = 0.2617; //TODO trajectory following 0.5 before
+const float SATURATION_VALUE_XY = 0.2617; 
 const float SATURATION_VALUE_YAW = 0.2617;
 const float SATURATION_VALUE_YAWRATE = 0.3;
 
 void set_realtime_priority();
 
 int main(int argc, char** argv) {
-    // //TODO remove SwitchOut Message
     // std::cout << "Hello Flight Controller!" << std::endl;
 
     // //*****************************LOGGER********************************** 
@@ -104,6 +103,28 @@ int main(int argc, char** argv) {
     ROSUnit* rosunit_waypoint_yaw = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
                                                                     ROSUnit_msg_type::ROSUnit_Float,
                                                                     "waypoint_reference/yaw");                                                            
+    ROSUnit* rosunit_ID_switch_x_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
+                                                                    ROSUnit_msg_type::ROSUnit_Int,
+                                                                    "/switch/ID_switch_x");
+    ROSUnit* rosunit_bounding_box_switch_x_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
+                                                                    ROSUnit_msg_type::ROSUnit_Int,
+                                                                    "/switch/bounding_box_switch_x");
+    ROSUnit* rosunit_ID_switch_roll_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
+                                                                    ROSUnit_msg_type::ROSUnit_Int,
+                                                                    "/switch/ID_switch_roll");
+    ROSUnit* rosunit_ID_switch_y_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
+                                                                    ROSUnit_msg_type::ROSUnit_Int,
+                                                                    "/switch/ID_switch_y");
+    ROSUnit* rosunit_bounding_box_switch_y_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
+                                                                    ROSUnit_msg_type::ROSUnit_Int,
+                                                                    "/switch/bounding_box_switch_y");
+    ROSUnit* rosunit_ID_switch_pitch_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
+                                                                    ROSUnit_msg_type::ROSUnit_Int,
+                                                                    "/switch/ID_switch_pitch");
+    ROSUnit* rosunit_ID_switch_z_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
+                                                                    ROSUnit_msg_type::ROSUnit_Int,
+                                                                    "/switch/ID_switch_z");
+
 
     //**************************SETTING BLOCKS**********************************
 
@@ -133,12 +154,7 @@ int main(int argc, char** argv) {
     Block* BB_x = new BoundingBoxController(block_id::BB_X);
     Block* BB_y = new BoundingBoxController(block_id::BB_Y);
 
-    // Block* PIDplusMRFT_z = new PIDplusMRFTController(block_id::PID_MRFT_Z, (PIDController*)PID_z, (MRFTController*)MRFT_z);
-
-    // Transform_InertialToBody* transform_X_InertialToBody = new Transform_InertialToBody(control_system::x);
-    // Transform_InertialToBody* transform_Y_InertialToBody = new Transform_InertialToBody(control_system::y);
     Transform_InertialToBody* inertialToBody_RotMat = new Transform_InertialToBody(control_system::y);
-
 
     Saturation* X_Saturation = new Saturation(SATURATION_VALUE_XY);
     Saturation* Y_Saturation = new Saturation(SATURATION_VALUE_XY);
@@ -187,17 +203,17 @@ int main(int argc, char** argv) {
 
     //*********************SETTING ACTUATION SYSTEMS************************
     
-    // Actuator* M1 = new ESCMotor(0, PWM_FREQUENCY);
-    // Actuator* M2 = new ESCMotor(1, PWM_FREQUENCY);
-    // Actuator* M3 = new ESCMotor(2, PWM_FREQUENCY);
-    // Actuator* M4 = new ESCMotor(3, PWM_FREQUENCY);
-    // Actuator* M5 = new ESCMotor(4, PWM_FREQUENCY);
-    // Actuator* M6 = new ESCMotor(5, PWM_FREQUENCY);
+    Actuator* M1 = new ESCMotor(0, PWM_FREQUENCY);
+    Actuator* M2 = new ESCMotor(1, PWM_FREQUENCY);
+    Actuator* M3 = new ESCMotor(2, PWM_FREQUENCY);
+    Actuator* M4 = new ESCMotor(3, PWM_FREQUENCY);
+    Actuator* M5 = new ESCMotor(4, PWM_FREQUENCY);
+    Actuator* M6 = new ESCMotor(5, PWM_FREQUENCY);
 
-    // std::vector<Actuator*> actuators{M1, M2, M3, M4, M5, M6};
+    std::vector<Actuator*> actuators{M1, M2, M3, M4, M5, M6};
 
-    // ActuationSystem* myActuationSystem = new HexaActuationSystem(actuators);
-    // // ActuationSystem* myActuationSystem = new QuadActuationSystem(actuators);
+    ActuationSystem* myActuationSystem = new HexaActuationSystem(actuators);
+    // ActuationSystem* myActuationSystem = new QuadActuationSystem(actuators);
 
 
     // //***********************************SETTING CONNECTIONS***********************************
@@ -235,19 +251,19 @@ int main(int argc, char** argv) {
     //*******************************************************************************************************************
     // X CHANNEL ->  Multirotors From Takeoff to Real-Time Full Identification Using the Modified Relay Feedback Test and Deep Neural Networks //
 
-    InvertedSwitch* bounding_box_switch_x = new InvertedSwitch(std::equal_to<float>(), 2.0);
-    InvertedSwitch* ID_switch_x = new InvertedSwitch(std::equal_to<float>(), 2.0);
+    InvertedSwitch* bounding_box_switch_x = new InvertedSwitch(std::equal_to<int>(), 1);
+    InvertedSwitch* ID_switch_x = new InvertedSwitch(std::equal_to<int>(), 1);
     Sum* sum_ref_x = new Sum(std::minus<float>());
     Sum* sum_ref_dot_x = new Sum(std::minus<float>());
     Sum* sum_ref_dot_dot_x = new Sum(std::minus<float>());
     Demux3D* prov_demux_x = new Demux3D();
     Mux3D* error_mux_x = new Mux3D();
 
-    myROSSwitchTrigger->connect(ID_switch_x->getPorts()[InvertedSwitch::ports_id::IP_1_TRIGGER]);
-    myROSSwitchTrigger->connect(bounding_box_switch_x->getPorts()[InvertedSwitch::ports_id::IP_1_TRIGGER]);
+    rosunit_ID_switch_x_trigger->getPorts()[(int)ROSUnit_SetIntSrv::ports_id::OP_0]->connect(ID_switch_x->getPorts()[InvertedSwitch::ports_id::IP_1_TRIGGER]);
+    rosunit_bounding_box_switch_x_trigger->getPorts()[(int)ROSUnit_SetIntSrv::ports_id::OP_1]->connect(bounding_box_switch_x->getPorts()[InvertedSwitch::ports_id::IP_1_TRIGGER]);
 
-    rosunit_waypoint_x->connect(sum_ref_x->getPorts()[(int)Sum::ports_id::IP_0_DATA]);
-    rosunit_x_provider->connect(prov_demux_x->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
+    rosunit_waypoint_x->getPorts()[(int)ROSUnit_FloatSub::ports_id::OP_0]->connect(sum_ref_x->getPorts()[(int)Sum::ports_id::IP_0_DATA]);
+    rosunit_x_provider->getPorts()[(int)ROSUnit_PointSub::ports_id::OP_0]->connect(prov_demux_x->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
 
     prov_demux_x->getPorts()[(int)Demux3D::ports_id::OP_0_DATA]->connect(sum_ref_x->getPorts()[(int)Sum::ports_id::IP_1_DATA]);
     prov_demux_x->getPorts()[(int)Demux3D::ports_id::OP_1_DATA]->connect(sum_ref_dot_x->getPorts()[(int)Sum::ports_id::IP_1_DATA]);
@@ -271,17 +287,17 @@ int main(int argc, char** argv) {
     inertialToBody_RotMat->getPorts()[(int)Transform_InertialToBody::ports_id::OP_0_DATA]->connect(X_Saturation->getPorts()[(int)Saturation::ports_id::IP_0_DATA]);
     
     // Roll
-    InvertedSwitch* ID_switch_roll = new InvertedSwitch(std::equal_to<float>(), 2.0);
+    InvertedSwitch* ID_switch_roll = new InvertedSwitch(std::equal_to<int>(), 1);
     Sum* sum_ref_roll = new Sum(std::minus<float>());
     Sum* sum_ref_dot_roll = new Sum(std::minus<float>());
     Sum* sum_ref_dot_dot_roll = new Sum(std::minus<float>());
     Demux3D* prov_demux_roll = new Demux3D();
     Mux3D* error_mux_roll = new Mux3D();
 
-    myROSSwitchTrigger->connect(ID_switch_roll->getPorts()[InvertedSwitch::ports_id::IP_1_TRIGGER]);
+    rosunit_ID_switch_roll_trigger->getPorts()[(int)ROSUnit_SetIntSrv::ports_id::OP_2]->connect(ID_switch_roll->getPorts()[InvertedSwitch::ports_id::IP_1_TRIGGER]);
 
     X_Saturation->getPorts()[(int)Saturation::ports_id::OP_0_DATA]->connect(sum_ref_roll->getPorts()[(int)Sum::ports_id::IP_0_DATA]);
-    rosunit_roll_provider->connect(prov_demux_roll->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
+    rosunit_roll_provider->getPorts()[(int)ROSUnit_PointSub::ports_id::OP_3]->connect(prov_demux_roll->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
 
     prov_demux_roll->getPorts()[(int)Demux3D::ports_id::OP_0_DATA]->connect(sum_ref_roll->getPorts()[(int)Sum::ports_id::IP_1_DATA]);
     prov_demux_roll->getPorts()[(int)Demux3D::ports_id::OP_1_DATA]->connect(sum_ref_dot_roll->getPorts()[(int)Sum::ports_id::IP_1_DATA]);
@@ -300,19 +316,19 @@ int main(int argc, char** argv) {
     //*******************************************************************************************************************
     // Y CHANNEL ->  Multirotors From Takeoff to Real-Time Full Identification Using the Modified Relay Feedback Test and Deep Neural Networks //
 
-    InvertedSwitch* bounding_box_switch_y = new InvertedSwitch(std::equal_to<float>(), 2.0);
-    InvertedSwitch* ID_switch_y = new InvertedSwitch(std::equal_to<float>(), 2.0);
+    InvertedSwitch* bounding_box_switch_y = new InvertedSwitch(std::equal_to<int>(), 1);
+    InvertedSwitch* ID_switch_y = new InvertedSwitch(std::equal_to<int>(), 1);
     Sum* sum_ref_y = new Sum(std::minus<float>());
     Sum* sum_ref_dot_y = new Sum(std::minus<float>());
     Sum* sum_ref_dot_dot_y = new Sum(std::minus<float>());
     Demux3D* prov_demux_y = new Demux3D();
     Mux3D* error_mux_y = new Mux3D();
 
-    myROSSwitchTrigger->connect(ID_switch_y->getPorts()[InvertedSwitch::ports_id::IP_1_TRIGGER]);
-    myROSSwitchTrigger->connect(bounding_box_switch_y->getPorts()[InvertedSwitch::ports_id::IP_1_TRIGGER]);
+    rosunit_ID_switch_y_trigger->getPorts()[(int)ROSUnit_SetIntSrv::ports_id::OP_3]->connect(ID_switch_y->getPorts()[InvertedSwitch::ports_id::IP_1_TRIGGER]);
+    rosunit_bounding_box_switch_y_trigger->getPorts()[(int)ROSUnit_SetIntSrv::ports_id::OP_4]->connect(bounding_box_switch_y->getPorts()[InvertedSwitch::ports_id::IP_1_TRIGGER]);
 
-    rosunit_waypoint_y->connect(sum_ref_y->getPorts()[(int)Sum::ports_id::IP_0_DATA]);
-    rosunit_y_provider->connect(prov_demux_y->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
+    rosunit_waypoint_y->getPorts()[(int)ROSUnit_FloatSub::ports_id::OP_1]->connect(sum_ref_y->getPorts()[(int)Sum::ports_id::IP_0_DATA]);
+    rosunit_y_provider->getPorts()[(int)ROSUnit_PointSub::ports_id::OP_1]->connect(prov_demux_y->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
 
     prov_demux_y->getPorts()[(int)Demux3D::ports_id::OP_0_DATA]->connect(sum_ref_y->getPorts()[(int)Sum::ports_id::IP_1_DATA]);
     prov_demux_y->getPorts()[(int)Demux3D::ports_id::OP_1_DATA]->connect(sum_ref_dot_y->getPorts()[(int)Sum::ports_id::IP_1_DATA]);
@@ -335,17 +351,17 @@ int main(int argc, char** argv) {
     // Saturation
     inertialToBody_RotMat->getPorts()[(int)Transform_InertialToBody::ports_id::OP_0_DATA]->connect(Y_Saturation->getPorts()[(int)Saturation::ports_id::IP_0_DATA]);
     // Pitch
-    InvertedSwitch* ID_switch_pitch = new InvertedSwitch(std::equal_to<float>(), 2.0);
+    InvertedSwitch* ID_switch_pitch = new InvertedSwitch(std::equal_to<int>(), 1);
     Sum* sum_ref_pitch = new Sum(std::minus<float>());
     Sum* sum_ref_dot_pitch = new Sum(std::minus<float>());
     Sum* sum_ref_dot_dot_pitch = new Sum(std::minus<float>());
     Demux3D* prov_demux_pitch = new Demux3D();
     Mux3D* error_mux_pitch = new Mux3D();
 
-    myROSSwitchTrigger->connect(ID_switch_pitch->getPorts()[InvertedSwitch::ports_id::IP_1_TRIGGER]);
+    rosunit_ID_switch_pitch_trigger->getPorts()[(int)ROSUnit_SetIntSrv::ports_id::OP_5]->connect(ID_switch_pitch->getPorts()[InvertedSwitch::ports_id::IP_1_TRIGGER]);
 
     Y_Saturation->getPorts()[(int)Saturation::ports_id::OP_0_DATA]->connect(sum_ref_pitch->getPorts()[(int)Sum::ports_id::IP_0_DATA]);
-    rosunit_pitch_provider->connect(prov_demux_pitch->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
+    rosunit_pitch_provider->getPorts()[(int)ROSUnit_PointSub::ports_id::OP_4]->connect(prov_demux_pitch->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
 
     prov_demux_pitch->getPorts()[(int)Demux3D::ports_id::OP_0_DATA]->connect(sum_ref_pitch->getPorts()[(int)Sum::ports_id::IP_1_DATA]);
     prov_demux_pitch->getPorts()[(int)Demux3D::ports_id::OP_1_DATA]->connect(sum_ref_dot_pitch->getPorts()[(int)Sum::ports_id::IP_1_DATA]);
@@ -360,10 +376,11 @@ int main(int argc, char** argv) {
     ((MRFTController*)MRFT_pitch)->getPorts()[(int)MRFTController::ports_id::OP_0_DATA]->connect(ID_switch_pitch->getPorts()[(int)InvertedSwitch::ports_id::IP_0_DATA_DEFAULT]);
     
     ID_switch_pitch->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_1_DATA_PITCH]);
+    
     //*******************************************************************************************************************
     // Z CHANNEL ->  Multirotors From Takeoff to Real-Time Full Identification Using the Modified Relay Feedback Test and Deep Neural Networks //
 
-    InvertedSwitch* ID_switch_z = new InvertedSwitch(std::equal_to<float>(), 2.0);
+    InvertedSwitch* ID_switch_z = new InvertedSwitch(std::equal_to<int>(), 1);
     Switch* PID_MRFT_switch_z = new Switch(std::greater_equal<float>(), 0.119842615399054);
     Sum* sum_PID_MRFT_z = new Sum(std::plus<float>());
     Sum* sum_ref_z = new Sum(std::minus<float>());
@@ -372,10 +389,10 @@ int main(int argc, char** argv) {
     Demux3D* prov_demux_z = new Demux3D();
     Mux3D* error_mux_z = new Mux3D();
 
-    myROSSwitchTrigger->connect(ID_switch_z->getPorts()[InvertedSwitch::ports_id::IP_1_TRIGGER]);
+    rosunit_ID_switch_z_trigger->getPorts()[(int)ROSUnit_SetIntSrv::ports_id::OP_6]->connect(ID_switch_z->getPorts()[InvertedSwitch::ports_id::IP_1_TRIGGER]);
 
-    rosunit_waypoint_z->connect(sum_ref_z->getPorts()[(int)Sum::ports_id::IP_0_DATA]);
-    rosunit_z_provider->connect(prov_demux_z->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
+    rosunit_waypoint_z->getPorts()[(int)ROSUnit_FloatSub::ports_id::OP_2]->connect(sum_ref_z->getPorts()[(int)Sum::ports_id::IP_0_DATA]);
+    rosunit_z_provider->getPorts()[(int)ROSUnit_PointSub::ports_id::OP_2]->connect(prov_demux_z->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
 
     prov_demux_z->getPorts()[(int)Demux3D::ports_id::OP_0_DATA]->connect(sum_ref_z->getPorts()[(int)Sum::ports_id::IP_1_DATA]);
     prov_demux_z->getPorts()[(int)Demux3D::ports_id::OP_1_DATA]->connect(sum_ref_dot_z->getPorts()[(int)Sum::ports_id::IP_1_DATA]);
@@ -404,9 +421,9 @@ int main(int argc, char** argv) {
     Demux3D* prov_demux_yaw = new Demux3D();
     Mux3D* error_mux_yaw = new Mux3D();
 
-    rosunit_waypoint_yaw->connect(sum_ref_yaw->getPorts()[(int)Sum::ports_id::IP_0_DATA]);
-    rosunit_yaw_provider->connect(prov_demux_yaw->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
-    rosunit_yaw_provider->connect(inertialToBody_RotMat->getPorts()[(int)Transform_InertialToBody::ports_id::IP_2_YAW]);
+    rosunit_waypoint_yaw->getPorts()[(int)ROSUnit_FloatSub::ports_id::OP_3]->connect(sum_ref_yaw->getPorts()[(int)Sum::ports_id::IP_0_DATA]);
+    rosunit_yaw_provider->getPorts()[(int)ROSUnit_PointSub::ports_id::OP_5]->connect(prov_demux_yaw->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
+    rosunit_yaw_provider->getPorts()[(int)ROSUnit_PointSub::ports_id::OP_5]->connect(inertialToBody_RotMat->getPorts()[(int)Transform_InertialToBody::ports_id::IP_2_YAW]);
 
     prov_demux_yaw->getPorts()[(int)Demux3D::ports_id::OP_0_DATA]->connect(sum_ref_yaw->getPorts()[(int)Sum::ports_id::IP_1_DATA]);
     prov_demux_yaw->getPorts()[(int)Demux3D::ports_id::OP_1_DATA]->connect(sum_ref_dot_yaw->getPorts()[(int)Sum::ports_id::IP_1_DATA]);
@@ -426,7 +443,7 @@ int main(int argc, char** argv) {
     Mux3D* error_mux_yaw_rate = new Mux3D();
 
     Yaw_Saturation->getPorts()[(int)Saturation::ports_id::OP_0_DATA]->connect(sum_ref_yaw_rate->getPorts()[(int)Sum::ports_id::IP_0_DATA]);
-    rosunit_yaw_rate_provider->connect(prov_demux_yaw_rate->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
+    rosunit_yaw_rate_provider->getPorts()[(int)ROSUnit_PointSub::ports_id::OP_6]->connect(prov_demux_yaw_rate->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
 
     prov_demux_yaw_rate->getPorts()[(int)Demux3D::ports_id::OP_0_DATA]->connect(sum_ref_yaw_rate->getPorts()[(int)Sum::ports_id::IP_1_DATA]);
     prov_demux_yaw_rate->getPorts()[(int)Demux3D::ports_id::OP_1_DATA]->connect(sum_ref_dot_yaw_rate->getPorts()[(int)Sum::ports_id::IP_1_DATA]);
@@ -455,7 +472,6 @@ int main(int argc, char** argv) {
 
     //******************PROVIDERS TO CONTROL SYSTEMS******************************
 
-    // //TODO remove this later, after everything is working, don't forget to change te receiving function
     // rosunit_x_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::x);
     // rosunit_y_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::y);
     // rosunit_z_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::z);
@@ -497,9 +513,8 @@ int main(int argc, char** argv) {
     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_yaw)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_yaw_rate)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
 
-    //TODO
-    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_2_BB]->connect(BB_x);
-    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_2_BB]->connect(BB_y);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_2_BB]->connect(BB_x->getPorts()[(int)BoundingBoxController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_2_BB]->connect(BB_y->getPorts()[(int)BoundingBoxController::ports_id::IP_1_UPDATE]);
 
     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_x)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_y)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
@@ -519,22 +534,13 @@ int main(int argc, char** argv) {
     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_yaw)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_yaw_rate)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
 
-    // myROSSwitchTrigger->connect(X_ControlSystem);
-    // myROSSwitchTrigger->connect(Y_ControlSystem);
-    // // myROSSwitchTrigger->connect(Z_ControlSystem);
-    // myROSSwitchTrigger->connect(Roll_ControlSystem);
-    // myROSSwitchTrigger->connect(Pitch_ControlSystem);
-    // myROSSwitchTrigger->connect(Yaw_ControlSystem);
-    // myROSSwitchTrigger->connect(YawRate_ControlSystem);
    
-    //TODO
-    myROSArm->connect( myActuationSystem);
+    myROSArm->getPorts()[(int)ROSUnit_Arm::ports_id::OP_0_DATA]->connect((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_4_ARM]);
     
     //********************SETTING FLIGHT SCENARIO OUTPUTS***************************
 
-    //TODO
-    myActuationSystem->connect(myROSBroadcastData->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_14_MOTORS]);
-    myActuationSystem->connect(myROSBroadcastData->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_15_ARMED]);
+    ((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::OP_0_CMD]->connect(myROSBroadcastData->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_14_MOTORS]);
+    ((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::OP_1_ARM]->connect(myROSBroadcastData->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_15_ARMED]);
     
     // pid_para_init.id = block_id::PID_ROLL;
     // ctrl_msg.setPIDParam(pid_para_init);
@@ -560,55 +566,55 @@ int main(int argc, char** argv) {
 
     // MRFT_parameters mrft_para_init;
 
-    mrft_para_init.id = block_id::MRFT_X;
-    ctrl_msg.setMRFTParam(mrft_para_init);
-    ctrl_msg.set_dt(X_ControlSystem->get_dt());
-    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
-    
+    // mrft_para_init.id = block_id::MRFT_X;
+    // ctrl_msg.setMRFTParam(mrft_para_init);
+    // ctrl_msg.set_dt(X_ControlSystem->get_dt());
+    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
+    // 
+// 
+    // mrft_para_init.id = block_id::MRFT_Y;
+    // ctrl_msg.setMRFTParam(mrft_para_init);
+    // ctrl_msg.set_dt(Y_ControlSystem->get_dt());
+    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
+// 
+// 
+    // mrft_para_init.id = block_id::MRFT_Z;
+    // ctrl_msg.setMRFTParam(mrft_para_init);
+    // ctrl_msg.set_dt(1/120);
+    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
+// 
+// 
+    // mrft_para_init.id = block_id::MRFT_ROLL;
+    // ctrl_msg.setMRFTParam(mrft_para_init);
+    // ctrl_msg.set_dt(Roll_ControlSystem->get_dt());
+    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
+// 
+    // mrft_para_init.id = block_id::MRFT_PITCH;
+    // ctrl_msg.setMRFTParam(mrft_para_init);
+    // ctrl_msg.set_dt(Pitch_ControlSystem->get_dt());
+    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
+// 
+    // mrft_para_init.id = block_id::MRFT_YAW;
+    // ctrl_msg.setMRFTParam(mrft_para_init);
+    // ctrl_msg.set_dt(Yaw_ControlSystem->get_dt());
+    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
+// 
+    // mrft_para_init.id = block_id::MRFT_YAW_RATE;
+    // ctrl_msg.setMRFTParam(mrft_para_init);
+    // ctrl_msg.set_dt(YawRate_ControlSystem->get_dt());
+    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
+// 
+    //***********************SETTING SM INITIAL VALUES*****************************
+// 
+    // BB_parameters bb_para_init;
 
-    mrft_para_init.id = block_id::MRFT_Y;
-    ctrl_msg.setMRFTParam(mrft_para_init);
-    ctrl_msg.set_dt(Y_ControlSystem->get_dt());
-    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
-
-
-    mrft_para_init.id = block_id::MRFT_Z;
-    ctrl_msg.setMRFTParam(mrft_para_init);
-    ctrl_msg.set_dt(1/120);
-    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
-
-
-    mrft_para_init.id = block_id::MRFT_ROLL;
-    ctrl_msg.setMRFTParam(mrft_para_init);
-    ctrl_msg.set_dt(Roll_ControlSystem->get_dt());
-    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
-
-    mrft_para_init.id = block_id::MRFT_PITCH;
-    ctrl_msg.setMRFTParam(mrft_para_init);
-    ctrl_msg.set_dt(Pitch_ControlSystem->get_dt());
-    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
-
-    mrft_para_init.id = block_id::MRFT_YAW;
-    ctrl_msg.setMRFTParam(mrft_para_init);
-    ctrl_msg.set_dt(Yaw_ControlSystem->get_dt());
-    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
-
-    mrft_para_init.id = block_id::MRFT_YAW_RATE;
-    ctrl_msg.setMRFTParam(mrft_para_init);
-    ctrl_msg.set_dt(YawRate_ControlSystem->get_dt());
-    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
-
-    // //***********************SETTING SM INITIAL VALUES*****************************
-
-    // SM_parameters sm_para_init;
-
-    // sm_para_init.id = block_id::BB_X;
-    // ctrl_msg.setSMParam(sm_para_init);
+    // bb_para_init.id = block_id::BB_X;
+    // ctrl_msg.setSMParam(bb_para_init);
     // ctrl_msg.set_dt(X_ControlSystem->get_dt());
     // myROSUpdateController->emitMsgUnicast((DataMessage*) &ctrl_msg, (int)ROSUnit_UpdateController::unicast_addresses::sm);
 
-    // sm_para_init.id = block_id::BB_Y;
-    // ctrl_msg.setSMParam(sm_para_init);
+    // bb_para_init.id = block_id::BB_Y;
+    // ctrl_msg.setSMParam(bb_para_init);
     // ctrl_msg.set_dt(Y_ControlSystem->get_dt());
     // myROSUpdateController->emitMsgUnicast((DataMessage*) &ctrl_msg, (int)ROSUnit_UpdateController::unicast_addresses::sm);
 

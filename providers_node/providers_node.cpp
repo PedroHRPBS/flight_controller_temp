@@ -81,8 +81,8 @@ int main(int argc, char **argv){
     Differentiator* optitrack_y_dot = new Differentiator(1./OPTITRACK_FREQUENCY);
     Differentiator* optitrack_z_dot = new Differentiator(1./OPTITRACK_FREQUENCY);
 
-    rosunit_g2i_position->connect(pos_demux->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
-    rosunit_g2i_orientation->connect(ori_demux->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
+    rosunit_g2i_position->getPorts()[(int)ROSUnit_PointSub::ports_id::OP_0]->connect(pos_demux->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
+    rosunit_g2i_orientation->getPorts()[(int)ROSUnit_PointSub::ports_id::OP_1]->connect(ori_demux->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
 
     // Setting Provider -> Always leave the pv connection last. Do pv_dot and pv_dot_dor first.
     // X Provider

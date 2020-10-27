@@ -7,7 +7,7 @@
 #include "SwitchOutMsg.hpp"
 #include "logger.hpp"
 #include "common_srv/IntegerMsg.hpp"
-#include "SM_values.hpp"
+#include "BB_values.hpp"
 #include "InputPort.hpp"
 #include "OutputPort.hpp"
 
@@ -39,7 +39,7 @@ public:
 	void process(DataMessage* t_msg, Port* t_port);
     std::vector<Port*> getPorts();
     void reset();
-    void initialize(SM_parameters*);
+    void initialize(BB_parameters*);
 	DataMessage* runTask(DataMessage*);
     controller_type getControllerType(){ return _controller_type; }
     block_id getID(){ return _id; }

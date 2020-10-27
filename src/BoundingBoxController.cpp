@@ -35,7 +35,7 @@ void BoundingBoxController::process(DataMessage* t_msg, Port* t_port) {
         this->runTask(t_msg);
     } else if(t_port->getID() == ports_id::IP_1_UPDATE){
         ControllerMessage* sm_msg = (ControllerMessage*)t_msg;
-		SM_parameters params = sm_msg->getSMParam();
+		BB_parameters params = sm_msg->getSMParam();
 
 		if(params.id == this->_id){		
 			this->initialize(&params);	
@@ -54,7 +54,7 @@ void BoundingBoxController::process(DataMessage* t_msg, Port* t_port) {
 
 // 	if(t_msg->getType() == msg_type::UPDATECONTROLLER){
 // 		ControllerMessage* sm_msg = (ControllerMessage*)t_msg;
-// 		SM_parameters params = sm_msg->getSMParam();
+// 		BB_parameters params = sm_msg->getSMParam();
 
 // 		if(params.id == this->_id){		
 // 			this->initialize(&params);	
@@ -77,7 +77,7 @@ std::vector<Port*> BoundingBoxController::getPorts(){ //TODO move to Block
 void BoundingBoxController::reset(){
 }
 
-void BoundingBoxController::initialize(SM_parameters* t_params){
+void BoundingBoxController::initialize(BB_parameters* t_params){
 	_id = t_params->id;
 	_alpha1 = t_params->alpha1;
 	_alpha2 = t_params->alpha2;

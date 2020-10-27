@@ -10,7 +10,7 @@ WrapAroundFunction::WrapAroundFunction(double t_min_val,double t_max_val){
     _ports = {_input_port, _output_port};
 }
 
-double WrapAroundFunction::wrapAround(double input){ //TODO handle cases for abs(input)>2span
+double WrapAroundFunction::wrapAround(double input){ 
     if (input>_max_val){
         return input-_span;
     }

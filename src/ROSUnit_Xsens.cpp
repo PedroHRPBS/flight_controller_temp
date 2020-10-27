@@ -57,10 +57,6 @@ void ROSUnit_Xsens::callbackXsensBodyRate(const geometry_msgs::Vector3Stamped& m
 
     pv_dot_msg.setVector3DMessage(angular_vel);
 
-    //TODO DELETE
-	_instance_ptr->emitMsgUnicast((DataMessage*) &pv_dot_msg,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_yaw_rate, (int)PVConcatenator::receiving_channels::ch_pv);
-	_instance_ptr->emitMsgUnicast((DataMessage*) &pv_dot_msg,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_attitude_rate, (int)PVConcatenator::receiving_channels::ch_pv_dot);
-			
     FloatMsg roll_rate, pitch_rate, yaw_rate;
     roll_rate.data = angular_vel.x;
     pitch_rate.data = angular_vel.y;

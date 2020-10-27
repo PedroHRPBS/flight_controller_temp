@@ -56,8 +56,8 @@ class PIDController : public Controller{
         DataMessage* runTask(DataMessage*);
         controller_type getControllerType(){ return _controller_type; }
         block_id getID(){ return _id; }
-        //TODO Send a message to Switcher
-        //TODO Receive a message from Switcher
+       
+       
 
         PIDController(block_id t_id);
         ~PIDController();

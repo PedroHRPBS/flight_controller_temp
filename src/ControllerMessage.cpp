@@ -25,7 +25,7 @@ void ControllerMessage::setPIDParam(PID_parameters t_param){
     _pid_param.kdd = t_param.kdd;
     _pid_param.anti_windup = t_param.anti_windup;
     _pid_param.en_pv_derivation = t_param.en_pv_derivation;
-    _pid_param.id = t_param.id; //TODO check if this is needed
+    _pid_param.id = t_param.id;
     
 }
 
@@ -38,7 +38,7 @@ void ControllerMessage::setMRFTParam(MRFT_parameters t_param){
 
 }
 
-void ControllerMessage::setSMParam(SM_parameters t_param){
+void ControllerMessage::setSMParam(BB_parameters t_param){
 
     _sm_param.h1 = t_param.h1;
     _sm_param.h2 = t_param.h2;

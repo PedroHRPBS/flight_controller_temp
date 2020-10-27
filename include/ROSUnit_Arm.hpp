@@ -9,14 +9,19 @@
 class ROSUnit_Arm :  public ROSUnit{
 
     private:
-        //TODO receive msgs from a service through a callback 
         static ROSUnit_Arm* _instance_ptr;
         static BooleanMsg _bool_msg; 
         ros::ServiceServer _srv_armed;
         static bool callbackArm(flight_controller::Arm::Request  &req, flight_controller::Arm::Response &res);
         void receiveMsgData(DataMessage* t_msg);  
-
+        static Port* _output_port;
+        std::vector<Port*> _ports;
     public:
+        enum ports_id {OP_0_DATA};
+        void process(DataMessage* t_msg, Port* t_port);
+        std::vector<Port*> getPorts();
+        DataMessage* runTask(DataMessage*);
+
         ROSUnit_Arm(ros::NodeHandle&);
         ~ROSUnit_Arm();
 };
