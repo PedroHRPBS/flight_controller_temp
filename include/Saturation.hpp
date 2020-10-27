@@ -6,7 +6,6 @@
 #include "common_srv/MsgReceiver.hpp"
 #include "cmath"
 #include "common_srv/FloatMsg.hpp"
-#include "ControlSystem.hpp"
 
 class Saturation : public Block, public MsgEmitter  {
 

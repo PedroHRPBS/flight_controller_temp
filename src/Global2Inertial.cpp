@@ -115,7 +115,6 @@ void Global2Inertial::process(DataMessage* t_msg, Port* t_port)
         #ifndef DEBUG_HR_LR_DECOUPLED
         emitMsgUnicast(&res_msg,Global2Inertial::unicast_addresses::uni_RTK_pos);
         #else
-        //emitMsgUnicast(&res_msg,Global2Inertial::unicast_addresses::uni_RTK_pos_pv, (int)PVConcatenator::receiving_channels::ch_pv);
         this->_output_port_2->receiveMsgData(&res_msg);
         #endif
     }

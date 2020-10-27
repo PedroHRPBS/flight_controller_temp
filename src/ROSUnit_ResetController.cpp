@@ -36,7 +36,7 @@ bool ROSUnit_ResetController::callbackResetController(flight_controller::Reset_C
     data = req.id;
 
     _reset_msg.data = data;
-    _instance_ptr->_output_port->receiveMsgData(t_msg);
+    _instance_ptr->_output_port->receiveMsgData(&_reset_msg);
 
     return true;
 }

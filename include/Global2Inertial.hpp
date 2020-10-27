@@ -13,7 +13,6 @@
 #include "common_srv/FloatMsg.hpp"
 #include "common_srv/IntegerMsg.hpp"
 #include "common_srv/Vector3DMessage.hpp"
-#include "PVConcatenator.hpp"
 #include "OptitrackMessage.hpp"
 
 class Global2Inertial : public Block {

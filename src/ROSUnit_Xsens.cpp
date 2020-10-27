@@ -82,10 +82,7 @@ void ROSUnit_Xsens::callbackXsensFreeAcceleration(const geometry_msgs::Vector3St
     // free_acceleration.y = filter_gyro_y.perform(free_acceleration.y);
     // free_acceleration.z = filter_gyro_z.perform(free_acceleration.z);
 
-    pv_dot_dot_msg.setVector3DMessage(free_acceleration);
-
-	//_instance_ptr->emitMsgUnicast((DataMessage*) &pv_dot_dot_msg,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_acceleration, (int)PVConcatenator::receiving_channels::ch_pv_dot_dot);
-   
+    pv_dot_dot_msg.setVector3DMessage(free_acceleration);   
 }
 
 void ROSUnit_Xsens::callbackXsensAttitude( const geometry_msgs::QuaternionStamped& msg_attitude){
@@ -123,9 +120,7 @@ void ROSUnit_Xsens::callbackXsensAttitude( const geometry_msgs::QuaternionStampe
     orientation_euler.y = _euler.x; //Arranging the frames to match with the drone's
     orientation_euler.z = _euler.z;
 
-
     pv_msg.setVector3DMessage(orientation_euler);
-	_instance_ptr->emitMsgUnicast((DataMessage*) &pv_msg,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_orientation, (int)PVConcatenator::receiving_channels::ch_pv);
 	
     FloatMsg roll, pitch;
     roll.data = orientation_euler.x;
