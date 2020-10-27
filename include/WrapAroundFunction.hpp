@@ -10,7 +10,7 @@
 
 class WrapAroundFunction : public Block, public MsgEmitter 
 {
-    double min_val,max_val,span;
+    double _min_val,_max_val,_span;
     double _input;
     double _output;
     Port* _input_port;
@@ -19,14 +19,9 @@ class WrapAroundFunction : public Block, public MsgEmitter
 
 public:
     
-    void assignParametersRange(double t_min_val,double t_max_val);
     double wrapAround(double input);
-    // void receiveMsgData(DataMessage*);
-    // void receiveMsgData(DataMessage* rec_msg, int ch);
-    
     enum ports_id {IP_0_DATA, OP_0_DATA};
-    WrapAroundFunction();
-    WrapAroundFunction(double t_min_val, double t_max_val);   
+    WrapAroundFunction(double t_min_val,double t_max_val);
 
     void process(DataMessage* t_msg, Port* t_port);
     DataMessage* runTask(DataMessage*);

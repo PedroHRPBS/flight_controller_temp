@@ -13,6 +13,8 @@
 #include "ROSUnit_Optitrack.hpp"
 #include "ROSUnit_Xsens.hpp"
 #include "common_srv/Timer.hpp"
+#include "Demux3D.hpp"
+#include "Mux3D.hpp"
 
 const int OPTITRACK_FREQUENCY = 120;
 
@@ -46,18 +48,10 @@ int main(int argc, char **argv){
     ROSUnit* rosunit_yaw_rate_provider_pub = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Publisher, 
                                                                     ROSUnit_msg_type::ROSUnit_Point,
                                                                     "/providers/yaw_rate");
-    //TODO PROVIDER CAMERA PUBLISHER
-    //TODO RECEIVED CAMERA DATA SUBSCRIBER
+    //TODO RECEIVED CAMERA DATA - SUBSCRIBER
+    
+    //TODO PROVIDER CAMERA - PUBLISHER
 
-    // ROSUnit* rosunit_g2i_x = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
-    //                                                                 ROSUnit_msg_type::ROSUnit_Point,
-    //                                                                 "global2inertial/x");
-    // ROSUnit* rosunit_g2i_y = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
-    //                                                                 ROSUnit_msg_type::ROSUnit_Point,
-    //                                                                 "global2inertial/y");
-    // ROSUnit* rosunit_g2i_z = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
-    //                                                                 ROSUnit_msg_type::ROSUnit_Point,
-    //                                                                 "global2inertial/z");                                                                     
     ROSUnit* rosunit_g2i_position = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
                                                                     ROSUnit_msg_type::ROSUnit_Point,
                                                                     "global2inertial/position");
@@ -69,80 +63,76 @@ int main(int argc, char **argv){
     ROSUnit* myROSUnit_Xsens = new ROSUnit_Xsens(nh);
 
     //***********************SETTING PROVIDERS**********************************
-    PVConcatenator* CsX_PVConcatenator = new PVConcatenator(PVConcatenator::concatenation_axes::conc_x_axis, act_on::pv);
-    PVConcatenator* CsY_PVConcatenator = new PVConcatenator(PVConcatenator::concatenation_axes::conc_y_axis, act_on::pv);
-    PVConcatenator* CsZ_PVConcatenator = new PVConcatenator(PVConcatenator::concatenation_axes::conc_z_axis, act_on::pv);
-    PVConcatenator* CsRoll_PVConcatenator = new PVConcatenator(PVConcatenator::concatenation_axes::conc_x_axis, act_on::pv);
-    PVConcatenator* CsPitch_PVConcatenator = new PVConcatenator(PVConcatenator::concatenation_axes::conc_y_axis, act_on::pv);
-    PVConcatenator* CsYaw_PVConcatenator = new PVConcatenator(PVConcatenator::concatenation_axes::conc_z_axis, act_on::pv);
-    PVConcatenator* CsYawRate_PVConcatenator = new PVConcatenator(PVConcatenator::concatenation_axes::conc_z_axis, act_on::pv);
 
-    WrapAroundFunction* wrap_around_yaw = new WrapAroundFunction();
-    wrap_around_yaw->assignParametersRange(-M_PI, M_PI);
+    Mux3D* mux_provider_x = new Mux3D();
+    Mux3D* mux_provider_y = new Mux3D();
+    Mux3D* mux_provider_z = new Mux3D();
+    Mux3D* mux_provider_roll = new Mux3D();
+    Mux3D* mux_provider_pitch = new Mux3D();
+    Mux3D* mux_provider_yaw = new Mux3D();
+    Mux3D* mux_provider_yaw_rate = new Mux3D();
+
+    Demux3D* pos_demux = new Demux3D();
+    Demux3D* ori_demux = new Demux3D();
+
+    WrapAroundFunction* wrap_around_yaw = new WrapAroundFunction(-M_PI, M_PI);
+
+    Differentiator* optitrack_x_dot = new Differentiator(1./OPTITRACK_FREQUENCY);
+    Differentiator* optitrack_y_dot = new Differentiator(1./OPTITRACK_FREQUENCY);
+    Differentiator* optitrack_z_dot = new Differentiator(1./OPTITRACK_FREQUENCY);
+
+    rosunit_g2i_position->connect(pos_demux->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
+    rosunit_g2i_orientation->connect(ori_demux->getPorts()[(int)Demux3D::ports_id::IP_0_DATA]);
+
+    // Setting Provider -> Always leave the pv connection last. Do pv_dot and pv_dot_dor first.
+    // X Provider
+    pos_demux->getPorts()[(int)Demux3D::ports_id::OP_0_DATA]->connect(optitrack_x_dot->getPorts()[(int)Differentiator::ports_id::IP_0_DATA]);
+    optitrack_x_dot->getPorts()[(int)Differentiator::ports_id::OP_0_DATA]->connect(mux_provider_x->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
+    pos_demux->getPorts()[(int)Demux3D::ports_id::OP_0_DATA]->connect(mux_provider_x->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
+
+    //Y Provider
+    pos_demux->getPorts()[(int)Demux3D::ports_id::OP_1_DATA]->connect(optitrack_y_dot->getPorts()[(int)Differentiator::ports_id::IP_0_DATA]);
+    optitrack_y_dot->getPorts()[(int)Differentiator::ports_id::OP_0_DATA]->connect(mux_provider_y->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
+    pos_demux->getPorts()[(int)Demux3D::ports_id::OP_1_DATA]->connect(mux_provider_y->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
+
+    //Z Provider
+    pos_demux->getPorts()[(int)Demux3D::ports_id::OP_2_DATA]->connect(optitrack_z_dot->getPorts()[(int)Differentiator::ports_id::IP_0_DATA]);
+    optitrack_z_dot->getPorts()[(int)Differentiator::ports_id::OP_0_DATA]->connect(mux_provider_z->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
+    pos_demux->getPorts()[(int)Demux3D::ports_id::OP_2_DATA]->connect(mux_provider_z->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
+
+    //Roll Provider
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_2_ROLL_RATE]->connect(mux_provider_roll->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_0_ROLL]->connect(mux_provider_roll->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
+
+    //Pitch Provider
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_3_PITCH_RATE]->connect(mux_provider_pitch->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_1_PITCH]->connect(mux_provider_pitch->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
+
+    //Yaw Provider
+    ori_demux->getPorts()[(int)Demux3D::ports_id::OP_2_DATA]->connect(mux_provider_yaw->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
+
+    //Yaw Rate Provider
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_4_YAW_RATE]->connect(mux_provider_yaw_rate->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
     
-    Differentiator* velocityFromPosition = new Differentiator(1./OPTITRACK_FREQUENCY);
-    velocityFromPosition->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv_dot);
+
+    std::cout  << "###### PROVIDERS NODE ######" "\n";
     
-    // Differentiator* yawRateFromYaw = new Differentiator(1./OPTITRACK_FREQUENCY);
-    // yawRateFromYaw->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv);
-    
-    rosunit_g2i_position->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv);
-    // rosunit_g2i_x->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv);
-    // rosunit_g2i_y->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv);
-    // rosunit_g2i_z->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv);
+    Timer tempo;
+    int i = 0;
+    while(ros::ok()){
+        tempo.tick();
 
-    rosunit_g2i_orientation->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv);
-
-    rosunit_g2i_position->addCallbackMsgReceiver((MsgReceiver*)velocityFromPosition);
-    // rosunit_g2i_orientation->addCallbackMsgReceiver((MsgReceiver*)yawRateFromYaw);
-    velocityFromPosition->addCallbackMsgReceiver((MsgReceiver*)CsX_PVConcatenator);
-    velocityFromPosition->addCallbackMsgReceiver((MsgReceiver*)CsY_PVConcatenator);
-    velocityFromPosition->addCallbackMsgReceiver((MsgReceiver*)CsZ_PVConcatenator);
-    // yawRateFromYaw->addCallbackMsgReceiver((MsgReceiver*)CsYawRate_PVConcatenator);
-    rosunit_g2i_position->addCallbackMsgReceiver((MsgReceiver*)CsX_PVConcatenator);
-    rosunit_g2i_position->addCallbackMsgReceiver((MsgReceiver*)CsY_PVConcatenator);
-    rosunit_g2i_position->addCallbackMsgReceiver((MsgReceiver*)CsZ_PVConcatenator);
-    rosunit_g2i_orientation->addCallbackMsgReceiver((MsgReceiver*)wrap_around_yaw);
-
-    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_4_YAW_RATE]->addCallbackMsgReceiver((MsgReceiver*)CsYawRate_PVConcatenator);
-    wrap_around_yaw->addCallbackMsgReceiver((MsgReceiver*)CsYaw_PVConcatenator);
-    
-    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_2_ROLL_RATE]->addCallbackMsgReceiver((MsgReceiver*)CsRoll_PVConcatenator);
-    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_3_PITCH_RATE]->addCallbackMsgReceiver((MsgReceiver*)CsPitch_PVConcatenator);
-    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_0_ROLL]->addCallbackMsgReceiver((MsgReceiver*)CsRoll_PVConcatenator);
-    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_1_PITCH]->addCallbackMsgReceiver((MsgReceiver*)CsPitch_PVConcatenator);
-
-//     //TODO after adding G2I
-//     //
-    
-//     //******************PROVIDERS TO CONTROL SYSTEMS******************************
-
-//     CsX_PVConcatenator->addCallbackMsgReceiver((MsgReceiver*)rosunit_x_provider_pub);
-//     CsY_PVConcatenator->addCallbackMsgReceiver((MsgReceiver*)rosunit_y_provider_pub);
-//     CsZ_PVConcatenator->addCallbackMsgReceiver((MsgReceiver*)rosunit_z_provider_pub);
-//     CsPitch_PVConcatenator->addCallbackMsgReceiver((MsgReceiver*)rosunit_pitch_provider_pub);
-//     CsRoll_PVConcatenator->addCallbackMsgReceiver((MsgReceiver*)rosunit_roll_provider_pub);
-//     CsYaw_PVConcatenator->addCallbackMsgReceiver((MsgReceiver*)rosunit_yaw_provider_pub);
-//     CsYawRate_PVConcatenator->addCallbackMsgReceiver((MsgReceiver*)rosunit_yaw_rate_provider_pub);
-
-//     std::cout  << "###### PROVIDERS NODE ######" "\n";
-    
-//     Timer tempo;
-//     int i = 0;
-//     while(ros::ok()){
-//         tempo.tick();
-
-//         ros::spinOnce();
+        ros::spinOnce();
        
-//         int gone = tempo.tockMicroSeconds();
-//         if(gone > 5000) {
-//              std::cout  << i << " PROV: " << gone << "\n";
-//         }
-//         i++;
+        int gone = tempo.tockMicroSeconds();
+        if(gone > 5000) {
+             std::cout  << i << " PROV: " << gone << "\n";
+        }
+        i++;
 
-//         rate.sleep();
+        rate.sleep();
 
-//     }
+    }
 
     return 0;
 }
