@@ -46,8 +46,8 @@ void ROSUnit_Xsens::callbackXsensBodyRate(const geometry_msgs::Vector3Stamped& m
 
     pv_dot_msg.setVector3DMessage(angular_vel);
 
-	_instance_ptr->emitMsgUnicast((DataMessage*) &pv_dot_msg,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_yaw_rate, (int)PVConcatenator::receiving_channels::ch_pv);
-	_instance_ptr->emitMsgUnicast((DataMessage*) &pv_dot_msg,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_attitude_rate, (int)PVConcatenator::receiving_channels::ch_pv_dot);
+	//_instance_ptr->emitMsgUnicast((DataMessage*) &pv_dot_msg,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_yaw_rate, (int)PVConcatenator::receiving_channels::ch_pv);
+	//_instance_ptr->emitMsgUnicast((DataMessage*) &pv_dot_msg,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_attitude_rate, (int)PVConcatenator::receiving_channels::ch_pv_dot);
 			
 }
 
@@ -69,7 +69,7 @@ void ROSUnit_Xsens::callbackXsensFreeAcceleration(const geometry_msgs::Vector3St
 
     pv_dot_dot_msg.setVector3DMessage(free_acceleration);
 
-	_instance_ptr->emitMsgUnicast((DataMessage*) &pv_dot_dot_msg,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_acceleration, (int)PVConcatenator::receiving_channels::ch_pv_dot_dot);
+	//_instance_ptr->emitMsgUnicast((DataMessage*) &pv_dot_dot_msg,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_acceleration, (int)PVConcatenator::receiving_channels::ch_pv_dot_dot);
    
 }
 
@@ -110,7 +110,7 @@ void ROSUnit_Xsens::callbackXsensAttitude( const geometry_msgs::QuaternionStampe
 
 
     pv_msg.setVector3DMessage(orientation_euler);
-	_instance_ptr->emitMsgUnicast((DataMessage*) &pv_msg,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_orientation, (int)PVConcatenator::receiving_channels::ch_pv);
+	//_instance_ptr->emitMsgUnicast((DataMessage*) &pv_msg,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_orientation, (int)PVConcatenator::receiving_channels::ch_pv);
 		
 }
 void ROSUnit_Xsens::callbackXsensVelocity(const geometry_msgs::TwistStamped& msg_velocity){

@@ -22,7 +22,7 @@ enum class control_system {roll=3, pitch=4, yaw=5, x=0, y=1, z=2, pitch_rate = 7
 // 					PID_MRFT_Z = 24, PID_Z_ID = 25, NULL_ID=999};
 // enum class block_type {controller, provider, reference};
 enum class switcher_type {controller, provider, reference, null_type};
-enum class controller_type {pid, mrft, sliding_mode, pid_mrft};
+enum class controller_type {pid, mrft, bounding_box, pid_mrft};
 enum class reference_type {process_variable_ref, restricted_process_variable_ref};
 enum class internal_switcher_type {position_provider, attitude_provider, reference, controller};
 enum class controller_msg_type {data, change_settings, command};

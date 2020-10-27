@@ -6,7 +6,7 @@
 #include <vector>
 #include "common_srv/Block.hpp"
 
-class ActuationSystem : public MsgEmitter, public Block{
+class ActuationSystem : public Block{
 
 public:
 
