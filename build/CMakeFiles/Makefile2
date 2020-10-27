@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build
 CMakeFiles/global2inertial_node.dir/all: CMakeFiles/flight_controller_generate_messages_cpp.dir/all
 	$(MAKE) -f CMakeFiles/global2inertial_node.dir/build.make CMakeFiles/global2inertial_node.dir/depend
 	$(MAKE) -f CMakeFiles/global2inertial_node.dir/build.make CMakeFiles/global2inertial_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60 "Built target global2inertial_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61 "Built target global2inertial_node"
 .PHONY : CMakeFiles/global2inertial_node.dir/all
 
 # Include target in all.
@@ -76,7 +76,7 @@ all: CMakeFiles/global2inertial_node.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/global2inertial_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 23
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/global2inertial_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 0
 .PHONY : CMakeFiles/global2inertial_node.dir/rule
@@ -103,7 +103,7 @@ clean: CMakeFiles/global2inertial_node.dir/clean
 CMakeFiles/flight_controller.dir/all: CMakeFiles/flight_controller_generate_messages_cpp.dir/all
 	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/depend
 	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Built target flight_controller"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17 "Built target flight_controller"
 .PHONY : CMakeFiles/flight_controller.dir/all
 
 # Include target in all.
@@ -145,7 +145,7 @@ CMakeFiles/flight_controller_genpy.dir/all: CMakeFiles/flight_controller_generat
 
 # Build rule for subdir invocation for target.
 CMakeFiles/flight_controller_genpy.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/flight_controller_genpy.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 0
 .PHONY : CMakeFiles/flight_controller_genpy.dir/rule
@@ -169,24 +169,24 @@ clean: CMakeFiles/flight_controller_genpy.dir/clean
 # Target rules for target CMakeFiles/flight_controller_generate_messages_lisp.dir
 
 # All Build rule for target.
-CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Y_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Waypoint.dir/all
-CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_X_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_MRFT_param.dir/all
-CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Z_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_SM.dir/all
-CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Restricted_Norm_Settings.dir/all
-CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SM_param.dir/all
-CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Yaw_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_PID_param.dir/all
-CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_PID.dir/all
+CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SwitchBlock.dir/all
 CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Info.dir/all
 CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Arm.dir/all
 CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Reset_Controller.dir/all
 CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_MRFT.dir/all
+CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_MRFT_param.dir/all
+CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_PID_param.dir/all
+CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_PID.dir/all
+CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SM_param.dir/all
+CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Arm.dir/all
+CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Yaw_Reference.dir/all
+CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Waypoint.dir/all
+CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_X_Reference.dir/all
+CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_SM.dir/all
+CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Restricted_Norm_Settings.dir/all
+CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Z_Reference.dir/all
+CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Y_Reference.dir/all
 CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Pose_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_lisp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SwitchBlock.dir/all
 	$(MAKE) -f CMakeFiles/flight_controller_generate_messages_lisp.dir/build.make CMakeFiles/flight_controller_generate_messages_lisp.dir/depend
 	$(MAKE) -f CMakeFiles/flight_controller_generate_messages_lisp.dir/build.make CMakeFiles/flight_controller_generate_messages_lisp.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=28,29,30,31,32 "Built target flight_controller_generate_messages_lisp"
@@ -218,24 +218,24 @@ clean: CMakeFiles/flight_controller_generate_messages_lisp.dir/clean
 # Target rules for target CMakeFiles/flight_controller_generate_messages_eus.dir
 
 # All Build rule for target.
-CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Y_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
-CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Waypoint.dir/all
-CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_X_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_MRFT_param.dir/all
-CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Z_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_SM.dir/all
-CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Restricted_Norm_Settings.dir/all
-CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SM_param.dir/all
-CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Yaw_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_PID_param.dir/all
-CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_PID.dir/all
+CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SwitchBlock.dir/all
 CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Info.dir/all
-CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Arm.dir/all
 CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Reset_Controller.dir/all
 CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_MRFT.dir/all
+CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_MRFT_param.dir/all
+CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_PID_param.dir/all
+CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_PID.dir/all
+CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SM_param.dir/all
+CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Arm.dir/all
+CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Yaw_Reference.dir/all
+CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Waypoint.dir/all
+CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_X_Reference.dir/all
+CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_SM.dir/all
+CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Restricted_Norm_Settings.dir/all
+CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Z_Reference.dir/all
+CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Y_Reference.dir/all
+CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/std_msgs_generate_messages_eus.dir/all
 CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Pose_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_eus.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SwitchBlock.dir/all
 	$(MAKE) -f CMakeFiles/flight_controller_generate_messages_eus.dir/build.make CMakeFiles/flight_controller_generate_messages_eus.dir/depend
 	$(MAKE) -f CMakeFiles/flight_controller_generate_messages_eus.dir/build.make CMakeFiles/flight_controller_generate_messages_eus.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=23,24,25,26,27 "Built target flight_controller_generate_messages_eus"
@@ -275,7 +275,7 @@ CMakeFiles/flight_controller_gencpp.dir/all: CMakeFiles/flight_controller_genera
 
 # Build rule for subdir invocation for target.
 CMakeFiles/flight_controller_gencpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/flight_controller_gencpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 0
 .PHONY : CMakeFiles/flight_controller_gencpp.dir/rule
@@ -558,7 +558,7 @@ clean: CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
 CMakeFiles/waypoint_reference_node.dir/all: CMakeFiles/flight_controller_generate_messages_cpp.dir/all
 	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/depend
 	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100 "Built target waypoint_reference_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,99,100 "Built target waypoint_reference_node"
 .PHONY : CMakeFiles/waypoint_reference_node.dir/all
 
 # Include target in all.
@@ -688,32 +688,32 @@ clean: CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
 # Target rules for target CMakeFiles/flight_controller_generate_messages_cpp.dir
 
 # All Build rule for target.
-CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Y_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Waypoint.dir/all
-CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_X_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_MRFT_param.dir/all
-CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Z_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_SM.dir/all
-CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Restricted_Norm_Settings.dir/all
-CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SM_param.dir/all
-CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Yaw_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_PID_param.dir/all
-CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_PID.dir/all
+CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SwitchBlock.dir/all
 CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Info.dir/all
-CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Arm.dir/all
 CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Reset_Controller.dir/all
 CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_MRFT.dir/all
+CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_MRFT_param.dir/all
+CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_PID_param.dir/all
+CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_PID.dir/all
+CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SM_param.dir/all
+CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Arm.dir/all
+CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Yaw_Reference.dir/all
+CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Waypoint.dir/all
+CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_X_Reference.dir/all
+CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_SM.dir/all
+CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Restricted_Norm_Settings.dir/all
+CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Z_Reference.dir/all
+CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Y_Reference.dir/all
 CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Pose_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_cpp.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SwitchBlock.dir/all
 	$(MAKE) -f CMakeFiles/flight_controller_generate_messages_cpp.dir/build.make CMakeFiles/flight_controller_generate_messages_cpp.dir/depend
 	$(MAKE) -f CMakeFiles/flight_controller_generate_messages_cpp.dir/build.make CMakeFiles/flight_controller_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=19,20,21,22 "Built target flight_controller_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=18,19,20,21,22 "Built target flight_controller_generate_messages_cpp"
 .PHONY : CMakeFiles/flight_controller_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/flight_controller_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/flight_controller_generate_messages_cpp.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 0
 .PHONY : CMakeFiles/flight_controller_generate_messages_cpp.dir/rule
@@ -897,24 +897,24 @@ clean: CMakeFiles/roscpp_generate_messages_lisp.dir/clean
 # Target rules for target CMakeFiles/flight_controller_generate_messages_nodejs.dir
 
 # All Build rule for target.
-CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Y_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Waypoint.dir/all
-CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_X_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_MRFT_param.dir/all
-CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Z_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_SM.dir/all
-CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Restricted_Norm_Settings.dir/all
-CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SM_param.dir/all
-CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Yaw_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_PID_param.dir/all
-CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_PID.dir/all
-CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Info.dir/all
 CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Arm.dir/all
+CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SwitchBlock.dir/all
+CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Info.dir/all
 CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Reset_Controller.dir/all
 CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_MRFT.dir/all
+CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_MRFT_param.dir/all
+CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_PID_param.dir/all
+CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_PID.dir/all
+CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SM_param.dir/all
+CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Arm.dir/all
+CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Yaw_Reference.dir/all
+CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Waypoint.dir/all
+CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_X_Reference.dir/all
+CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_SM.dir/all
+CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Restricted_Norm_Settings.dir/all
+CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Z_Reference.dir/all
+CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Y_Reference.dir/all
 CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Pose_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_nodejs.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SwitchBlock.dir/all
 	$(MAKE) -f CMakeFiles/flight_controller_generate_messages_nodejs.dir/build.make CMakeFiles/flight_controller_generate_messages_nodejs.dir/depend
 	$(MAKE) -f CMakeFiles/flight_controller_generate_messages_nodejs.dir/build.make CMakeFiles/flight_controller_generate_messages_nodejs.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=33,34,35,36,37 "Built target flight_controller_generate_messages_nodejs"
@@ -981,7 +981,7 @@ clean: CMakeFiles/_flight_controller_generate_messages_check_deps_MRFT_param.dir
 CMakeFiles/providers_node.dir/all: CMakeFiles/flight_controller_generate_messages_cpp.dir/all
 	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/depend
 	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81 "Built target providers_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82 "Built target providers_node"
 .PHONY : CMakeFiles/providers_node.dir/all
 
 # Include target in all.
@@ -991,7 +991,7 @@ all: CMakeFiles/providers_node.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/providers_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 22
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 23
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/providers_node.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 0
 .PHONY : CMakeFiles/providers_node.dir/rule
@@ -1688,10 +1688,10 @@ clean: CMakeFiles/common_srv_generate_messages_eus.dir/clean
 
 # All Build rule for target.
 CMakeFiles/flight_controller_generate_messages.dir/all: CMakeFiles/flight_controller_generate_messages_cpp.dir/all
-CMakeFiles/flight_controller_generate_messages.dir/all: CMakeFiles/flight_controller_generate_messages_eus.dir/all
-CMakeFiles/flight_controller_generate_messages.dir/all: CMakeFiles/flight_controller_generate_messages_py.dir/all
 CMakeFiles/flight_controller_generate_messages.dir/all: CMakeFiles/flight_controller_generate_messages_nodejs.dir/all
+CMakeFiles/flight_controller_generate_messages.dir/all: CMakeFiles/flight_controller_generate_messages_py.dir/all
 CMakeFiles/flight_controller_generate_messages.dir/all: CMakeFiles/flight_controller_generate_messages_lisp.dir/all
+CMakeFiles/flight_controller_generate_messages.dir/all: CMakeFiles/flight_controller_generate_messages_eus.dir/all
 	$(MAKE) -f CMakeFiles/flight_controller_generate_messages.dir/build.make CMakeFiles/flight_controller_generate_messages.dir/depend
 	$(MAKE) -f CMakeFiles/flight_controller_generate_messages.dir/build.make CMakeFiles/flight_controller_generate_messages.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num= "Built target flight_controller_generate_messages"
@@ -1704,7 +1704,7 @@ all: CMakeFiles/flight_controller_generate_messages.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/flight_controller_generate_messages.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 26
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/flight_controller_generate_messages.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 0
 .PHONY : CMakeFiles/flight_controller_generate_messages.dir/rule
@@ -1824,32 +1824,32 @@ clean: CMakeFiles/_flight_controller_generate_messages_check_deps_SM_param.dir/c
 # Target rules for target CMakeFiles/flight_controller_generate_messages_py.dir
 
 # All Build rule for target.
-CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Y_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Waypoint.dir/all
-CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_X_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_MRFT_param.dir/all
-CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Z_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/std_msgs_generate_messages_py.dir/all
-CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_SM.dir/all
-CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Restricted_Norm_Settings.dir/all
-CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SM_param.dir/all
-CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Yaw_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_PID_param.dir/all
-CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_PID.dir/all
+CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SwitchBlock.dir/all
 CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Info.dir/all
-CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Arm.dir/all
+CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/std_msgs_generate_messages_py.dir/all
 CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Reset_Controller.dir/all
 CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_MRFT.dir/all
+CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_MRFT_param.dir/all
+CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_PID_param.dir/all
+CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_PID.dir/all
+CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SM_param.dir/all
+CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Arm.dir/all
+CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Yaw_Reference.dir/all
+CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Waypoint.dir/all
+CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_X_Reference.dir/all
+CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Controller_SM.dir/all
+CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Restricted_Norm_Settings.dir/all
+CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Z_Reference.dir/all
+CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Y_Reference.dir/all
 CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_Update_Pose_Reference.dir/all
-CMakeFiles/flight_controller_generate_messages_py.dir/all: CMakeFiles/_flight_controller_generate_messages_check_deps_SwitchBlock.dir/all
 	$(MAKE) -f CMakeFiles/flight_controller_generate_messages_py.dir/build.make CMakeFiles/flight_controller_generate_messages_py.dir/depend
 	$(MAKE) -f CMakeFiles/flight_controller_generate_messages_py.dir/build.make CMakeFiles/flight_controller_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=38,39,40,41,42 "Built target flight_controller_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=38,39,40,41,42,43 "Built target flight_controller_generate_messages_py"
 .PHONY : CMakeFiles/flight_controller_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/flight_controller_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/flight_controller_generate_messages_py.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 0
 .PHONY : CMakeFiles/flight_controller_generate_messages_py.dir/rule
@@ -2042,12 +2042,12 @@ gtest/googlemock/preinstall: gtest/googlemock/gtest/preinstall
 gtest/googlemock/CMakeFiles/gmock_main.dir/all:
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=62 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=62,63 "Built target gmock_main"
 .PHONY : gtest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
 gtest/googlemock/CMakeFiles/gmock_main.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 gtest/googlemock/CMakeFiles/gmock_main.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 0
 .PHONY : gtest/googlemock/CMakeFiles/gmock_main.dir/rule
@@ -2074,12 +2074,12 @@ clean: gtest/googlemock/CMakeFiles/gmock_main.dir/clean
 gtest/googlemock/CMakeFiles/gmock.dir/all:
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=61 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num= "Built target gmock"
 .PHONY : gtest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
 gtest/googlemock/CMakeFiles/gmock.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 gtest/googlemock/CMakeFiles/gmock.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 0
 .PHONY : gtest/googlemock/CMakeFiles/gmock.dir/rule
@@ -2125,7 +2125,7 @@ gtest/googlemock/gtest/preinstall:
 gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all: gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num= "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=64 "Built target gtest_main"
 .PHONY : gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2157,12 +2157,12 @@ clean: gtest/googlemock/gtest/CMakeFiles/gtest_main.dir/clean
 gtest/googlemock/gtest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=63 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num= "Built target gtest"
 .PHONY : gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
 gtest/googlemock/gtest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 gtest/googlemock/gtest/CMakeFiles/gtest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles 0
 .PHONY : gtest/googlemock/gtest/CMakeFiles/gtest.dir/rule
