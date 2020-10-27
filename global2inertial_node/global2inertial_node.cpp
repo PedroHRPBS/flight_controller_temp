@@ -16,12 +16,6 @@ int main(int argc, char **argv){
     ROSUnit_Factory ROSUnit_Factory_main{nh};
 
     ROSUnit* myROSOptitrack = new ROSUnit_Optitrack(nh);
-    ROSUnit* myCameraPosition =  ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
-                                                                    ROSUnit_msg_type::ROSUnit_Float,
-                                                                    "camera_provider");
-    ROSUnit* rosunit_camera_enable = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server,
-                                                                            ROSUnit_msg_type::ROSUnit_Int,
-                                                                            "set_camera_status");
     ROSUnit* rosunit_g2i_position = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Publisher, 
                                                                     ROSUnit_msg_type::ROSUnit_Point,
                                                                     "global2inertial/position");
@@ -32,20 +26,14 @@ int main(int argc, char **argv){
                                                                             ROSUnit_msg_type::ROSUnit_Float,
                                                                             "set_height_offset");
     
-    
     Global2Inertial* myGlobal2Inertial = new Global2Inertial();
 
-    myCameraPosition->setEmittingChannel((int)Global2Inertial::receiving_channels::ch_Camera);
-    rosunit_camera_enable->setEmittingChannel((int)Global2Inertial::receiving_channels::ch_Camera);
-    myCameraPosition->addCallbackMsgReceiver((MsgReceiver*)myGlobal2Inertial);
-    rosunit_camera_enable->addCallbackMsgReceiver((MsgReceiver*)myGlobal2Inertial);
-    myROSOptitrack->addCallbackMsgReceiver((MsgReceiver*)myGlobal2Inertial);
-    myGlobal2Inertial->addCallbackMsgReceiver((MsgReceiver*)rosunit_g2i_position, (int)Global2Inertial::unicast_addresses::uni_Optitrack_pos);
-    myGlobal2Inertial->addCallbackMsgReceiver((MsgReceiver*)rosunit_g2i_orientation, (int)Global2Inertial::unicast_addresses::uni_Optitrack_heading);
-    rosunit_set_height_offset->addCallbackMsgReceiver((MsgReceiver*)myGlobal2Inertial);
+    myROSOptitrack->getPorts()[(int)ROSUnit_Optitrack::ports_id::OP_0_OPT]->connect(myGlobal2Inertial->getPorts()[(int)Global2Inertial::ports_id::IP_0_OPTI_MSG]);
+    myGlobal2Inertial->getPorts()[(int)Global2Inertial::ports_id::OP_0_OPTIPOS]->connect(rosunit_g2i_position);
+    myGlobal2Inertial->getPorts()[(int)Global2Inertial::ports_id::OP_1_OPTIHEADING]->connect(rosunit_g2i_orientation);
+    rosunit_set_height_offset->connect(myGlobal2Inertial->getPorts()[(int)Global2Inertial::ports_id::IP_1_FLOAT_DATA]);
 
     std::cout  << "###### GLOBAL2INERTIAL NODE ######" "\n";
-
     Timer tempo;
     int i = 0;
     while(ros::ok()){

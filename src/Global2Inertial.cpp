@@ -94,10 +94,6 @@ void Global2Inertial::process(DataMessage* t_msg, Port* t_port)
         Vector3D<double> translate_pos = this->translatePoint(pos_point);
         Vector3D<double> result_pos = this->rotatePoint(translate_pos);
       
-        if (_camera_enabled > 0){
-            result_pos.z = _camera_z;
-        }
-
         Vector3DMessage results_msg;
         results_msg.setVector3DMessage(result_pos);
 
@@ -156,14 +152,6 @@ void Global2Inertial::process(DataMessage* t_msg, Port* t_port)
         //TODO: fix connection : WAHBAH
         //this->_output_port_5->receiveMsgData(&res_msg);
         //emitMsgUnicast(&res_msg,Global2Inertial::unicast_addresses::uni_XSens_ori,(int)PVConcatenator::receiving_channels::ch_pv);
-    }
-    else if (t_port->getID() == ports_id::IP_6_CAM_Z){
-        FloatMsg* float_msg = (FloatMsg*)t_msg;
-        _camera_z = float_msg->data;
-    }
-    else if (t_port->getID() == ports_id::IP_7_CAM_EN){
-        IntegerMsg* int_msg = (IntegerMsg*)t_msg;
-        _camera_enabled = int_msg->data;   
     }
     //TODO add an else if for the camera message, it should update a private variable, and this private variable should be passed to the controller from the Optitrack message
     //doing so we don't mess with the frequencies.
