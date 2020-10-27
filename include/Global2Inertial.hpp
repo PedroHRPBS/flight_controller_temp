@@ -6,8 +6,8 @@
 
 #include "common_srv/Block.hpp"
 #include "common_srv/Vector3D.hpp"
-#include "InputPort.hpp"
-#include "OutputPort.hpp"
+#include "common_srv/InputPort.hpp"
+#include "common_srv/OutputPort.hpp"
 #include "RotationMatrix3by3.hpp"
 #include <math.h>
 #include "common_srv/FloatMsg.hpp"

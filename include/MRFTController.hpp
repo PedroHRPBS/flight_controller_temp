@@ -9,8 +9,8 @@
 #include "SwitchOutMsg.hpp"
 #include "logger.hpp"
 #include "common_srv/IntegerMsg.hpp"
-#include "InputPort.hpp"
-#include "OutputPort.hpp"
+#include "common_srv/InputPort.hpp"
+#include "common_srv/OutputPort.hpp"
 
 class MRFTController : public Controller{
 

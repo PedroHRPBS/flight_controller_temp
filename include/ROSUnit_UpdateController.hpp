@@ -11,7 +11,7 @@
 #include <flight_controller/Update_Controller_SM.h>
 #include "common_types.hpp"
 #include "ControllerMessage.hpp"
-#include "OutputPort.hpp"
+#include "common_srv/OutputPort.hpp"
 
 class ROSUnit_UpdateController :  public ROSUnit{
 

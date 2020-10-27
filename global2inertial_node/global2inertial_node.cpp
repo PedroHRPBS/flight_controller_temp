@@ -29,8 +29,8 @@ int main(int argc, char **argv){
     Global2Inertial* myGlobal2Inertial = new Global2Inertial();
 
     myROSOptitrack->getPorts()[(int)ROSUnit_Optitrack::ports_id::OP_0_OPT]->connect(myGlobal2Inertial->getPorts()[(int)Global2Inertial::ports_id::IP_0_OPTI_MSG]);
-    myGlobal2Inertial->getPorts()[(int)Global2Inertial::ports_id::OP_0_OPTIPOS]->connect(rosunit_g2i_position);
-    myGlobal2Inertial->getPorts()[(int)Global2Inertial::ports_id::OP_1_OPTIHEADING]->connect(rosunit_g2i_orientation);
+    myGlobal2Inertial->getPorts()[(int)Global2Inertial::ports_id::OP_0_OPTIPOS]->connect(rosunit_g2i_position->getPorts()[(int)ROSUnit_PointPub::ports_id::IP_0]);
+    myGlobal2Inertial->getPorts()[(int)Global2Inertial::ports_id::OP_1_OPTIHEADING]->connect(rosunit_g2i_orientation->getPorts()[(int)ROSUnit_PointPub::ports_id::IP_0]);
     rosunit_set_height_offset->getPorts()[(int)ROSUnit_SetFloatSrv::ports_id::OP_0]->connect(myGlobal2Inertial->getPorts()[(int)Global2Inertial::ports_id::IP_1_FLOAT_DATA]);
 
     std::cout  << "###### GLOBAL2INERTIAL NODE ######" "\n";

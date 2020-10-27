@@ -10,7 +10,7 @@
 #include "common_srv/IntegerMsg.hpp"
 #include "common_srv/BooleanMsg.hpp"
 #include "common_srv/VectorDoubleMsg.hpp"
-#include <InputPort.hpp>
+#include <common_srv/InputPort.hpp>
 
 class ROSUnit_BroadcastData : public ROSUnit{
 

@@ -8,8 +8,8 @@
 #include "logger.hpp"
 #include "common_srv/IntegerMsg.hpp"
 #include "BB_values.hpp"
-#include "InputPort.hpp"
-#include "OutputPort.hpp"
+#include "common_srv/InputPort.hpp"
+#include "common_srv/OutputPort.hpp"
 
 class BoundingBoxController : public Controller{
 

@@ -3,7 +3,7 @@
 #include "RestrictedNormRefSettingsMsg.hpp"
 #include <flight_controller/Restricted_Norm_Settings.h>
 #include "common_srv/Vector3D.hpp"
-#include "OutputPort.hpp"
+#include "common_srv/OutputPort.hpp"
 
 class ROSUnit_RestNormSettings :  public ROSUnit{
 
