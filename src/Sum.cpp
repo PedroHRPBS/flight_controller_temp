@@ -30,6 +30,7 @@ void Sum::process(DataMessage* t_msg, Port* t_port) {
         float data = float_msg->data;
 
         _v1 = data;
+        this->runTask(t_msg);
 
     }else if(t_port->getID() == ports_id::IP_1_DATA){ 
         FloatMsg* float_msg = (FloatMsg*)t_msg;

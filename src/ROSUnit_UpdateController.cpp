@@ -1,6 +1,5 @@
 #include "ROSUnit_UpdateController.hpp"
 
-//TODO rename the topics and class
 ROSUnit_UpdateController* ROSUnit_UpdateController::_instance_ptr = NULL;
 ControllerMessage ROSUnit_UpdateController::_update_controller_msg;
 control_system ROSUnit_UpdateController::_id;
@@ -57,9 +56,6 @@ bool ROSUnit_UpdateController::callbackUpdateControllerPID(flight_controller::Up
     pid_data.id = _id;
     
     _update_controller_msg.setPIDParam(pid_data);
-   
-    _instance_ptr->emitMsgUnicast((DataMessage*) &_update_controller_msg, ROSUnit_UpdateController::unicast_addresses::pid); //TODO remove
-    
     _instance_ptr->_output_port_0->receiveMsgData(&_update_controller_msg);
 
     return true;
@@ -90,7 +86,7 @@ bool ROSUnit_UpdateController::callbackUpdateControllerSM(flight_controller::Upd
     
     block_id _id = static_cast<block_id>((int)req.controller_parameters.id);
     
-    SM_parameters sm_data;
+    BB_parameters sm_data;
     sm_data.alpha1 = req.controller_parameters.sm_alpha1;
     sm_data.alpha2 = req.controller_parameters.sm_alpha2;
     sm_data.h1 = req.controller_parameters.sm_h1;

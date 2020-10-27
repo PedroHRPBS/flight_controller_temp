@@ -12,8 +12,6 @@
 #include "common_srv/VectorDoubleMsg.hpp"
 #include <InputPort.hpp>
 
-//TODO refactor all msgs
-
 class ROSUnit_BroadcastData : public ROSUnit{
 
 private:

@@ -149,7 +149,7 @@ void PIDController::set_internal_sw(PID_parameters pid_para_x){ //This checks in
 
 void PIDController::initialize(PID_parameters para){ //Refer to example 1 on how to initialize
 	
-	_parameters = para; //TODO: Revise _parameters scope
+	_parameters = para; 
 	set_internal_sw(_parameters);
 	accum_u = 0; //This is important as it resets NaN condition
 	accum_I = 0;
