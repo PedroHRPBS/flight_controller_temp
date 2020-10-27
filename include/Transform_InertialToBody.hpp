@@ -6,8 +6,9 @@
 #include <atomic>
 #include "common_srv/Vector3DMessage.hpp"
 #include "common_srv/FloatMsg.hpp"
-#include "ControlSystem.hpp"
 #include "common_srv/Block.hpp"
+#include "common_srv/InputPort.hpp"
+#include "common_srv/OutputPort.hpp"
 
 class Transform_InertialToBody : public MsgEmitter, public Block {
 
@@ -17,7 +18,6 @@ private:
     static std::atomic<float>  _inertial_command_z;
     bool _opti_x_received = false, _opti_y_received = false, _current_yaw_received = false;
     RotationMatrix3by3 _rotation_matrix;
-    control_system _source;
 
     Port* _input_port_0;
     Port* _input_port_1;

@@ -8,7 +8,6 @@
 #include "common_srv/Vector3D.hpp"
 #include "Quaternion.hpp"
 #include "common_srv/Vector3DMessage.hpp"
-#include "PVConcatenator.hpp"
 #include "Global2Inertial.hpp"
 #include "common_srv/Timer.hpp"
 #include "ButterFilter_Xsens.hpp"

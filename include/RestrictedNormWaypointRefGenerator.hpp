@@ -2,10 +2,11 @@
 #include "common_srv/MsgEmitter.hpp"
 #include "common_srv/MsgReceiver.hpp"
 #include "common_srv/Vector3D.hpp"
+#include "common_srv/Vector3DMessage.hpp"
+#include "common_srv/FloatMsg.hpp"
 #include "RestrictedNormRefSettingsMsg.hpp"
 #include "common_srv/PosesMsg.hpp"
 #include <vector>
-#include "ControlSystem.hpp"
 #include "Waypoint.hpp"
 #include "common_srv/PosesMsg.hpp"
 #include "common_srv/InputPort.hpp"

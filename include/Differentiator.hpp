@@ -8,7 +8,6 @@
 #include "common_srv/Vector3DMessage.hpp"
 #include "common_srv/Timer.hpp"
 #include "common_srv/FloatMsg.hpp"
-#include "PVConcatenator.hpp"
 #include "ButterFilter_120hz.hpp"
 
 class Differentiator : public Block, public MsgEmitter {
