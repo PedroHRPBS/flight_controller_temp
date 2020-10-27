@@ -265,7 +265,7 @@ int main(int argc, char** argv) {
     ((MRFTController*)MRFT_z)->getPorts()[(int)MRFTController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)sum_PID_MRFT_z->getPorts()[(int)Sum::ports_id::IP_1_DATA]);
     sum_PID_MRFT_z->getPorts()[(int)Sum::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)ID_switch_z->getPorts()[(int)InvertedSwitch::ports_id::IP_0_DATA_DEFAULT]);
     ID_switch_z->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_3_DATA_Z]);
-    ID_switch_z->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)((ROSUnit_BroadcastData*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_0_DATA]);
+    ID_switch_z->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)((ROSUnit_BroadcastData*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_2_Z_OUTPUT]);
     
     
     //*******************************************************************************************************************
@@ -295,13 +295,13 @@ int main(int argc, char** argv) {
     rosunit_yaw_rate_provider->addCallbackMsgReceiver((MsgReceiver*)YawRate_ControlSystem);
 
     //This is only needed for the /uav_control/uav_position. Refactor.
-    rosunit_x_provider->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData);
-    rosunit_y_provider->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData);
-    rosunit_z_provider->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData);
-    rosunit_roll_provider->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData);
-    rosunit_pitch_provider->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData);
-    rosunit_yaw_provider->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData);
-    rosunit_yaw_rate_provider->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData);
+    // rosunit_x_provider->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData);
+    // rosunit_y_provider->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData);
+    // rosunit_z_provider->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData);
+    // rosunit_roll_provider->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData);
+    // rosunit_pitch_provider->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData);
+    // rosunit_yaw_provider->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData);
+    // rosunit_yaw_rate_provider->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData);
 
     //***********************SETTING FLIGHT SCENARIO INPUTS****************************
     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->addCallbackMsgReceiver((MsgReceiver*)((PIDController*)PID_x)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
@@ -354,8 +354,8 @@ int main(int argc, char** argv) {
     
     //********************SETTING FLIGHT SCENARIO OUTPUTS***************************
 
-    myActuationSystem->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData, (int)HexaActuationSystem::unicast_addresses::unicast_ActuationSystem_commands);
-    myActuationSystem->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData, (int)HexaActuationSystem::unicast_addresses::unicast_ActuationSystem_armed);
+    myActuationSystem->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_14_MOTORS]);
+    myActuationSystem->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_15_ARMED]);
 
     X_ControlSystem->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData);
     Y_ControlSystem->addCallbackMsgReceiver((MsgReceiver*)myROSBroadcastData);
