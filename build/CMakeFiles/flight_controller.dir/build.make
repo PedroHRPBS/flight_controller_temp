@@ -225,57 +225,9 @@ CMakeFiles/flight_controller.dir/src/CircularProcessVariableReference.cpp.o.prov
 CMakeFiles/flight_controller.dir/src/CircularProcessVariableReference.cpp.o.provides.build: CMakeFiles/flight_controller.dir/src/CircularProcessVariableReference.cpp.o
 
 
-CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.o: CMakeFiles/flight_controller.dir/flags.make
-CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.o: ../src/ControlSystem.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.o"
-	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ControlSystem.cpp
-
-CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.i"
-	/usr/bin/x86_64-linux-gnu-g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ControlSystem.cpp > CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.i
-
-CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.s"
-	/usr/bin/x86_64-linux-gnu-g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ControlSystem.cpp -o CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.s
-
-CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.o.requires:
-
-.PHONY : CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.o.requires
-
-CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.o.provides: CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.o.requires
-	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.o.provides.build
-.PHONY : CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.o.provides
-
-CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.o.provides.build: CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.o
-
-
-CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.o: CMakeFiles/flight_controller.dir/flags.make
-CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.o: ../src/ControlSystemMessage.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.o"
-	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ControlSystemMessage.cpp
-
-CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.i"
-	/usr/bin/x86_64-linux-gnu-g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ControlSystemMessage.cpp > CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.i
-
-CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.s"
-	/usr/bin/x86_64-linux-gnu-g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ControlSystemMessage.cpp -o CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.s
-
-CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.o.requires:
-
-.PHONY : CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.o.requires
-
-CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.o.provides: CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.o.requires
-	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.o.provides.build
-.PHONY : CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.o.provides
-
-CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.o.provides.build: CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.o
-
-
 CMakeFiles/flight_controller.dir/src/Controller.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Controller.cpp.o: ../src/Controller.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/flight_controller.dir/src/Controller.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/flight_controller.dir/src/Controller.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Controller.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Controller.cpp
 
 CMakeFiles/flight_controller.dir/src/Controller.cpp.i: cmake_force
@@ -299,7 +251,7 @@ CMakeFiles/flight_controller.dir/src/Controller.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/flight_controller.dir/src/ControllerMessage.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/ControllerMessage.cpp.o: ../src/ControllerMessage.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/flight_controller.dir/src/ControllerMessage.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/flight_controller.dir/src/ControllerMessage.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/ControllerMessage.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ControllerMessage.cpp
 
 CMakeFiles/flight_controller.dir/src/ControllerMessage.cpp.i: cmake_force
@@ -323,7 +275,7 @@ CMakeFiles/flight_controller.dir/src/ControllerMessage.cpp.o.provides.build: CMa
 
 CMakeFiles/flight_controller.dir/src/Demux3D.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Demux3D.cpp.o: ../src/Demux3D.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/flight_controller.dir/src/Demux3D.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/flight_controller.dir/src/Demux3D.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Demux3D.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Demux3D.cpp
 
 CMakeFiles/flight_controller.dir/src/Demux3D.cpp.i: cmake_force
@@ -347,7 +299,7 @@ CMakeFiles/flight_controller.dir/src/Demux3D.cpp.o.provides.build: CMakeFiles/fl
 
 CMakeFiles/flight_controller.dir/src/Differentiator.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Differentiator.cpp.o: ../src/Differentiator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/flight_controller.dir/src/Differentiator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/flight_controller.dir/src/Differentiator.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Differentiator.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Differentiator.cpp
 
 CMakeFiles/flight_controller.dir/src/Differentiator.cpp.i: cmake_force
@@ -371,7 +323,7 @@ CMakeFiles/flight_controller.dir/src/Differentiator.cpp.o.provides.build: CMakeF
 
 CMakeFiles/flight_controller.dir/src/ESCMotor.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/ESCMotor.cpp.o: ../src/ESCMotor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/flight_controller.dir/src/ESCMotor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/flight_controller.dir/src/ESCMotor.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/ESCMotor.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ESCMotor.cpp
 
 CMakeFiles/flight_controller.dir/src/ESCMotor.cpp.i: cmake_force
@@ -395,7 +347,7 @@ CMakeFiles/flight_controller.dir/src/ESCMotor.cpp.o.provides.build: CMakeFiles/f
 
 CMakeFiles/flight_controller.dir/src/Global2Inertial.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Global2Inertial.cpp.o: ../src/Global2Inertial.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/flight_controller.dir/src/Global2Inertial.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/flight_controller.dir/src/Global2Inertial.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Global2Inertial.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Global2Inertial.cpp
 
 CMakeFiles/flight_controller.dir/src/Global2Inertial.cpp.i: cmake_force
@@ -419,7 +371,7 @@ CMakeFiles/flight_controller.dir/src/Global2Inertial.cpp.o.provides.build: CMake
 
 CMakeFiles/flight_controller.dir/src/HexaActuationSystem.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/HexaActuationSystem.cpp.o: ../src/HexaActuationSystem.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/flight_controller.dir/src/HexaActuationSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/flight_controller.dir/src/HexaActuationSystem.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/HexaActuationSystem.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/HexaActuationSystem.cpp
 
 CMakeFiles/flight_controller.dir/src/HexaActuationSystem.cpp.i: cmake_force
@@ -443,7 +395,7 @@ CMakeFiles/flight_controller.dir/src/HexaActuationSystem.cpp.o.provides.build: C
 
 CMakeFiles/flight_controller.dir/src/InvertedSwitch.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/InvertedSwitch.cpp.o: ../src/InvertedSwitch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/flight_controller.dir/src/InvertedSwitch.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/flight_controller.dir/src/InvertedSwitch.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/InvertedSwitch.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/InvertedSwitch.cpp
 
 CMakeFiles/flight_controller.dir/src/InvertedSwitch.cpp.i: cmake_force
@@ -467,7 +419,7 @@ CMakeFiles/flight_controller.dir/src/InvertedSwitch.cpp.o.provides.build: CMakeF
 
 CMakeFiles/flight_controller.dir/src/MRFTController.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/MRFTController.cpp.o: ../src/MRFTController.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/flight_controller.dir/src/MRFTController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/flight_controller.dir/src/MRFTController.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/MRFTController.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/MRFTController.cpp
 
 CMakeFiles/flight_controller.dir/src/MRFTController.cpp.i: cmake_force
@@ -491,7 +443,7 @@ CMakeFiles/flight_controller.dir/src/MRFTController.cpp.o.provides.build: CMakeF
 
 CMakeFiles/flight_controller.dir/src/Matrix3by3.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Matrix3by3.cpp.o: ../src/Matrix3by3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/flight_controller.dir/src/Matrix3by3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/flight_controller.dir/src/Matrix3by3.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Matrix3by3.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Matrix3by3.cpp
 
 CMakeFiles/flight_controller.dir/src/Matrix3by3.cpp.i: cmake_force
@@ -515,7 +467,7 @@ CMakeFiles/flight_controller.dir/src/Matrix3by3.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/flight_controller.dir/src/Mux3D.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Mux3D.cpp.o: ../src/Mux3D.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/flight_controller.dir/src/Mux3D.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/flight_controller.dir/src/Mux3D.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Mux3D.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Mux3D.cpp
 
 CMakeFiles/flight_controller.dir/src/Mux3D.cpp.i: cmake_force
@@ -539,7 +491,7 @@ CMakeFiles/flight_controller.dir/src/Mux3D.cpp.o.provides.build: CMakeFiles/flig
 
 CMakeFiles/flight_controller.dir/src/OptitrackMessage.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/OptitrackMessage.cpp.o: ../src/OptitrackMessage.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/flight_controller.dir/src/OptitrackMessage.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/flight_controller.dir/src/OptitrackMessage.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/OptitrackMessage.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/OptitrackMessage.cpp
 
 CMakeFiles/flight_controller.dir/src/OptitrackMessage.cpp.i: cmake_force
@@ -563,7 +515,7 @@ CMakeFiles/flight_controller.dir/src/OptitrackMessage.cpp.o.provides.build: CMak
 
 CMakeFiles/flight_controller.dir/src/PIDController.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/PIDController.cpp.o: ../src/PIDController.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/flight_controller.dir/src/PIDController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/flight_controller.dir/src/PIDController.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/PIDController.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/PIDController.cpp
 
 CMakeFiles/flight_controller.dir/src/PIDController.cpp.i: cmake_force
@@ -587,7 +539,7 @@ CMakeFiles/flight_controller.dir/src/PIDController.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/flight_controller.dir/src/PIDplusMRFTController.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/PIDplusMRFTController.cpp.o: ../src/PIDplusMRFTController.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/flight_controller.dir/src/PIDplusMRFTController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/flight_controller.dir/src/PIDplusMRFTController.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/PIDplusMRFTController.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/PIDplusMRFTController.cpp
 
 CMakeFiles/flight_controller.dir/src/PIDplusMRFTController.cpp.i: cmake_force
@@ -609,33 +561,9 @@ CMakeFiles/flight_controller.dir/src/PIDplusMRFTController.cpp.o.provides: CMake
 CMakeFiles/flight_controller.dir/src/PIDplusMRFTController.cpp.o.provides.build: CMakeFiles/flight_controller.dir/src/PIDplusMRFTController.cpp.o
 
 
-CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.o: CMakeFiles/flight_controller.dir/flags.make
-CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.o: ../src/PVConcatenator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.o"
-	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/PVConcatenator.cpp
-
-CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.i"
-	/usr/bin/x86_64-linux-gnu-g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/PVConcatenator.cpp > CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.i
-
-CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.s"
-	/usr/bin/x86_64-linux-gnu-g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/PVConcatenator.cpp -o CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.s
-
-CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.o.requires:
-
-.PHONY : CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.o.requires
-
-CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.o.provides: CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.o.requires
-	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.o.provides.build
-.PHONY : CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.o.provides
-
-CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.o.provides.build: CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.o
-
-
 CMakeFiles/flight_controller.dir/src/ProcessVariableReference.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/ProcessVariableReference.cpp.o: ../src/ProcessVariableReference.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/flight_controller.dir/src/ProcessVariableReference.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/flight_controller.dir/src/ProcessVariableReference.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/ProcessVariableReference.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ProcessVariableReference.cpp
 
 CMakeFiles/flight_controller.dir/src/ProcessVariableReference.cpp.i: cmake_force
@@ -659,7 +587,7 @@ CMakeFiles/flight_controller.dir/src/ProcessVariableReference.cpp.o.provides.bui
 
 CMakeFiles/flight_controller.dir/src/QuadActuationSystem.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/QuadActuationSystem.cpp.o: ../src/QuadActuationSystem.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/flight_controller.dir/src/QuadActuationSystem.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/flight_controller.dir/src/QuadActuationSystem.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/QuadActuationSystem.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/QuadActuationSystem.cpp
 
 CMakeFiles/flight_controller.dir/src/QuadActuationSystem.cpp.i: cmake_force
@@ -683,7 +611,7 @@ CMakeFiles/flight_controller.dir/src/QuadActuationSystem.cpp.o.provides.build: C
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_Arm.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/ROSUnit_Arm.cpp.o: ../src/ROSUnit_Arm.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_Arm.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_Arm.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/ROSUnit_Arm.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ROSUnit_Arm.cpp
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_Arm.cpp.i: cmake_force
@@ -707,7 +635,7 @@ CMakeFiles/flight_controller.dir/src/ROSUnit_Arm.cpp.o.provides.build: CMakeFile
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_BroadcastData.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/ROSUnit_BroadcastData.cpp.o: ../src/ROSUnit_BroadcastData.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_BroadcastData.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_BroadcastData.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/ROSUnit_BroadcastData.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ROSUnit_BroadcastData.cpp
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_BroadcastData.cpp.i: cmake_force
@@ -731,7 +659,7 @@ CMakeFiles/flight_controller.dir/src/ROSUnit_BroadcastData.cpp.o.provides.build:
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_Optitrack.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/ROSUnit_Optitrack.cpp.o: ../src/ROSUnit_Optitrack.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_Optitrack.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_Optitrack.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/ROSUnit_Optitrack.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ROSUnit_Optitrack.cpp
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_Optitrack.cpp.i: cmake_force
@@ -755,7 +683,7 @@ CMakeFiles/flight_controller.dir/src/ROSUnit_Optitrack.cpp.o.provides.build: CMa
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_RTK.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/ROSUnit_RTK.cpp.o: ../src/ROSUnit_RTK.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_RTK.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_RTK.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/ROSUnit_RTK.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ROSUnit_RTK.cpp
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_RTK.cpp.i: cmake_force
@@ -779,7 +707,7 @@ CMakeFiles/flight_controller.dir/src/ROSUnit_RTK.cpp.o.provides.build: CMakeFile
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_ResetController.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/ROSUnit_ResetController.cpp.o: ../src/ROSUnit_ResetController.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_ResetController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_ResetController.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/ROSUnit_ResetController.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ROSUnit_ResetController.cpp
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_ResetController.cpp.i: cmake_force
@@ -803,7 +731,7 @@ CMakeFiles/flight_controller.dir/src/ROSUnit_ResetController.cpp.o.provides.buil
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_RestNormSettings.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/ROSUnit_RestNormSettings.cpp.o: ../src/ROSUnit_RestNormSettings.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_RestNormSettings.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_RestNormSettings.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/ROSUnit_RestNormSettings.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ROSUnit_RestNormSettings.cpp
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_RestNormSettings.cpp.i: cmake_force
@@ -827,7 +755,7 @@ CMakeFiles/flight_controller.dir/src/ROSUnit_RestNormSettings.cpp.o.provides.bui
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_SwitchBlock.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/ROSUnit_SwitchBlock.cpp.o: ../src/ROSUnit_SwitchBlock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_SwitchBlock.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_SwitchBlock.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/ROSUnit_SwitchBlock.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ROSUnit_SwitchBlock.cpp
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_SwitchBlock.cpp.i: cmake_force
@@ -851,7 +779,7 @@ CMakeFiles/flight_controller.dir/src/ROSUnit_SwitchBlock.cpp.o.provides.build: C
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_UpdateController.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/ROSUnit_UpdateController.cpp.o: ../src/ROSUnit_UpdateController.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_UpdateController.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_UpdateController.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/ROSUnit_UpdateController.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ROSUnit_UpdateController.cpp
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_UpdateController.cpp.i: cmake_force
@@ -875,7 +803,7 @@ CMakeFiles/flight_controller.dir/src/ROSUnit_UpdateController.cpp.o.provides.bui
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_Xsens.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/ROSUnit_Xsens.cpp.o: ../src/ROSUnit_Xsens.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_Xsens.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/flight_controller.dir/src/ROSUnit_Xsens.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/ROSUnit_Xsens.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ROSUnit_Xsens.cpp
 
 CMakeFiles/flight_controller.dir/src/ROSUnit_Xsens.cpp.i: cmake_force
@@ -899,7 +827,7 @@ CMakeFiles/flight_controller.dir/src/ROSUnit_Xsens.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/flight_controller.dir/src/Reference.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Reference.cpp.o: ../src/Reference.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/flight_controller.dir/src/Reference.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/flight_controller.dir/src/Reference.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Reference.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Reference.cpp
 
 CMakeFiles/flight_controller.dir/src/Reference.cpp.i: cmake_force
@@ -923,7 +851,7 @@ CMakeFiles/flight_controller.dir/src/Reference.cpp.o.provides.build: CMakeFiles/
 
 CMakeFiles/flight_controller.dir/src/RestrictedNormRefSettingsMsg.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/RestrictedNormRefSettingsMsg.cpp.o: ../src/RestrictedNormRefSettingsMsg.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/flight_controller.dir/src/RestrictedNormRefSettingsMsg.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/flight_controller.dir/src/RestrictedNormRefSettingsMsg.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/RestrictedNormRefSettingsMsg.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/RestrictedNormRefSettingsMsg.cpp
 
 CMakeFiles/flight_controller.dir/src/RestrictedNormRefSettingsMsg.cpp.i: cmake_force
@@ -947,7 +875,7 @@ CMakeFiles/flight_controller.dir/src/RestrictedNormRefSettingsMsg.cpp.o.provides
 
 CMakeFiles/flight_controller.dir/src/RestrictedNormWaypointRefGenerator.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/RestrictedNormWaypointRefGenerator.cpp.o: ../src/RestrictedNormWaypointRefGenerator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/flight_controller.dir/src/RestrictedNormWaypointRefGenerator.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/flight_controller.dir/src/RestrictedNormWaypointRefGenerator.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/RestrictedNormWaypointRefGenerator.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/RestrictedNormWaypointRefGenerator.cpp
 
 CMakeFiles/flight_controller.dir/src/RestrictedNormWaypointRefGenerator.cpp.i: cmake_force
@@ -971,7 +899,7 @@ CMakeFiles/flight_controller.dir/src/RestrictedNormWaypointRefGenerator.cpp.o.pr
 
 CMakeFiles/flight_controller.dir/src/RotationMatrix3by3.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/RotationMatrix3by3.cpp.o: ../src/RotationMatrix3by3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/flight_controller.dir/src/RotationMatrix3by3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/flight_controller.dir/src/RotationMatrix3by3.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/RotationMatrix3by3.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/RotationMatrix3by3.cpp
 
 CMakeFiles/flight_controller.dir/src/RotationMatrix3by3.cpp.i: cmake_force
@@ -995,7 +923,7 @@ CMakeFiles/flight_controller.dir/src/RotationMatrix3by3.cpp.o.provides.build: CM
 
 CMakeFiles/flight_controller.dir/src/Saturation.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Saturation.cpp.o: ../src/Saturation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/flight_controller.dir/src/Saturation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/flight_controller.dir/src/Saturation.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Saturation.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Saturation.cpp
 
 CMakeFiles/flight_controller.dir/src/Saturation.cpp.i: cmake_force
@@ -1019,7 +947,7 @@ CMakeFiles/flight_controller.dir/src/Saturation.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/flight_controller.dir/src/Sum.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Sum.cpp.o: ../src/Sum.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/flight_controller.dir/src/Sum.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/flight_controller.dir/src/Sum.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Sum.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Sum.cpp
 
 CMakeFiles/flight_controller.dir/src/Sum.cpp.i: cmake_force
@@ -1043,7 +971,7 @@ CMakeFiles/flight_controller.dir/src/Sum.cpp.o.provides.build: CMakeFiles/flight
 
 CMakeFiles/flight_controller.dir/src/Switch.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Switch.cpp.o: ../src/Switch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/flight_controller.dir/src/Switch.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/flight_controller.dir/src/Switch.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Switch.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Switch.cpp
 
 CMakeFiles/flight_controller.dir/src/Switch.cpp.i: cmake_force
@@ -1067,7 +995,7 @@ CMakeFiles/flight_controller.dir/src/Switch.cpp.o.provides.build: CMakeFiles/fli
 
 CMakeFiles/flight_controller.dir/src/SwitchBlockMsg.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/SwitchBlockMsg.cpp.o: ../src/SwitchBlockMsg.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/flight_controller.dir/src/SwitchBlockMsg.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/flight_controller.dir/src/SwitchBlockMsg.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/SwitchBlockMsg.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/SwitchBlockMsg.cpp
 
 CMakeFiles/flight_controller.dir/src/SwitchBlockMsg.cpp.i: cmake_force
@@ -1091,7 +1019,7 @@ CMakeFiles/flight_controller.dir/src/SwitchBlockMsg.cpp.o.provides.build: CMakeF
 
 CMakeFiles/flight_controller.dir/src/SwitchOutMsg.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/SwitchOutMsg.cpp.o: ../src/SwitchOutMsg.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/flight_controller.dir/src/SwitchOutMsg.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/flight_controller.dir/src/SwitchOutMsg.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/SwitchOutMsg.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/SwitchOutMsg.cpp
 
 CMakeFiles/flight_controller.dir/src/SwitchOutMsg.cpp.i: cmake_force
@@ -1113,33 +1041,9 @@ CMakeFiles/flight_controller.dir/src/SwitchOutMsg.cpp.o.provides: CMakeFiles/fli
 CMakeFiles/flight_controller.dir/src/SwitchOutMsg.cpp.o.provides.build: CMakeFiles/flight_controller.dir/src/SwitchOutMsg.cpp.o
 
 
-CMakeFiles/flight_controller.dir/src/Switcher.cpp.o: CMakeFiles/flight_controller.dir/flags.make
-CMakeFiles/flight_controller.dir/src/Switcher.cpp.o: ../src/Switcher.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/flight_controller.dir/src/Switcher.cpp.o"
-	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Switcher.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Switcher.cpp
-
-CMakeFiles/flight_controller.dir/src/Switcher.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/flight_controller.dir/src/Switcher.cpp.i"
-	/usr/bin/x86_64-linux-gnu-g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Switcher.cpp > CMakeFiles/flight_controller.dir/src/Switcher.cpp.i
-
-CMakeFiles/flight_controller.dir/src/Switcher.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/flight_controller.dir/src/Switcher.cpp.s"
-	/usr/bin/x86_64-linux-gnu-g++-7 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Switcher.cpp -o CMakeFiles/flight_controller.dir/src/Switcher.cpp.s
-
-CMakeFiles/flight_controller.dir/src/Switcher.cpp.o.requires:
-
-.PHONY : CMakeFiles/flight_controller.dir/src/Switcher.cpp.o.requires
-
-CMakeFiles/flight_controller.dir/src/Switcher.cpp.o.provides: CMakeFiles/flight_controller.dir/src/Switcher.cpp.o.requires
-	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/Switcher.cpp.o.provides.build
-.PHONY : CMakeFiles/flight_controller.dir/src/Switcher.cpp.o.provides
-
-CMakeFiles/flight_controller.dir/src/Switcher.cpp.o.provides.build: CMakeFiles/flight_controller.dir/src/Switcher.cpp.o
-
-
 CMakeFiles/flight_controller.dir/src/Transform_InertialToBody.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Transform_InertialToBody.cpp.o: ../src/Transform_InertialToBody.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/flight_controller.dir/src/Transform_InertialToBody.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/flight_controller.dir/src/Transform_InertialToBody.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Transform_InertialToBody.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Transform_InertialToBody.cpp
 
 CMakeFiles/flight_controller.dir/src/Transform_InertialToBody.cpp.i: cmake_force
@@ -1163,7 +1067,7 @@ CMakeFiles/flight_controller.dir/src/Transform_InertialToBody.cpp.o.provides.bui
 
 CMakeFiles/flight_controller.dir/src/UserReference.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/UserReference.cpp.o: ../src/UserReference.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/flight_controller.dir/src/UserReference.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/flight_controller.dir/src/UserReference.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/UserReference.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/UserReference.cpp
 
 CMakeFiles/flight_controller.dir/src/UserReference.cpp.i: cmake_force
@@ -1187,7 +1091,7 @@ CMakeFiles/flight_controller.dir/src/UserReference.cpp.o.provides.build: CMakeFi
 
 CMakeFiles/flight_controller.dir/src/WrapAroundFunction.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/WrapAroundFunction.cpp.o: ../src/WrapAroundFunction.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/flight_controller.dir/src/WrapAroundFunction.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/flight_controller.dir/src/WrapAroundFunction.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/WrapAroundFunction.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/WrapAroundFunction.cpp
 
 CMakeFiles/flight_controller.dir/src/WrapAroundFunction.cpp.i: cmake_force
@@ -1211,7 +1115,7 @@ CMakeFiles/flight_controller.dir/src/WrapAroundFunction.cpp.o.provides.build: CM
 
 CMakeFiles/flight_controller.dir/src/XSensMessage.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/XSensMessage.cpp.o: ../src/XSensMessage.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/flight_controller.dir/src/XSensMessage.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/flight_controller.dir/src/XSensMessage.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/XSensMessage.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/XSensMessage.cpp
 
 CMakeFiles/flight_controller.dir/src/XSensMessage.cpp.i: cmake_force
@@ -1235,7 +1139,7 @@ CMakeFiles/flight_controller.dir/src/XSensMessage.cpp.o.provides.build: CMakeFil
 
 CMakeFiles/flight_controller.dir/src/XSens_IMU.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/XSens_IMU.cpp.o: ../src/XSens_IMU.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/flight_controller.dir/src/XSens_IMU.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/flight_controller.dir/src/XSens_IMU.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/XSens_IMU.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/XSens_IMU.cpp
 
 CMakeFiles/flight_controller.dir/src/XSens_IMU.cpp.i: cmake_force
@@ -1259,7 +1163,7 @@ CMakeFiles/flight_controller.dir/src/XSens_IMU.cpp.o.provides.build: CMakeFiles/
 
 CMakeFiles/flight_controller.dir/src/logger.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/logger.cpp.o: ../src/logger.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/flight_controller.dir/src/logger.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/flight_controller.dir/src/logger.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/logger.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/logger.cpp
 
 CMakeFiles/flight_controller.dir/src/logger.cpp.i: cmake_force
@@ -1283,7 +1187,7 @@ CMakeFiles/flight_controller.dir/src/logger.cpp.o.provides.build: CMakeFiles/fli
 
 CMakeFiles/flight_controller.dir/src/std_logger.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/std_logger.cpp.o: ../src/std_logger.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/flight_controller.dir/src/std_logger.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/flight_controller.dir/src/std_logger.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/std_logger.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/std_logger.cpp
 
 CMakeFiles/flight_controller.dir/src/std_logger.cpp.i: cmake_force
@@ -1307,7 +1211,7 @@ CMakeFiles/flight_controller.dir/src/std_logger.cpp.o.provides.build: CMakeFiles
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/ADC_Navio2.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/ADC_Navio2.cpp.o: ../src/Navio2_cpp/ADC_Navio2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/ADC_Navio2.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/ADC_Navio2.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Navio2_cpp/ADC_Navio2.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Navio2_cpp/ADC_Navio2.cpp
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/ADC_Navio2.cpp.i: cmake_force
@@ -1331,7 +1235,7 @@ CMakeFiles/flight_controller.dir/src/Navio2_cpp/ADC_Navio2.cpp.o.provides.build:
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/I2Cdev.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/I2Cdev.cpp.o: ../src/Navio2_cpp/I2Cdev.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/I2Cdev.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/I2Cdev.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Navio2_cpp/I2Cdev.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Navio2_cpp/I2Cdev.cpp
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/I2Cdev.cpp.i: cmake_force
@@ -1355,7 +1259,7 @@ CMakeFiles/flight_controller.dir/src/Navio2_cpp/I2Cdev.cpp.o.provides.build: CMa
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/LSM9DS1.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/LSM9DS1.cpp.o: ../src/Navio2_cpp/LSM9DS1.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/LSM9DS1.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/LSM9DS1.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Navio2_cpp/LSM9DS1.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Navio2_cpp/LSM9DS1.cpp
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/LSM9DS1.cpp.i: cmake_force
@@ -1379,7 +1283,7 @@ CMakeFiles/flight_controller.dir/src/Navio2_cpp/LSM9DS1.cpp.o.provides.build: CM
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/Led_Navio2.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/Led_Navio2.cpp.o: ../src/Navio2_cpp/Led_Navio2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/Led_Navio2.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/Led_Navio2.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Navio2_cpp/Led_Navio2.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Navio2_cpp/Led_Navio2.cpp
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/Led_Navio2.cpp.i: cmake_force
@@ -1403,7 +1307,7 @@ CMakeFiles/flight_controller.dir/src/Navio2_cpp/Led_Navio2.cpp.o.provides.build:
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/MPU9250.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/MPU9250.cpp.o: ../src/Navio2_cpp/MPU9250.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/MPU9250.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/MPU9250.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Navio2_cpp/MPU9250.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Navio2_cpp/MPU9250.cpp
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/MPU9250.cpp.i: cmake_force
@@ -1427,7 +1331,7 @@ CMakeFiles/flight_controller.dir/src/Navio2_cpp/MPU9250.cpp.o.provides.build: CM
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/MS5611.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/MS5611.cpp.o: ../src/Navio2_cpp/MS5611.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/MS5611.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/MS5611.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Navio2_cpp/MS5611.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Navio2_cpp/MS5611.cpp
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/MS5611.cpp.i: cmake_force
@@ -1451,7 +1355,7 @@ CMakeFiles/flight_controller.dir/src/Navio2_cpp/MS5611.cpp.o.provides.build: CMa
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/PWM.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/PWM.cpp.o: ../src/Navio2_cpp/PWM.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/PWM.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/PWM.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Navio2_cpp/PWM.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Navio2_cpp/PWM.cpp
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/PWM.cpp.i: cmake_force
@@ -1475,7 +1379,7 @@ CMakeFiles/flight_controller.dir/src/Navio2_cpp/PWM.cpp.o.provides.build: CMakeF
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/RCInput_Navio2.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/RCInput_Navio2.cpp.o: ../src/Navio2_cpp/RCInput_Navio2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/RCInput_Navio2.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/RCInput_Navio2.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Navio2_cpp/RCInput_Navio2.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Navio2_cpp/RCInput_Navio2.cpp
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/RCInput_Navio2.cpp.i: cmake_force
@@ -1499,7 +1403,7 @@ CMakeFiles/flight_controller.dir/src/Navio2_cpp/RCInput_Navio2.cpp.o.provides.bu
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/RCOutput_Navio2.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/RCOutput_Navio2.cpp.o: ../src/Navio2_cpp/RCOutput_Navio2.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/RCOutput_Navio2.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/RCOutput_Navio2.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Navio2_cpp/RCOutput_Navio2.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Navio2_cpp/RCOutput_Navio2.cpp
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/RCOutput_Navio2.cpp.i: cmake_force
@@ -1523,7 +1427,7 @@ CMakeFiles/flight_controller.dir/src/Navio2_cpp/RCOutput_Navio2.cpp.o.provides.b
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/RGBled.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/RGBled.cpp.o: ../src/Navio2_cpp/RGBled.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/RGBled.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/RGBled.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Navio2_cpp/RGBled.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Navio2_cpp/RGBled.cpp
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/RGBled.cpp.i: cmake_force
@@ -1547,7 +1451,7 @@ CMakeFiles/flight_controller.dir/src/Navio2_cpp/RGBled.cpp.o.provides.build: CMa
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/Ublox.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/Ublox.cpp.o: ../src/Navio2_cpp/Ublox.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/Ublox.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/Ublox.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Navio2_cpp/Ublox.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Navio2_cpp/Ublox.cpp
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/Ublox.cpp.i: cmake_force
@@ -1571,7 +1475,7 @@ CMakeFiles/flight_controller.dir/src/Navio2_cpp/Ublox.cpp.o.provides.build: CMak
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/Util.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/Util.cpp.o: ../src/Navio2_cpp/Util.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/Util.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/Util.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Navio2_cpp/Util.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Navio2_cpp/Util.cpp
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/Util.cpp.i: cmake_force
@@ -1595,7 +1499,7 @@ CMakeFiles/flight_controller.dir/src/Navio2_cpp/Util.cpp.o.provides.build: CMake
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/gpio.cpp.o: CMakeFiles/flight_controller.dir/flags.make
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/gpio.cpp.o: ../src/Navio2_cpp/gpio.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_65) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/gpio.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/flight_controller.dir/src/Navio2_cpp/gpio.cpp.o"
 	/usr/bin/x86_64-linux-gnu-g++-7  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/flight_controller.dir/src/Navio2_cpp/gpio.cpp.o -c /home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Navio2_cpp/gpio.cpp
 
 CMakeFiles/flight_controller.dir/src/Navio2_cpp/gpio.cpp.i: cmake_force
@@ -1626,8 +1530,6 @@ flight_controller_OBJECTS = \
 "CMakeFiles/flight_controller.dir/src/ButterFilter_2nd_200Hz.cpp.o" \
 "CMakeFiles/flight_controller.dir/src/ButterFilter_Xsens.cpp.o" \
 "CMakeFiles/flight_controller.dir/src/CircularProcessVariableReference.cpp.o" \
-"CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.o" \
-"CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.o" \
 "CMakeFiles/flight_controller.dir/src/Controller.cpp.o" \
 "CMakeFiles/flight_controller.dir/src/ControllerMessage.cpp.o" \
 "CMakeFiles/flight_controller.dir/src/Demux3D.cpp.o" \
@@ -1642,7 +1544,6 @@ flight_controller_OBJECTS = \
 "CMakeFiles/flight_controller.dir/src/OptitrackMessage.cpp.o" \
 "CMakeFiles/flight_controller.dir/src/PIDController.cpp.o" \
 "CMakeFiles/flight_controller.dir/src/PIDplusMRFTController.cpp.o" \
-"CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.o" \
 "CMakeFiles/flight_controller.dir/src/ProcessVariableReference.cpp.o" \
 "CMakeFiles/flight_controller.dir/src/QuadActuationSystem.cpp.o" \
 "CMakeFiles/flight_controller.dir/src/ROSUnit_Arm.cpp.o" \
@@ -1663,7 +1564,6 @@ flight_controller_OBJECTS = \
 "CMakeFiles/flight_controller.dir/src/Switch.cpp.o" \
 "CMakeFiles/flight_controller.dir/src/SwitchBlockMsg.cpp.o" \
 "CMakeFiles/flight_controller.dir/src/SwitchOutMsg.cpp.o" \
-"CMakeFiles/flight_controller.dir/src/Switcher.cpp.o" \
 "CMakeFiles/flight_controller.dir/src/Transform_InertialToBody.cpp.o" \
 "CMakeFiles/flight_controller.dir/src/UserReference.cpp.o" \
 "CMakeFiles/flight_controller.dir/src/WrapAroundFunction.cpp.o" \
@@ -1695,8 +1595,6 @@ devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/ButterFilter_2nd_200Hz.cpp.o
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/ButterFilter_Xsens.cpp.o
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/CircularProcessVariableReference.cpp.o
-devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.o
-devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.o
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/Controller.cpp.o
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/ControllerMessage.cpp.o
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/Demux3D.cpp.o
@@ -1711,7 +1609,6 @@ devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/OptitrackMessage.cpp.o
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/PIDController.cpp.o
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/PIDplusMRFTController.cpp.o
-devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.o
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/ProcessVariableReference.cpp.o
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/QuadActuationSystem.cpp.o
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/ROSUnit_Arm.cpp.o
@@ -1732,7 +1629,6 @@ devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/Switch.cpp.o
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/SwitchBlockMsg.cpp.o
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/SwitchOutMsg.cpp.o
-devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/Switcher.cpp.o
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/Transform_InertialToBody.cpp.o
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/UserReference.cpp.o
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/src/WrapAroundFunction.cpp.o
@@ -1774,7 +1670,7 @@ devel/lib/flight_controller/flight_controller: /usr/lib/x86_64-linux-gnu/libboos
 devel/lib/flight_controller/flight_controller: /usr/lib/x86_64-linux-gnu/libpthread.so
 devel/lib/flight_controller/flight_controller: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
 devel/lib/flight_controller/flight_controller: CMakeFiles/flight_controller.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_66) "Linking CXX executable devel/lib/flight_controller/flight_controller"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Linking CXX executable devel/lib/flight_controller/flight_controller"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/flight_controller.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -1789,8 +1685,6 @@ CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/ButterFilter_2nd_200Hz.cpp.o.requires
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/ButterFilter_Xsens.cpp.o.requires
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/CircularProcessVariableReference.cpp.o.requires
-CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/ControlSystem.cpp.o.requires
-CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/ControlSystemMessage.cpp.o.requires
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/Controller.cpp.o.requires
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/ControllerMessage.cpp.o.requires
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/Demux3D.cpp.o.requires
@@ -1805,7 +1699,6 @@ CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/OptitrackMessage.cpp.o.requires
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/PIDController.cpp.o.requires
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/PIDplusMRFTController.cpp.o.requires
-CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/PVConcatenator.cpp.o.requires
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/ProcessVariableReference.cpp.o.requires
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/QuadActuationSystem.cpp.o.requires
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/ROSUnit_Arm.cpp.o.requires
@@ -1826,7 +1719,6 @@ CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/Switch.cpp.o.requires
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/SwitchBlockMsg.cpp.o.requires
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/SwitchOutMsg.cpp.o.requires
-CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/Switcher.cpp.o.requires
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/Transform_InertialToBody.cpp.o.requires
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/UserReference.cpp.o.requires
 CMakeFiles/flight_controller.dir/requires: CMakeFiles/flight_controller.dir/src/WrapAroundFunction.cpp.o.requires
