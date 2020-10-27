@@ -34,7 +34,7 @@ public:
 
     void receiveMsgData(DataMessage*);
     void receiveMsgData(DataMessage*, int);
-    Transform_InertialToBody(control_system);
+    Transform_InertialToBody();
     ~Transform_InertialToBody();
 
     //TODO Refactor below

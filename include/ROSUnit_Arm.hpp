@@ -16,6 +16,7 @@ class ROSUnit_Arm :  public ROSUnit{
         void receiveMsgData(DataMessage* t_msg);  
         static Port* _output_port;
         std::vector<Port*> _ports;
+    
     public:
         enum ports_id {OP_0_DATA};
         void process(DataMessage* t_msg, Port* t_port);

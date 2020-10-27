@@ -124,9 +124,6 @@ void ROSUnit_Xsens::callbackXsensAttitude( const geometry_msgs::QuaternionStampe
     orientation_euler.z = _euler.z;
 
 
-    pv_msg.setVector3DMessage(orientation_euler);
-	_instance_ptr->emitMsgUnicast((DataMessage*) &pv_msg,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_orientation, (int)PVConcatenator::receiving_channels::ch_pv);
-	
     FloatMsg roll, pitch;
     roll.data = orientation_euler.x;
     pitch.data = orientation_euler.y;

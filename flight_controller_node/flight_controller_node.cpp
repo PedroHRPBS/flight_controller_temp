@@ -57,11 +57,11 @@ int main(int argc, char** argv) {
     
     // //****************************ROS UNITS*******************************
 
-    // ros::init(argc, argv, "flight_controller_node");
-
-    // ros::NodeHandle nh;
-    // ros::Rate rate(200);
-    // ROSUnit_Factory ROSUnit_Factory_main{nh};
+    ros::init(argc, argv, "flight_controller_node");
+// 
+    ros::NodeHandle nh;
+    ros::Rate rate(200);
+    ROSUnit_Factory ROSUnit_Factory_main{nh};
 
     
     ROSUnit* myROSArm = new ROSUnit_Arm(nh);
@@ -154,7 +154,7 @@ int main(int argc, char** argv) {
     Block* BB_x = new BoundingBoxController(block_id::BB_X);
     Block* BB_y = new BoundingBoxController(block_id::BB_Y);
 
-    Transform_InertialToBody* inertialToBody_RotMat = new Transform_InertialToBody(control_system::y);
+    Transform_InertialToBody* inertialToBody_RotMat = new Transform_InertialToBody();
 
     Saturation* X_Saturation = new Saturation(SATURATION_VALUE_XY);
     Saturation* Y_Saturation = new Saturation(SATURATION_VALUE_XY);
@@ -453,7 +453,7 @@ int main(int argc, char** argv) {
     sum_ref_dot_dot_yaw_rate->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_yaw_rate->getPorts()[(int)Mux3D::ports_id::IP_2_DATA]);
     error_mux_yaw_rate->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
     
-    ((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_2_DATA_YAW]);
+    ((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_2_DATA_YAW]);
     //*******************************************************************************************************************
     
     // ROS CONTROL OUTPUTS
@@ -513,8 +513,8 @@ int main(int argc, char** argv) {
     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_yaw)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_yaw_rate)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
 
-    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_2_BB]->connect(BB_x->getPorts()[(int)BoundingBoxController::ports_id::IP_1_UPDATE]);
-    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_2_BB]->connect(BB_y->getPorts()[(int)BoundingBoxController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_2_BB]->connect(((BoundingBoxController*)BB_x)->getPorts()[(int)BoundingBoxController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_2_BB]->connect(((BoundingBoxController*)BB_y)->getPorts()[(int)BoundingBoxController::ports_id::IP_1_UPDATE]);
 
     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_x)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_y)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
@@ -535,7 +535,7 @@ int main(int argc, char** argv) {
     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_yaw_rate)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
 
    
-    myROSArm->getPorts()[(int)ROSUnit_Arm::ports_id::OP_0_DATA]->connect((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_4_ARM]);
+    myROSArm->getPorts()[(int)ROSUnit_Arm::ports_id::OP_0_DATA]->connect(((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_4_ARM]);
     
     //********************SETTING FLIGHT SCENARIO OUTPUTS***************************
 

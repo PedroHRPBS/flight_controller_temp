@@ -19,14 +19,14 @@ void ROSUnit_Arm::receiveMsgData(DataMessage* t_msg){
 
 }
 
-std::vector<Port*> ROSUnit_ResetController::getPorts(){
+std::vector<Port*> ROSUnit_Arm::getPorts(){
     return this->_ports;
 }
 
-void ROSUnit_ResetController::process(DataMessage* t_msg, Port* t_port){
+void ROSUnit_Arm::process(DataMessage* t_msg, Port* t_port){
 }
 
-DataMessage* ROSUnit_ResetController::runTask(DataMessage* t_msg){
+DataMessage* ROSUnit_Arm::runTask(DataMessage* t_msg){
 }
 
 
@@ -36,7 +36,7 @@ bool ROSUnit_Arm::callbackArm(flight_controller::Arm::Request &req, flight_contr
     data = req.armed;
 
     _bool_msg.data = data;
-    _instance_ptr->_output_port->receiveMsgData(t_msg);
+    _instance_ptr->_output_port->receiveMsgData(&_bool_msg);
     
     return true;
 }

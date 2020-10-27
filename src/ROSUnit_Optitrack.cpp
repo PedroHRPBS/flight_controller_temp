@@ -26,7 +26,6 @@ void ROSUnit_Optitrack::process(DataMessage* t_msg, Port* t_port){
 }
 
 DataMessage* ROSUnit_Optitrack::runTask(DataMessage* t_msg){
-    this->_output_port->receiveMsgData(t_msg);
 }
 
 
