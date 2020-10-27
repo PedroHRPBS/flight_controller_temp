@@ -109,7 +109,8 @@ int main(int argc, char **argv){
     myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_1_PITCH]->connect(mux_provider_pitch->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
 
     //Yaw Provider
-    ori_demux->getPorts()[(int)Demux3D::ports_id::OP_2_DATA]->connect(mux_provider_yaw->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
+    ori_demux->getPorts()[(int)Demux3D::ports_id::OP_2_DATA]->connect(wrap_around_yaw->getPorts()[(int)WrapAroundFunction::ports_id::IP_0_DATA]);
+    wrap_around_yaw->getPorts()[(int)WrapAroundFunction::ports_id::OP_0_DATA]->connect(mux_provider_yaw->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
 
     //Yaw Rate Provider
     myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_4_YAW_RATE]->connect(mux_provider_yaw_rate->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
