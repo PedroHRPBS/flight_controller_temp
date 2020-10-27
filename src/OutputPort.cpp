@@ -16,3 +16,7 @@ void OutputPort::receiveMsgData(DataMessage* t_msg){
 void OutputPort::receiveMsgData(DataMessage* t_msg, int channel_id){
     this->emitMsgUnicastDefault(t_msg);
 }
+
+void OutputPort::connect(InputPort* t_input_port){
+    this->addCallbackMsgReceiver((MsgReceiver*) t_input_port);
+}

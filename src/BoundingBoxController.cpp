@@ -91,7 +91,7 @@ void BoundingBoxController::initialize(SM_parameters* t_params){
 	Logger::getAssignedLogger()->log("H2: %.2f", _h2, LoggerLevel::Info);
 }
 
-DataMessage* BoundingBoxController::runTask(DataMessage* t_msg){ //TODO: WUT? ~ WAHBAH
+DataMessage* BoundingBoxController::runTask(DataMessage* t_msg){ 
         
 	Vector3DMessage* controller_msg = (Vector3DMessage*)t_msg;
 
