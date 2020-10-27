@@ -29,36 +29,39 @@ void WrapAroundFunction::assignParametersRange(double t_min_val,double t_max_val
     max_val =t_max_val;
     span=max_val-min_val;
 }
+
 WrapAroundFunction::WrapAroundFunction(){}
 
 WrapAroundFunction::WrapAroundFunction(double t_min_val,double t_max_val){
     min_val = t_min_val;
     max_val = t_max_val;
     span = max_val-min_val;
-    this->_input_port = new InputPort(ports_id::IP_DATA, this);
-    this->_output_port = new OutputPort(ports_id::OP_DATA, this);
+    this->_input_port = new InputPort(ports_id::IP_0_DATA, this);
+    this->_output_port = new OutputPort(ports_id::OP_0_DATA, this);
     _ports = {_input_port, _output_port};
 }
 
 void WrapAroundFunction::process(DataMessage* t_msg, Port* t_port) {
-    if(t_port->getID() == ports_id::IP_DATA){    
-        _output = ((Vector3DMessage*)t_msg)->getData();
-        _input = _output.z;
+    if(t_port->getID() == ports_id::IP_0_DATA){    
+        _input = ((FloatMsg*)t_msg)->data;
+        _output = _input;
+
+        if (_input>max_val){
+            _output = _input-span;
+        }
+        else if (_input<min_val){
+            _output = _input+span;
+        }
+
+        FloatMsg output_msg;
+        output_msg.data = _output;
+        this->_output_port->receiveMsgData((DataMessage*)&output_msg);
+
     }
 }
 
 DataMessage* WrapAroundFunction::runTask(DataMessage* t_msg){ //TODO handle cases for abs(input)>2span
-    Vector3DMessage output_msg;
-
-    if (_input>max_val){
-        _output.z = _input-span;
-    }
-    else if (_input<min_val){
-        _output.z = _input+span;
-    }
-
-    output_msg.setVector3DMessage(_output);
-    this->_output_port->receiveMsgData((DataMessage*)&output_msg);
+   
 
     return t_msg;
 }

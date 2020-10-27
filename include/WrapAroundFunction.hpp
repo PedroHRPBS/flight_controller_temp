@@ -6,12 +6,13 @@
 #include "common_srv/MsgReceiver.hpp"
 #include "common_srv/Vector3D.hpp"
 #include "common_srv/Vector3DMessage.hpp"
+#include "common_srv/FloatMsg.hpp"
 
 class WrapAroundFunction : public Block, public MsgEmitter 
 {
     double min_val,max_val,span;
     double _input;
-    Vector3D<double> _output;
+    double _output;
     Port* _input_port;
     Port* _output_port;
     std::vector<Port*> _ports;
@@ -23,7 +24,7 @@ public:
     // void receiveMsgData(DataMessage*);
     // void receiveMsgData(DataMessage* rec_msg, int ch);
     
-    enum ports_id {IP_DATA, OP_DATA};
+    enum ports_id {IP_0_DATA, OP_0_DATA};
     WrapAroundFunction();
     WrapAroundFunction(double t_min_val, double t_max_val);   
 
