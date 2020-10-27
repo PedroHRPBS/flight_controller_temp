@@ -5,8 +5,8 @@
 #include "ROSUnit_BroadcastData.hpp"
 #include "common_srv/VectorDoubleMsg.hpp"
 #include <vector>
-#include "InputPort.hpp"
-#include "OutputPort.hpp"
+#include "common_srv/InputPort.hpp"
+#include "common_srv/OutputPort.hpp"
 
 // GEOMETRY
 //      CW(3) (5)CCW                x

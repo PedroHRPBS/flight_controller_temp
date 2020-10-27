@@ -8,8 +8,8 @@
 #include "ControlSystem.hpp"
 #include "Waypoint.hpp"
 #include "common_srv/PosesMsg.hpp"
-#include "InputPort.hpp"
-#include "OutputPort.hpp"
+#include "common_srv/InputPort.hpp"
+#include "common_srv/OutputPort.hpp"
 
 class RestrictedNormWaypointRefGenerator : public MsgEmitter, public Block{
 

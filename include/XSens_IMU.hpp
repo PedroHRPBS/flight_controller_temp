@@ -1,8 +1,8 @@
 #pragma once
 #include "common_srv/Vector3DMessage.hpp"
 #include "common_srv/Block.hpp"
-#include "InputPort.hpp"
-#include "OutputPort.hpp"
+#include "common_srv/InputPort.hpp"
+#include "common_srv/OutputPort.hpp"
 #include "XSensMessage.hpp"
 #include "common_types.hpp"
 

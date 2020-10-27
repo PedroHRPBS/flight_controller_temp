@@ -2,8 +2,8 @@
 #include <string.h>
 #include <iostream>
 #include <functional>
-#include <InputPort.hpp>
-#include <OutputPort.hpp>
+#include <common_srv/InputPort.hpp>
+#include <common_srv/OutputPort.hpp>
 #include "common_srv/Block.hpp"
 #include "common_srv/FloatMsg.hpp"
 #include "common_srv/Vector3DMessage.hpp"

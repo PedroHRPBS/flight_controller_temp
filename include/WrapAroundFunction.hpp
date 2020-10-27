@@ -1,6 +1,6 @@
 #pragma once
-#include <InputPort.hpp>
-#include <OutputPort.hpp>
+#include <common_srv/InputPort.hpp>
+#include <common_srv/OutputPort.hpp>
 #include "common_srv/Block.hpp"
 #include "common_srv/MsgEmitter.hpp"
 #include "common_srv/MsgReceiver.hpp"

@@ -12,7 +12,7 @@
 #include "Global2Inertial.hpp"
 #include "common_srv/Timer.hpp"
 #include "ButterFilter_Xsens.hpp"
-#include "OutputPort.hpp"
+#include "common_srv/OutputPort.hpp"
 
 class ROSUnit_Xsens : public ROSUnit{
 

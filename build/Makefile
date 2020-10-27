@@ -1581,42 +1581,6 @@ src/HexaActuationSystem.cpp.s:
 	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/HexaActuationSystem.cpp.s
 .PHONY : src/HexaActuationSystem.cpp.s
 
-src/InputPort.o: src/InputPort.cpp.o
-
-.PHONY : src/InputPort.o
-
-# target to build an object file
-src/InputPort.cpp.o:
-	$(MAKE) -f CMakeFiles/global2inertial_node.dir/build.make CMakeFiles/global2inertial_node.dir/src/InputPort.cpp.o
-	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/InputPort.cpp.o
-	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/src/InputPort.cpp.o
-	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/InputPort.cpp.o
-.PHONY : src/InputPort.cpp.o
-
-src/InputPort.i: src/InputPort.cpp.i
-
-.PHONY : src/InputPort.i
-
-# target to preprocess a source file
-src/InputPort.cpp.i:
-	$(MAKE) -f CMakeFiles/global2inertial_node.dir/build.make CMakeFiles/global2inertial_node.dir/src/InputPort.cpp.i
-	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/InputPort.cpp.i
-	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/src/InputPort.cpp.i
-	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/InputPort.cpp.i
-.PHONY : src/InputPort.cpp.i
-
-src/InputPort.s: src/InputPort.cpp.s
-
-.PHONY : src/InputPort.s
-
-# target to generate assembly for a file
-src/InputPort.cpp.s:
-	$(MAKE) -f CMakeFiles/global2inertial_node.dir/build.make CMakeFiles/global2inertial_node.dir/src/InputPort.cpp.s
-	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/InputPort.cpp.s
-	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/src/InputPort.cpp.s
-	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/InputPort.cpp.s
-.PHONY : src/InputPort.cpp.s
-
 src/InvertedSwitch.o: src/InvertedSwitch.cpp.o
 
 .PHONY : src/InvertedSwitch.o
@@ -2264,42 +2228,6 @@ src/OptitrackMessage.cpp.s:
 	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/src/OptitrackMessage.cpp.s
 	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/OptitrackMessage.cpp.s
 .PHONY : src/OptitrackMessage.cpp.s
-
-src/OutputPort.o: src/OutputPort.cpp.o
-
-.PHONY : src/OutputPort.o
-
-# target to build an object file
-src/OutputPort.cpp.o:
-	$(MAKE) -f CMakeFiles/global2inertial_node.dir/build.make CMakeFiles/global2inertial_node.dir/src/OutputPort.cpp.o
-	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/OutputPort.cpp.o
-	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/src/OutputPort.cpp.o
-	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/OutputPort.cpp.o
-.PHONY : src/OutputPort.cpp.o
-
-src/OutputPort.i: src/OutputPort.cpp.i
-
-.PHONY : src/OutputPort.i
-
-# target to preprocess a source file
-src/OutputPort.cpp.i:
-	$(MAKE) -f CMakeFiles/global2inertial_node.dir/build.make CMakeFiles/global2inertial_node.dir/src/OutputPort.cpp.i
-	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/OutputPort.cpp.i
-	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/src/OutputPort.cpp.i
-	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/OutputPort.cpp.i
-.PHONY : src/OutputPort.cpp.i
-
-src/OutputPort.s: src/OutputPort.cpp.s
-
-.PHONY : src/OutputPort.s
-
-# target to generate assembly for a file
-src/OutputPort.cpp.s:
-	$(MAKE) -f CMakeFiles/global2inertial_node.dir/build.make CMakeFiles/global2inertial_node.dir/src/OutputPort.cpp.s
-	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/OutputPort.cpp.s
-	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/src/OutputPort.cpp.s
-	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/OutputPort.cpp.s
-.PHONY : src/OutputPort.cpp.s
 
 src/PIDController.o: src/PIDController.cpp.o
 
@@ -3572,9 +3500,6 @@ help:
 	@echo "... src/HexaActuationSystem.o"
 	@echo "... src/HexaActuationSystem.i"
 	@echo "... src/HexaActuationSystem.s"
-	@echo "... src/InputPort.o"
-	@echo "... src/InputPort.i"
-	@echo "... src/InputPort.s"
 	@echo "... src/InvertedSwitch.o"
 	@echo "... src/InvertedSwitch.i"
 	@echo "... src/InvertedSwitch.s"
@@ -3629,9 +3554,6 @@ help:
 	@echo "... src/OptitrackMessage.o"
 	@echo "... src/OptitrackMessage.i"
 	@echo "... src/OptitrackMessage.s"
-	@echo "... src/OutputPort.o"
-	@echo "... src/OutputPort.i"
-	@echo "... src/OutputPort.s"
 	@echo "... src/PIDController.o"
 	@echo "... src/PIDController.i"
 	@echo "... src/PIDController.s"
