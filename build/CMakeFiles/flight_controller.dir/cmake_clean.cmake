@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/flight_controller.dir/flight_controller_node/flight_controller_node.cpp.o"
   "CMakeFiles/flight_controller.dir/src/BatteryMonitor.cpp.o"
+  "CMakeFiles/flight_controller.dir/src/BoundingBoxController.cpp.o"
   "CMakeFiles/flight_controller.dir/src/ButterFilter_120hz.cpp.o"
   "CMakeFiles/flight_controller.dir/src/ButterFilter_2nd_200Hz.cpp.o"
   "CMakeFiles/flight_controller.dir/src/ButterFilter_Xsens.cpp.o"
@@ -40,7 +41,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/flight_controller.dir/src/RestrictedNormWaypointRefGenerator.cpp.o"
   "CMakeFiles/flight_controller.dir/src/RotationMatrix3by3.cpp.o"
   "CMakeFiles/flight_controller.dir/src/Saturation.cpp.o"
-  "CMakeFiles/flight_controller.dir/src/SlidingModeController.cpp.o"
   "CMakeFiles/flight_controller.dir/src/Sum.cpp.o"
   "CMakeFiles/flight_controller.dir/src/Switch.cpp.o"
   "CMakeFiles/flight_controller.dir/src/SwitchBlockMsg.cpp.o"

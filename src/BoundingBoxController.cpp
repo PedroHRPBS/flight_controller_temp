@@ -2,9 +2,11 @@
 
 BoundingBoxController::BoundingBoxController(block_id t_id) {  
 
-	this->_input_port_0 = new InputPort(ports_id::IP_0_UPDATE, this);
-    this->_input_port_1 = new InputPort(ports_id::IP_1_RESET, this);
-    _ports = {_input_port_0, _input_port_1};
+	_input_port_0 = new InputPort(ports_id::IP_0_DATA, this);
+	_input_port_1 = new InputPort(ports_id::IP_1_UPDATE, this);
+	_input_port_2 = new InputPort(ports_id::IP_2_RESET, this);
+	_output_port = new OutputPort(ports_id::OP_0_DATA, this);
+	_ports = {_input_port_0, _input_port_1, _input_port_2, _output_port};
 
     _controller_type = controller_type::bounding_box;
 	_id = t_id;
@@ -29,16 +31,17 @@ DataMessage* BoundingBoxController::switchOut(){
 
 void BoundingBoxController::process(DataMessage* t_msg, Port* t_port) {
 
-	if(t_port->getID() == ports_id::IP_0_UPDATE){
-		ControllerMessage* sm_msg = (ControllerMessage*)t_msg;
+	if(t_port->getID() == ports_id::IP_0_DATA){
+        this->runTask(t_msg);
+    } else if(t_port->getID() == ports_id::IP_1_UPDATE){
+        ControllerMessage* sm_msg = (ControllerMessage*)t_msg;
 		SM_parameters params = sm_msg->getSMParam();
 
 		if(params.id == this->_id){		
 			this->initialize(&params);	
 		}
-
-	}else if(t_port->getID() == ports_id::IP_1_RESET){
-		IntegerMsg* integer_msg = (IntegerMsg*)t_msg;
+    } else if(t_port->getID() == ports_id::IP_2_RESET){
+        IntegerMsg* integer_msg = (IntegerMsg*)t_msg;
 
 		if(static_cast<block_id>(integer_msg->data) == this->_id){
 			Logger::getAssignedLogger()->log("RESET CONTROLLER: %.0f", (int)this->_id, LoggerLevel::Warning);
@@ -70,7 +73,6 @@ void BoundingBoxController::process(DataMessage* t_msg, Port* t_port) {
 std::vector<Port*> BoundingBoxController::getPorts(){ //TODO move to Block
     return _ports;
 }
-
 
 void BoundingBoxController::reset(){
 }
@@ -105,6 +107,8 @@ DataMessage* BoundingBoxController::runTask(DataMessage* t_msg){ //TODO: WUT? ~ 
 	
     _command_msg.data = command;
 
+    this->_output_port->receiveMsgData(&_command_msg);
+
 	return (DataMessage*) &_command_msg;
 }
 
@@ -122,10 +126,5 @@ float BoundingBoxController::bounding_box_algorithm(float t_error){
 		_command = _alpha2;
 	}
 
-	// std::cout << "H1: " << _h1 << " H2: " << _h2 << "ALPHA1: " << _alpha1 << "ALPHA2: " << _alpha2 << std::endl;
-
-	// std::cout << "Error: " << t_error << " Command: " << command << std::endl;
-
 	return _command;
-
 }

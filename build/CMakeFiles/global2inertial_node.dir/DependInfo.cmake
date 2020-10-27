@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/global2inertial_node/global2inertial_node.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/global2inertial_node/global2inertial_node.cpp.o"
   "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/BatteryMonitor.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/BatteryMonitor.cpp.o"
+  "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/BoundingBoxController.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/BoundingBoxController.cpp.o"
   "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ButterFilter_120hz.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/ButterFilter_120hz.cpp.o"
   "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ButterFilter_2nd_200Hz.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/ButterFilter_2nd_200Hz.cpp.o"
   "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ButterFilter_Xsens.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/ButterFilter_Xsens.cpp.o"
@@ -58,7 +59,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/RestrictedNormWaypointRefGenerator.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/RestrictedNormWaypointRefGenerator.cpp.o"
   "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/RotationMatrix3by3.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/RotationMatrix3by3.cpp.o"
   "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Saturation.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/Saturation.cpp.o"
-  "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/SlidingModeController.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/SlidingModeController.cpp.o"
   "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Sum.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/Sum.cpp.o"
   "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Switch.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/Switch.cpp.o"
   "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/SwitchBlockMsg.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/SwitchBlockMsg.cpp.o"

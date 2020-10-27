@@ -14,9 +14,10 @@
 class BoundingBoxController : public Controller{
 
 private:
-
     Port* _input_port_0;
     Port* _input_port_1;
+    Port* _input_port_2;
+    Port* _output_port;
     std::vector<Port*> _ports;
 
 	Timer _timer;
@@ -31,7 +32,7 @@ private:
 
 public:
 
-    enum ports_id {IP_0_UPDATE, IP_1_RESET};
+    enum ports_id {IP_0_DATA, IP_1_UPDATE, IP_2_RESET, OP_0_DATA};
 
 	void switchIn(DataMessage*);
     DataMessage* switchOut();

@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/providers_node.dir/providers_node/providers_node.cpp.o"
   "CMakeFiles/providers_node.dir/src/BatteryMonitor.cpp.o"
+  "CMakeFiles/providers_node.dir/src/BoundingBoxController.cpp.o"
   "CMakeFiles/providers_node.dir/src/ButterFilter_120hz.cpp.o"
   "CMakeFiles/providers_node.dir/src/ButterFilter_2nd_200Hz.cpp.o"
   "CMakeFiles/providers_node.dir/src/ButterFilter_Xsens.cpp.o"
@@ -40,7 +41,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/providers_node.dir/src/RestrictedNormWaypointRefGenerator.cpp.o"
   "CMakeFiles/providers_node.dir/src/RotationMatrix3by3.cpp.o"
   "CMakeFiles/providers_node.dir/src/Saturation.cpp.o"
-  "CMakeFiles/providers_node.dir/src/SlidingModeController.cpp.o"
   "CMakeFiles/providers_node.dir/src/Sum.cpp.o"
   "CMakeFiles/providers_node.dir/src/Switch.cpp.o"
   "CMakeFiles/providers_node.dir/src/SwitchBlockMsg.cpp.o"

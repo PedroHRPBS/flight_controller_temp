@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/waypoint_reference_node.dir/waypoint_reference_node/waypoint_reference_node.cpp.o"
   "CMakeFiles/waypoint_reference_node.dir/src/BatteryMonitor.cpp.o"
+  "CMakeFiles/waypoint_reference_node.dir/src/BoundingBoxController.cpp.o"
   "CMakeFiles/waypoint_reference_node.dir/src/ButterFilter_120hz.cpp.o"
   "CMakeFiles/waypoint_reference_node.dir/src/ButterFilter_2nd_200Hz.cpp.o"
   "CMakeFiles/waypoint_reference_node.dir/src/ButterFilter_Xsens.cpp.o"
@@ -40,7 +41,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/waypoint_reference_node.dir/src/RestrictedNormWaypointRefGenerator.cpp.o"
   "CMakeFiles/waypoint_reference_node.dir/src/RotationMatrix3by3.cpp.o"
   "CMakeFiles/waypoint_reference_node.dir/src/Saturation.cpp.o"
-  "CMakeFiles/waypoint_reference_node.dir/src/SlidingModeController.cpp.o"
   "CMakeFiles/waypoint_reference_node.dir/src/Sum.cpp.o"
   "CMakeFiles/waypoint_reference_node.dir/src/Switch.cpp.o"
   "CMakeFiles/waypoint_reference_node.dir/src/SwitchBlockMsg.cpp.o"

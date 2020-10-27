@@ -1077,6 +1077,42 @@ src/BatteryMonitor.cpp.s:
 	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/BatteryMonitor.cpp.s
 .PHONY : src/BatteryMonitor.cpp.s
 
+src/BoundingBoxController.o: src/BoundingBoxController.cpp.o
+
+.PHONY : src/BoundingBoxController.o
+
+# target to build an object file
+src/BoundingBoxController.cpp.o:
+	$(MAKE) -f CMakeFiles/global2inertial_node.dir/build.make CMakeFiles/global2inertial_node.dir/src/BoundingBoxController.cpp.o
+	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/BoundingBoxController.cpp.o
+	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/src/BoundingBoxController.cpp.o
+	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/BoundingBoxController.cpp.o
+.PHONY : src/BoundingBoxController.cpp.o
+
+src/BoundingBoxController.i: src/BoundingBoxController.cpp.i
+
+.PHONY : src/BoundingBoxController.i
+
+# target to preprocess a source file
+src/BoundingBoxController.cpp.i:
+	$(MAKE) -f CMakeFiles/global2inertial_node.dir/build.make CMakeFiles/global2inertial_node.dir/src/BoundingBoxController.cpp.i
+	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/BoundingBoxController.cpp.i
+	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/src/BoundingBoxController.cpp.i
+	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/BoundingBoxController.cpp.i
+.PHONY : src/BoundingBoxController.cpp.i
+
+src/BoundingBoxController.s: src/BoundingBoxController.cpp.s
+
+.PHONY : src/BoundingBoxController.s
+
+# target to generate assembly for a file
+src/BoundingBoxController.cpp.s:
+	$(MAKE) -f CMakeFiles/global2inertial_node.dir/build.make CMakeFiles/global2inertial_node.dir/src/BoundingBoxController.cpp.s
+	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/BoundingBoxController.cpp.s
+	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/src/BoundingBoxController.cpp.s
+	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/BoundingBoxController.cpp.s
+.PHONY : src/BoundingBoxController.cpp.s
+
 src/ButterFilter_120hz.o: src/ButterFilter_120hz.cpp.o
 
 .PHONY : src/ButterFilter_120hz.o
@@ -2949,42 +2985,6 @@ src/Saturation.cpp.s:
 	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/Saturation.cpp.s
 .PHONY : src/Saturation.cpp.s
 
-src/SlidingModeController.o: src/SlidingModeController.cpp.o
-
-.PHONY : src/SlidingModeController.o
-
-# target to build an object file
-src/SlidingModeController.cpp.o:
-	$(MAKE) -f CMakeFiles/global2inertial_node.dir/build.make CMakeFiles/global2inertial_node.dir/src/SlidingModeController.cpp.o
-	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/SlidingModeController.cpp.o
-	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/src/SlidingModeController.cpp.o
-	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/SlidingModeController.cpp.o
-.PHONY : src/SlidingModeController.cpp.o
-
-src/SlidingModeController.i: src/SlidingModeController.cpp.i
-
-.PHONY : src/SlidingModeController.i
-
-# target to preprocess a source file
-src/SlidingModeController.cpp.i:
-	$(MAKE) -f CMakeFiles/global2inertial_node.dir/build.make CMakeFiles/global2inertial_node.dir/src/SlidingModeController.cpp.i
-	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/SlidingModeController.cpp.i
-	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/src/SlidingModeController.cpp.i
-	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/SlidingModeController.cpp.i
-.PHONY : src/SlidingModeController.cpp.i
-
-src/SlidingModeController.s: src/SlidingModeController.cpp.s
-
-.PHONY : src/SlidingModeController.s
-
-# target to generate assembly for a file
-src/SlidingModeController.cpp.s:
-	$(MAKE) -f CMakeFiles/global2inertial_node.dir/build.make CMakeFiles/global2inertial_node.dir/src/SlidingModeController.cpp.s
-	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/SlidingModeController.cpp.s
-	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/src/SlidingModeController.cpp.s
-	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/SlidingModeController.cpp.s
-.PHONY : src/SlidingModeController.cpp.s
-
 src/Sum.o: src/Sum.cpp.o
 
 .PHONY : src/Sum.o
@@ -3530,6 +3530,9 @@ help:
 	@echo "... src/BatteryMonitor.o"
 	@echo "... src/BatteryMonitor.i"
 	@echo "... src/BatteryMonitor.s"
+	@echo "... src/BoundingBoxController.o"
+	@echo "... src/BoundingBoxController.i"
+	@echo "... src/BoundingBoxController.s"
 	@echo "... src/ButterFilter_120hz.o"
 	@echo "... src/ButterFilter_120hz.i"
 	@echo "... src/ButterFilter_120hz.s"
@@ -3686,9 +3689,6 @@ help:
 	@echo "... src/Saturation.o"
 	@echo "... src/Saturation.i"
 	@echo "... src/Saturation.s"
-	@echo "... src/SlidingModeController.o"
-	@echo "... src/SlidingModeController.i"
-	@echo "... src/SlidingModeController.s"
 	@echo "... src/Sum.o"
 	@echo "... src/Sum.i"
 	@echo "... src/Sum.s"
