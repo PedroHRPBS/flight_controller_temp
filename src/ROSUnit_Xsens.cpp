@@ -120,8 +120,6 @@ void ROSUnit_Xsens::callbackXsensAttitude( const geometry_msgs::QuaternionStampe
     orientation_euler.y = _euler.x; //Arranging the frames to match with the drone's
     orientation_euler.z = _euler.z;
 
-    pv_msg.setVector3DMessage(orientation_euler);
-	
     FloatMsg roll, pitch;
     roll.data = orientation_euler.x;
     pitch.data = orientation_euler.y;

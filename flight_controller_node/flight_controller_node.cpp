@@ -56,11 +56,13 @@ void set_realtime_priority();
     
 //     // //****************************ROS UNITS*******************************
 
-//     // ros::init(argc, argv, "flight_controller_node");
 
-//     // ros::NodeHandle nh;
-//     // ros::Rate rate(200);
-//     // ROSUnit_Factory ROSUnit_Factory_main{nh};
+    ros::init(argc, argv, "flight_controller_node");
+// 
+    ros::NodeHandle nh;
+    ros::Rate rate(200);
+    ROSUnit_Factory ROSUnit_Factory_main{nh};
+
 
     
 //     ROSUnit* myROSArm = new ROSUnit_Arm(nh);
@@ -69,109 +71,110 @@ void set_realtime_priority();
 //     ROSUnit* myROSBroadcastData = new ROSUnit_BroadcastData(nh);
 //     ROSUnit* myROSSwitchTrigger = new ROSUnit_SwitchBlock(nh);
     
-//     ROSUnit* rosunit_x_provider = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Point,
-//                                                                     "/providers/x");
-//     ROSUnit* rosunit_y_provider = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Point,
-//                                                                     "/providers/y");
-//     ROSUnit* rosunit_z_provider = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Point,
-//                                                                     "/providers/z");
-//     ROSUnit* rosunit_roll_provider = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Point,
-//                                                                     "/providers/roll");
-//     ROSUnit* rosunit_pitch_provider = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Point,
-//                                                                     "/providers/pitch");
-//     ROSUnit* rosunit_yaw_provider = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Point,
-//                                                                     "/providers/yaw");
-//     ROSUnit* rosunit_yaw_rate_provider = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Point,
-//                                                                     "/providers/yaw_rate");
-//     ROSUnit* rosunit_waypoint_x = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Float,
-//                                                                     "waypoint_reference/x");
-//     ROSUnit* rosunit_waypoint_y = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Float,
-//                                                                     "waypoint_reference/y");
-//     ROSUnit* rosunit_waypoint_z = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Float,
-//                                                                     "waypoint_reference/z");
-//     ROSUnit* rosunit_waypoint_yaw = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Float,
-//                                                                     "waypoint_reference/yaw");                                                            
-//     ROSUnit* rosunit_ID_switch_x_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Int,
-//                                                                     "/switch/ID_switch_x");
-//     ROSUnit* rosunit_bounding_box_switch_x_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Int,
-//                                                                     "/switch/bounding_box_switch_x");
-//     ROSUnit* rosunit_ID_switch_roll_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Int,
-//                                                                     "/switch/ID_switch_roll");
-//     ROSUnit* rosunit_ID_switch_y_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Int,
-//                                                                     "/switch/ID_switch_y");
-//     ROSUnit* rosunit_bounding_box_switch_y_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Int,
-//                                                                     "/switch/bounding_box_switch_y");
-//     ROSUnit* rosunit_ID_switch_pitch_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Int,
-//                                                                     "/switch/ID_switch_pitch");
-//     ROSUnit* rosunit_ID_switch_z_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
-//                                                                     ROSUnit_msg_type::ROSUnit_Int,
-//                                                                     "/switch/ID_switch_z");
+    ROSUnit* rosunit_x_provider = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
+                                                                    ROSUnit_msg_type::ROSUnit_Point,
+                                                                    "/providers/x");
+    ROSUnit* rosunit_y_provider = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
+                                                                    ROSUnit_msg_type::ROSUnit_Point,
+                                                                    "/providers/y");
+    ROSUnit* rosunit_z_provider = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
+                                                                    ROSUnit_msg_type::ROSUnit_Point,
+                                                                    "/providers/z");
+    ROSUnit* rosunit_roll_provider = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
+                                                                    ROSUnit_msg_type::ROSUnit_Point,
+                                                                    "/providers/roll");
+    ROSUnit* rosunit_pitch_provider = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
+                                                                    ROSUnit_msg_type::ROSUnit_Point,
+                                                                    "/providers/pitch");
+    ROSUnit* rosunit_yaw_provider = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
+                                                                    ROSUnit_msg_type::ROSUnit_Point,
+                                                                    "/providers/yaw");
+    ROSUnit* rosunit_yaw_rate_provider = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
+                                                                    ROSUnit_msg_type::ROSUnit_Point,
+                                                                    "/providers/yaw_rate");
+    ROSUnit* rosunit_waypoint_x = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
+                                                                    ROSUnit_msg_type::ROSUnit_Float,
+                                                                    "waypoint_reference/x");
+    ROSUnit* rosunit_waypoint_y = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
+                                                                    ROSUnit_msg_type::ROSUnit_Float,
+                                                                    "waypoint_reference/y");
+    ROSUnit* rosunit_waypoint_z = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
+                                                                    ROSUnit_msg_type::ROSUnit_Float,
+                                                                    "waypoint_reference/z");
+    ROSUnit* rosunit_waypoint_yaw = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
+                                                                    ROSUnit_msg_type::ROSUnit_Float,
+                                                                    "waypoint_reference/yaw");                                                            
+    ROSUnit* rosunit_ID_switch_x_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
+                                                                    ROSUnit_msg_type::ROSUnit_Int,
+                                                                    "/switch/ID_switch_x");
+    ROSUnit* rosunit_bounding_box_switch_x_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
+                                                                    ROSUnit_msg_type::ROSUnit_Int,
+                                                                    "/switch/bounding_box_switch_x");
+    ROSUnit* rosunit_ID_switch_roll_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
+                                                                    ROSUnit_msg_type::ROSUnit_Int,
+                                                                    "/switch/ID_switch_roll");
+    ROSUnit* rosunit_ID_switch_y_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
+                                                                    ROSUnit_msg_type::ROSUnit_Int,
+                                                                    "/switch/ID_switch_y");
+    ROSUnit* rosunit_bounding_box_switch_y_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
+                                                                    ROSUnit_msg_type::ROSUnit_Int,
+                                                                    "/switch/bounding_box_switch_y");
+    ROSUnit* rosunit_ID_switch_pitch_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
+                                                                    ROSUnit_msg_type::ROSUnit_Int,
+                                                                    "/switch/ID_switch_pitch");
+    ROSUnit* rosunit_ID_switch_z_trigger = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Server, 
+                                                                    ROSUnit_msg_type::ROSUnit_Int,
+                                                                    "/switch/ID_switch_z");
 
 
-//     //**************************SETTING BLOCKS**********************************
+    //**************************SETTING BLOCKS**********************************
 
-//     Block* PID_x = new PIDController(block_id::PID_X);
-//     Block* PID_pitch = new PIDController(block_id::PID_PITCH);
-//     Block* PV_Ref_x = new ProcessVariableReference(block_id::REF_X);
-//     Block* PV_Ref_pitch = new ProcessVariableReference(block_id::REF_PITCH);
-//     Block* PID_y = new PIDController(block_id::PID_Y);
-//     Block* PID_roll = new PIDController(block_id::PID_ROLL);
-//     Block* PV_Ref_y = new ProcessVariableReference(block_id::REF_Y);
-//     Block* PV_Ref_roll = new ProcessVariableReference(block_id::REF_ROLL);
-//     Block* PID_z = new PIDController(block_id::PID_Z);
-//     Block* PID_z_identification = new PIDController(block_id::PID_Z_ID);
-//     Block* PID_yaw = new PIDController(block_id::PID_YAW);
-//     Block* PID_yaw_rate = new PIDController(block_id::PID_YAW_RATE);
-//     Block* PV_Ref_z = new ProcessVariableReference(block_id::REF_Z);
-//     Block* PV_Ref_yaw = new CircularProcessVariableReference(block_id::REF_YAW);
-//     Block* PV_Ref_yaw_rate = new ProcessVariableReference(block_id::REF_YAW_RATE);
+    Block* PID_x = new PIDController(block_id::PID_X);
+    Block* PID_pitch = new PIDController(block_id::PID_PITCH);
+    Block* PV_Ref_x = new ProcessVariableReference(block_id::REF_X);
+    Block* PV_Ref_pitch = new ProcessVariableReference(block_id::REF_PITCH);
+    Block* PID_y = new PIDController(block_id::PID_Y);
+    Block* PID_roll = new PIDController(block_id::PID_ROLL);
+    Block* PV_Ref_y = new ProcessVariableReference(block_id::REF_Y);
+    Block* PV_Ref_roll = new ProcessVariableReference(block_id::REF_ROLL);
+    Block* PID_z = new PIDController(block_id::PID_Z);
+    Block* PID_z_identification = new PIDController(block_id::PID_Z_ID);
+    Block* PID_yaw = new PIDController(block_id::PID_YAW);
+    Block* PID_yaw_rate = new PIDController(block_id::PID_YAW_RATE);
+    Block* PV_Ref_z = new ProcessVariableReference(block_id::REF_Z);
+    Block* PV_Ref_yaw = new CircularProcessVariableReference(block_id::REF_YAW);
+    Block* PV_Ref_yaw_rate = new ProcessVariableReference(block_id::REF_YAW_RATE);
 
-//     Block* MRFT_x = new MRFTController(block_id::MRFT_X);
-//     Block* MRFT_y = new MRFTController(block_id::MRFT_Y);
-//     Block* MRFT_z = new MRFTController(block_id::MRFT_Z);
-//     Block* MRFT_roll = new MRFTController(block_id::MRFT_ROLL);
-//     Block* MRFT_pitch = new MRFTController(block_id::MRFT_PITCH);
-//     Block* MRFT_yaw = new MRFTController(block_id::MRFT_YAW);
-//     Block* MRFT_yaw_rate = new MRFTController(block_id::MRFT_YAW_RATE);
-//     Block* BB_x = new BoundingBoxController(block_id::BB_X);
-//     Block* BB_y = new BoundingBoxController(block_id::BB_Y);
+    Block* MRFT_x = new MRFTController(block_id::MRFT_X);
+    Block* MRFT_y = new MRFTController(block_id::MRFT_Y);
+    Block* MRFT_z = new MRFTController(block_id::MRFT_Z);
+    Block* MRFT_roll = new MRFTController(block_id::MRFT_ROLL);
+    Block* MRFT_pitch = new MRFTController(block_id::MRFT_PITCH);
+    Block* MRFT_yaw = new MRFTController(block_id::MRFT_YAW);
+    Block* MRFT_yaw_rate = new MRFTController(block_id::MRFT_YAW_RATE);
+    Block* BB_x = new BoundingBoxController(block_id::BB_X);
+    Block* BB_y = new BoundingBoxController(block_id::BB_Y);
 
-//     Transform_InertialToBody* inertialToBody_RotMat = new Transform_InertialToBody(control_system::y);
+    Transform_InertialToBody* inertialToBody_RotMat = new Transform_InertialToBody();
 
-//     Saturation* X_Saturation = new Saturation(SATURATION_VALUE_XY);
-//     Saturation* Y_Saturation = new Saturation(SATURATION_VALUE_XY);
-//     Saturation* Yaw_Saturation = new Saturation(SATURATION_VALUE_YAW);
-//     Saturation* YawRate_Saturation = new Saturation(SATURATION_VALUE_YAWRATE);
+    Saturation* X_Saturation = new Saturation(SATURATION_VALUE_XY);
+    Saturation* Y_Saturation = new Saturation(SATURATION_VALUE_XY);
+    Saturation* Yaw_Saturation = new Saturation(SATURATION_VALUE_YAW);
+    Saturation* YawRate_Saturation = new Saturation(SATURATION_VALUE_YAWRATE);
 
-//     //***********************SETTING CONTROL SYSTEMS***************************
+    //***********************SETTING CONTROL SYSTEMS***************************
 
-//     // ControlSystem* X_ControlSystem = new ControlSystem(control_system::x, block_frequency::hz120);
-//     // X_ControlSystem->addBlock(PID_x);
-//     // X_ControlSystem->addBlock(MRFT_x);
-//     // X_ControlSystem->addBlock(BB_x);
-//     // X_ControlSystem->addBlock(PV_Ref_x);
+    // ControlSystem* X_ControlSystem = new ControlSystem(control_system::x, block_frequency::hz120);
+    // X_ControlSystem->addBlock(PID_x);
+    // X_ControlSystem->addBlock(MRFT_x);
+    // X_ControlSystem->addBlock(BB_x);
+    // X_ControlSystem->addBlock(PV_Ref_x);
 
-//     // ControlSystem* Pitch_ControlSystem = new ControlSystem(control_system::pitch, block_frequency::hz200);
-//     // Pitch_ControlSystem->addBlock(PID_pitch);
-//     // Pitch_ControlSystem->addBlock(MRFT_pitch);
-//     // Pitch_ControlSystem->addBlock(PV_Ref_pitch);
+    // ControlSystem* Pitch_ControlSystem = new ControlSystem(control_system::pitch, block_frequency::hz200);
+    // Pitch_ControlSystem->addBlock(PID_pitch);
+    // Pitch_ControlSystem->addBlock(MRFT_pitch);
+    // Pitch_ControlSystem->addBlock(PV_Ref_pitch);
+
     
 //     // ControlSystem* Y_ControlSystem = new ControlSystem(control_system::y, block_frequency::hz120);
 //     // Y_ControlSystem->addBlock(PID_y);
@@ -452,8 +455,10 @@ void set_realtime_priority();
 //     sum_ref_dot_dot_yaw_rate->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_yaw_rate->getPorts()[(int)Mux3D::ports_id::IP_2_DATA]);
 //     error_mux_yaw_rate->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
     
-//     ((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->addCallbackMsgReceiver((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_2_DATA_YAW]);
-//     //*******************************************************************************************************************
+
+    ((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_2_DATA_YAW]);
+    //*******************************************************************************************************************
+
     
 //     // ROS CONTROL OUTPUTS
 //     X_Saturation->getPorts()[(int)Saturation::ports_id::OP_0_DATA]->connect(((ROSUnit_BroadcastData*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_0_X_OUTPUT]);
@@ -464,77 +469,77 @@ void set_realtime_priority();
 //     Yaw_Saturation->getPorts()[(int)Saturation::ports_id::OP_0_DATA]->connect(((ROSUnit_BroadcastData*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_5_YAW_OUTPUT]);
 //     ((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(((ROSUnit_BroadcastData*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_6_YAWRATE_OUTPUT]);
     
-//     // rosunit_waypoint_yaw->connect(Yaw_ControlSystem);
-//     // Yaw_ControlSystem->connect(Yaw_Saturation, (int)ControlSystem::unicast_addresses::unicast_control_system);
-//     // Yaw_Saturation->connect(YawRate_ControlSystem);
-//     // YawRate_ControlSystem->connect(myActuationSystem, (int)ControlSystem::unicast_addresses::unicast_actuation_system);
+    // rosunit_waypoint_yaw->connect(Yaw_ControlSystem);
+    // Yaw_ControlSystem->connect(Yaw_Saturation, (int)ControlSystem::unicast_addresses::unicast_control_system);
+    // Yaw_Saturation->connect(YawRate_ControlSystem);
+    // YawRate_ControlSystem->connect(myActuationSystem, (int)ControlSystem::unicast_addresses::unicast_actuation_system);
 
-//     //******************PROVIDERS TO CONTROL SYSTEMS******************************
+    //******************PROVIDERS TO CONTROL SYSTEMS******************************
 
-//     // rosunit_x_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::x);
-//     // rosunit_y_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::y);
-//     // rosunit_z_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::z);
-//     // rosunit_roll_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::roll);  
-//     // rosunit_pitch_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::pitch);
-//     // rosunit_yaw_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::yaw);
-//     // rosunit_yaw_rate_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::yaw_rate);
+    // rosunit_x_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::x);
+    // rosunit_y_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::y);
+    // rosunit_z_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::z);
+    // rosunit_roll_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::roll);  
+    // rosunit_pitch_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::pitch);
+    // rosunit_yaw_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::yaw);
+    // rosunit_yaw_rate_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::yaw_rate);
 
-//     // rosunit_x_provider->connect(X_ControlSystem);
-//     // rosunit_y_provider->connect(Y_ControlSystem);
-//     // // rosunit_z_provider->connect(Z_ControlSystem);
-//     // rosunit_pitch_provider->connect(Pitch_ControlSystem);
-//     // rosunit_roll_provider->connect(Roll_ControlSystem);
-//     // rosunit_yaw_provider->connect(Yaw_ControlSystem);
-//     // rosunit_yaw_rate_provider->connect(YawRate_ControlSystem);
+    // rosunit_x_provider->connect(X_ControlSystem);
+    // rosunit_y_provider->connect(Y_ControlSystem);
+    // // rosunit_z_provider->connect(Z_ControlSystem);
+    // rosunit_pitch_provider->connect(Pitch_ControlSystem);
+    // rosunit_roll_provider->connect(Roll_ControlSystem);
+    // rosunit_yaw_provider->connect(Yaw_ControlSystem);
+    // rosunit_yaw_rate_provider->connect(YawRate_ControlSystem);
 
-//     //This is only needed for the /uav_control/uav_position. Refactor.
-//     // rosunit_x_provider->connect(myROSBroadcastData);
-//     // rosunit_y_provider->connect(myROSBroadcastData);
-//     // rosunit_z_provider->connect(myROSBroadcastData);
-//     // rosunit_roll_provider->connect(myROSBroadcastData);
-//     // rosunit_pitch_provider->connect(myROSBroadcastData);
-//     // rosunit_yaw_provider->connect(myROSBroadcastData);
-//     // rosunit_yaw_rate_provider->connect(myROSBroadcastData);
+    //This is only needed for the /uav_control/uav_position. Refactor.
+    // rosunit_x_provider->connect(myROSBroadcastData);
+    // rosunit_y_provider->connect(myROSBroadcastData);
+    // rosunit_z_provider->connect(myROSBroadcastData);
+    // rosunit_roll_provider->connect(myROSBroadcastData);
+    // rosunit_pitch_provider->connect(myROSBroadcastData);
+    // rosunit_yaw_provider->connect(myROSBroadcastData);
+    // rosunit_yaw_rate_provider->connect(myROSBroadcastData);
 
-//     //***********************SETTING FLIGHT SCENARIO INPUTS****************************
-//     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_x)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
-//     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_y)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
-//     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_roll)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
-//     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_pitch)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
-//     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_yaw)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
-//     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    //***********************SETTING FLIGHT SCENARIO INPUTS****************************
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_x)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_y)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_roll)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_pitch)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_yaw)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
 
-//     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_x)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
-//     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_y)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
-//     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_z)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
-//     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_roll)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
-//     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_pitch)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
-//     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_yaw)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
-//     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_yaw_rate)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_x)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_y)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_z)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_roll)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_pitch)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_yaw)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_yaw_rate)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
 
-//     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_2_BB]->connect(BB_x->getPorts()[(int)BoundingBoxController::ports_id::IP_1_UPDATE]);
-//     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_2_BB]->connect(BB_y->getPorts()[(int)BoundingBoxController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_2_BB]->connect(((BoundingBoxController*)BB_x)->getPorts()[(int)BoundingBoxController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_2_BB]->connect(((BoundingBoxController*)BB_y)->getPorts()[(int)BoundingBoxController::ports_id::IP_1_UPDATE]);
 
-//     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_x)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
-//     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_y)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
-//     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_z)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
-//     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_z_identification)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_x)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_y)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_z)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_z_identification)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
 
-//     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_roll)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
-//     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_pitch)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
-//     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_yaw)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
-//     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_roll)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_pitch)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_yaw)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
 
-//     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_x)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
-//     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_y)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
-//     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_z)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
-//     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_roll)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
-//     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_pitch)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
-//     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_yaw)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
-//     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_yaw_rate)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_x)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_y)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_z)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_roll)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_pitch)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_yaw)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_yaw_rate)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
 
    
-//     myROSArm->getPorts()[(int)ROSUnit_Arm::ports_id::OP_0_DATA]->connect((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_4_ARM]);
+    myROSArm->getPorts()[(int)ROSUnit_Arm::ports_id::OP_0_DATA]->connect(((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_4_ARM]);
     
 //     //********************SETTING FLIGHT SCENARIO OUTPUTS***************************
 

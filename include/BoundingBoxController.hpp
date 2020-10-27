@@ -48,7 +48,6 @@ public:
     BoundingBoxController(block_id t_id);
     ~BoundingBoxController();
 
-    virtual block_type getType() = 0;
-    virtual void receiveMsgData(DataMessage* t_msg) = 0;
+    void receiveMsgData(DataMessage* t_msg){}
 
 };
