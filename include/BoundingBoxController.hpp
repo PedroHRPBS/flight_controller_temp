@@ -8,10 +8,17 @@
 #include "logger.hpp"
 #include "common_srv/IntegerMsg.hpp"
 #include "SM_values.hpp"
+#include "InputPort.hpp"
+#include "OutputPort.hpp"
 
-class SlidingModeController : public Controller{
+class BoundingBoxController : public Controller{
 
 private:
+
+    Port* _input_port_0;
+    Port* _input_port_1;
+    std::vector<Port*> _ports;
+
 	Timer _timer;
 	block_id _id;
     controller_type _controller_type;
@@ -23,16 +30,24 @@ private:
 
 
 public:
+
+    enum ports_id {IP_0_UPDATE, IP_1_RESET};
+
 	void switchIn(DataMessage*);
     DataMessage* switchOut();
-	void receiveMsgData(DataMessage* t_msg); 
+	void process(DataMessage* t_msg, Port* t_port);
+    std::vector<Port*> getPorts();
     void reset();
     void initialize(SM_parameters*);
 	DataMessage* runTask(DataMessage*);
     controller_type getControllerType(){ return _controller_type; }
     block_id getID(){ return _id; }
-    float sliding_mode_algorithm(float);
+    float bounding_box_algorithm(float);
 
-    SlidingModeController(block_id t_id);
-    ~SlidingModeController();
+    BoundingBoxController(block_id t_id);
+    ~BoundingBoxController();
+
+    virtual block_type getType() = 0;
+    virtual void receiveMsgData(DataMessage* t_msg) = 0;
+
 };

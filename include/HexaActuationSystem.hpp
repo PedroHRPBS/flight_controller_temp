@@ -24,7 +24,7 @@
 
 class HexaActuationSystem : public ActuationSystem {
 
-private:    
+private: 
     std::vector<Actuator*> _actuators;
     const int _escMin = 1000;
     const int _escMin_armed = 1150;
@@ -44,12 +44,14 @@ private:
     Port* _input_port_1;
     Port* _input_port_2;
     Port* _input_port_3;
-    Port* _output_port;
+    Port* _output_port_0;
+    Port* _output_port_1;
     std::vector<Port*> _ports;
 
 public:
-    enum ports_id {IP_0_DATA_ROLL, IP_1_DATA_PITCH, IP_2_DATA_YAW, IP_3_DATA_Z, OP_0_DATA};
+    enum ports_id {IP_0_DATA_ROLL, IP_1_DATA_PITCH, IP_2_DATA_YAW, IP_3_DATA_Z, OP_0_CMD, OP_1_ARM};
     void process(DataMessage* t_msg, Port* t_port);
+    DataMessage* runTask(DataMessage*); 
     std::vector<Port*> getPorts();
     enum unicast_addresses {broadcast, unicast_ActuationSystem_commands, unicast_ActuationSystem_armed};
     enum receiving_channels {ch_roll=0, ch_pitch=1, ch_yaw=2, ch_throttle=3};

@@ -5,7 +5,25 @@
 #include "Global2Inertial.hpp"
 #define DEBUG_HR_LR_DECOUPLED
 
-Global2Inertial::Global2Inertial(){
+Global2Inertial::Global2Inertial() {
+
+    _input_port_0 = new InputPort(ports_id::IP_0_OPTI_MSG, this);
+    _input_port_1 = new InputPort(ports_id::IP_1_FLOAT_DATA, this);
+    _input_port_2 = new InputPort(ports_id::IP_2_RTK_POS, this);
+    _input_port_3 = new InputPort(ports_id::IP_3_RTK_XSESN_POS, this);
+    _input_port_4 = new InputPort(ports_id::IP_4_RTK_XSESN_VEL, this);
+    _input_port_5 = new InputPort(ports_id::IP_5_RTK_XSESN_ORI, this);
+    _input_port_6 = new InputPort(ports_id::IP_6_CAM_Z, this);
+    _input_port_7 = new InputPort(ports_id::IP_7_CAM_EN, this);
+    _output_port_0 = new OutputPort(ports_id::OP_0_OPTIPOS, this);
+    _output_port_1 = new OutputPort(ports_id::OP_1_OPTIHEADING, this);
+    _output_port_2 = new OutputPort(ports_id::OP_2_RTK_POS_WP, this);
+    _output_port_3 = new OutputPort(ports_id::OP_3_XSENS_POS, this);
+    _output_port_4 = new OutputPort(ports_id::OP_4_XSENS_VEL, this);
+    _output_port_5 = new OutputPort(ports_id::OP_5_XSENS_ORI, this);
+    _ports = {_input_port_0, _input_port_1, _input_port_2, _input_port_3, _input_port_4, _input_port_5, _input_port_6, _input_port_7, 
+             _output_port_0, _output_port_1, _output_port_2, _output_port_3, _output_port_4,  _output_port_5};
+
     //TODO: Ensure altitude is calibrated
     calib_point1.x = 0.0;
     calib_point1.y = 0.0;
@@ -62,9 +80,9 @@ Global2Inertial::Global2Inertial(){
     antenna_pose.y=0.1;
     antenna_pose.z=0.1;
 }
-void Global2Inertial::receiveMsgData(DataMessage* t_msg)
+void Global2Inertial::process(DataMessage* t_msg, Port* t_port)
 {
-    if(t_msg->getType() == msg_type::optitrack){ 
+    if(t_port->getID() == ports_id::IP_0_OPTI_MSG){ 
         
         OptitrackMessage* opti_msg = ((OptitrackMessage*)t_msg);
         Vector3D<double> pos_point = opti_msg->getPosition();
@@ -86,72 +104,96 @@ void Global2Inertial::receiveMsgData(DataMessage* t_msg)
         Vector3DMessage yaw_msg;
         att_vec.z -= calibrated_reference_inertial_heading;
         yaw_msg.setVector3DMessage(att_vec);
-          
-        this->emitMsgUnicast(&results_msg, 
-                            Global2Inertial::unicast_addresses::uni_Optitrack_pos);
-        this->emitMsgUnicast(&yaw_msg,
-                            Global2Inertial::unicast_addresses::uni_Optitrack_heading);
+        
+        this->_output_port_0->receiveMsgData(&results_msg);
+        this->_output_port_1->receiveMsgData(&yaw_msg);
     
     }
-    else if (t_msg->getType()==msg_type::FLOAT){
+    else if (t_port->getID() == ports_id::IP_1_FLOAT_DATA){
         calib_point1.z = ((FloatMsg*)t_msg)->data;
         std::cout << "NEW HEIGHT OFFSET = " << calib_point1.z << std::endl;
+    }
+    else if (t_port->getID() == ports_id::IP_2_RTK_POS){
+        Vector3D<double> results = changeLLAtoMeters(calib_point1, ((Vector3DMessage*)t_msg)->getData()); //TODO uncoment
+        Vector3D<double> results_elev=offsetElevation(results,-calib_point1.z);
+        Vector3D<double> results_rot=rotatePoint(results_elev);
+        Vector3DMessage res_msg;
+        res_msg.setVector3DMessage(results_rot);
+        #ifndef DEBUG_HR_LR_DECOUPLED
+        emitMsgUnicast(&res_msg,Global2Inertial::unicast_addresses::uni_RTK_pos);
+        #else
+        //emitMsgUnicast(&res_msg,Global2Inertial::unicast_addresses::uni_RTK_pos_pv, (int)PVConcatenator::receiving_channels::ch_pv);
+        this->_output_port_2->receiveMsgData(&res_msg);
+        #endif
+    }
+    else if (t_port->getID() == ports_id::IP_3_RTK_XSESN_POS){
+        Vector3D<double> results = changeLLAtoMeters(calib_point1,((Vector3DMessage*)t_msg)->getData());
+        Vector3D<double> results_rot=rotatePoint(results);
+        Vector3DMessage res_msg;
+        res_msg.setVector3DMessage(results_rot);
+        #ifdef RTK
+        emitMsgUnicast(&res_msg,Global2Inertial::unicast_addresses::uni_XSens_pos);
+        #else
+        //TODO: fix connection : WAHBAH
+        //this->_output_port_3->receiveMsgData(&res_msg);
+        //emitMsgUnicast(&res_msg,Global2Inertial::unicast_addresses::uni_XSens_pos,(int)PVConcatenator::receiving_channels::ch_pv);
+        #endif
+    }
+    else if (t_port->getID() == ports_id::IP_4_RTK_XSESN_VEL){
+        Vector3D<double> results = transformVelocity(((Vector3DMessage*)t_msg)->getData());
+        Vector3DMessage res_msg;
+        res_msg.setVector3DMessage(results);
+        //TODO: fix connection : WAHBAH
+        //this->_output_port_4->receiveMsgData(&res_msg);
+        //emitMsgUnicast(&res_msg,Global2Inertial::unicast_addresses::uni_XSens_vel,(int)PVConcatenator::receiving_channels::ch_pv_dot);
+    }
+    else if (t_port->getID() == ports_id::IP_5_RTK_XSESN_ORI){
+        Vector3D<double> results = ((Vector3DMessage*)t_msg)->getData();
+        results.z = results.z - calibrated_reference_inertial_heading - calibrated_global_to_inertial_angle;
+
+        Vector3DMessage res_msg;
+        res_msg.setVector3DMessage(results);
+        //TODO: fix connection : WAHBAH
+        //this->_output_port_5->receiveMsgData(&res_msg);
+        //emitMsgUnicast(&res_msg,Global2Inertial::unicast_addresses::uni_XSens_ori,(int)PVConcatenator::receiving_channels::ch_pv);
+    }
+    else if (t_port->getID() == ports_id::IP_6_CAM_Z){
+        FloatMsg* float_msg = (FloatMsg*)t_msg;
+        _camera_z = float_msg->data;
+    }
+    else if (t_port->getID() == ports_id::IP_7_CAM_EN){
+        IntegerMsg* int_msg = (IntegerMsg*)t_msg;
+        _camera_enabled = int_msg->data;   
     }
     //TODO add an else if for the camera message, it should update a private variable, and this private variable should be passed to the controller from the Optitrack message
     //doing so we don't mess with the frequencies.
 }
 
-void Global2Inertial::receiveMsgData(DataMessage* t_msg,int ch){
-    if (t_msg->getType()==msg_type::VECTOR3D){
-        if (ch==Global2Inertial::receiving_channels::ch_RTK_pos){
-            Vector3D<double> results = changeLLAtoMeters(calib_point1, ((Vector3DMessage*)t_msg)->getData()); //TODO uncoment
-            Vector3D<double> results_elev=offsetElevation(results,-calib_point1.z);
-            Vector3D<double> results_rot=rotatePoint(results_elev);
-            Vector3DMessage res_msg;
-            res_msg.setVector3DMessage(results_rot);
-            #ifndef DEBUG_HR_LR_DECOUPLED
-            emitMsgUnicast(&res_msg,Global2Inertial::unicast_addresses::uni_RTK_pos);
-            #else
-            emitMsgUnicast(&res_msg,Global2Inertial::unicast_addresses::uni_RTK_pos_pv, (int)PVConcatenator::receiving_channels::ch_pv);
-            emitMsgUnicast(&res_msg,Global2Inertial::unicast_addresses::uni_RTK_pos_wp);
-            #endif
-        }
-        else if (ch==Global2Inertial::receiving_channels::ch_XSens_pos){
-            Vector3D<double> results = changeLLAtoMeters(calib_point1,((Vector3DMessage*)t_msg)->getData());
-            Vector3D<double> results_rot=rotatePoint(results);
-            Vector3DMessage res_msg;
-            res_msg.setVector3DMessage(results_rot);
-            #ifdef RTK
-            emitMsgUnicast(&res_msg,Global2Inertial::unicast_addresses::uni_XSens_pos);
-            #else
-            emitMsgUnicast(&res_msg,Global2Inertial::unicast_addresses::uni_XSens_pos,(int)PVConcatenator::receiving_channels::ch_pv);
-            #endif
-        }
-        else if (ch==Global2Inertial::receiving_channels::ch_XSens_vel){
-            Vector3D<double> results = transformVelocity(((Vector3DMessage*)t_msg)->getData());
-            Vector3DMessage res_msg;
-            res_msg.setVector3DMessage(results);
-            emitMsgUnicast(&res_msg,Global2Inertial::unicast_addresses::uni_XSens_vel,(int)PVConcatenator::receiving_channels::ch_pv_dot);
-        }
-        else if (ch==Global2Inertial::receiving_channels::ch_XSens_ori){
-            Vector3D<double> results = ((Vector3DMessage*)t_msg)->getData();
-            results.z = results.z - calibrated_reference_inertial_heading - calibrated_global_to_inertial_angle;
-
-            Vector3DMessage res_msg;
-            res_msg.setVector3DMessage(results);
-            emitMsgUnicast(&res_msg,Global2Inertial::unicast_addresses::uni_XSens_ori,(int)PVConcatenator::receiving_channels::ch_pv);
-        }
-    }
-    else if(t_msg->getType()==msg_type::FLOAT){
-        FloatMsg* float_msg = (FloatMsg*)t_msg;
-        _camera_z = float_msg->data;
-    }
-    else if(t_msg->getType()==msg_type::INTEGER){
-        IntegerMsg* int_msg = (IntegerMsg*)t_msg;
-        _camera_enabled = int_msg->data;   
-    }
-
+std::vector<Port*> Global2Inertial::getPorts(){ //TODO move to Block
+    return _ports;
 }
+
+// void Global2Inertial::receiveMsgData(DataMessage* t_msg,int ch){
+//     if (t_msg->getType()==msg_type::VECTOR3D){
+//         if (ch==Global2Inertial::receiving_channels::ch_RTK_pos){
+            
+//         }
+//         else if (ch==Global2Inertial::receiving_channels::ch_XSens_pos){
+            
+//         }
+//         else if (ch==Global2Inertial::receiving_channels::ch_XSens_vel){
+//              }
+//         else if (ch==Global2Inertial::receiving_channels::ch_XSens_ori){
+//             }
+//     }
+//     else if(t_msg->getType()==msg_type::FLOAT){
+        
+//     }
+//     else if(t_msg->getType()==msg_type::INTEGER){
+        
+//     }
+
+// }
 
 Vector3D<double> Global2Inertial::translatePoint(Vector3D<double> t_input_point){
         

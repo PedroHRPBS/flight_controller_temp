@@ -8,7 +8,7 @@
 #include "common_srv/Vector3DMessage.hpp"
 #include "common_srv/FloatMsg.hpp"
 
-class Mux3D : public Block{
+class Mux3D : public Block {
 
 private:
     Port* _input_port_0;
