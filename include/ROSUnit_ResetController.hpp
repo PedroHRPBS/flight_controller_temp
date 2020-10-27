@@ -16,7 +16,7 @@ class ROSUnit_ResetController :  public ROSUnit{
         ros::ServiceServer _srv_reset_controller;
         static bool callbackResetController(flight_controller::Reset_Controller::Request  &req, flight_controller::Reset_Controller::Response &res);
         void receiveMsgData(DataMessage* t_msg);  
-        Port* _output_port;
+        static Port* _output_port;
         std::vector<Port*> _ports;
 
     public:

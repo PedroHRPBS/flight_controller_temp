@@ -88,7 +88,6 @@ void RestrictedNormWaypointRefGenerator::process(DataMessage* t_msg, Port* t_por
 
         FloatMsg num_waypoints;
         num_waypoints.data = Waypoints.size();
-        this->emitMsgUnicastDefault((DataMessage*) &num_waypoints); //TODO REMOVE
         this->_output_port_4->receiveMsgData(&num_waypoints);
 
     }
@@ -115,22 +114,18 @@ void RestrictedNormWaypointRefGenerator::updateControlSystemsReferences(Vector3D
     
     FloatMsg x_cont_ref;
     x_cont_ref.data = t_pos_ref.x;
-    this->emitMsgUnicast(&x_cont_ref, RestrictedNormWaypointRefGenerator::unicast_addresses::x); //TODO REMOVE
     this->_output_port_0->receiveMsgData(&x_cont_ref);
 
     FloatMsg y_cont_ref;
     y_cont_ref.data = t_pos_ref.y;
-    this->emitMsgUnicast(&y_cont_ref, RestrictedNormWaypointRefGenerator::unicast_addresses::y);
     this->_output_port_1->receiveMsgData(&y_cont_ref);
 
     FloatMsg z_cont_ref;
     z_cont_ref.data = t_pos_ref.z;
-    this->emitMsgUnicast(&z_cont_ref, RestrictedNormWaypointRefGenerator::unicast_addresses::z);
     this->_output_port_2->receiveMsgData(&z_cont_ref);
 
     FloatMsg yaw_cont_ref;
     yaw_cont_ref.data = t_yaw;
-    this->emitMsgUnicast(&yaw_cont_ref, RestrictedNormWaypointRefGenerator::unicast_addresses::yaw);
     this->_output_port_3->receiveMsgData(&yaw_cont_ref);
 
 }
