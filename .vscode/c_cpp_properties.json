@@ -12,7 +12,10 @@
                 "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ROSUnits/**",
                 "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/global2inertial_node/**",
                 "/home/pedrohrpbs/catkin_ws_NAVIO/src/common_srv/src/**",
-                "/home/pedrohrpbs/catkin_ws_NAVIO/src/common_srv/include/**"
+                "/home/pedrohrpbs/catkin_ws_NAVIO/src/common_srv/include/**",
+                "/home/captcrunch/catkin_ws/src/common_srv/include/**",
+                "/home/captcrunch/catkin_ws/src/common_srv/src/**",
+                "/home/captcrunch/catkin_ws/src/common_srv/flight_controller_node/**"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",
