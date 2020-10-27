@@ -1,9 +1,20 @@
 #include "RestrictedNormWaypointRefGenerator.hpp"
 
+RestrictedNormWaypointRefGenerator::RestrictedNormWaypointRefGenerator(){
+    _input_port_0 = new InputPort(ports_id::IP_0_WAYPOINT, this);
+    _input_port_1 = new InputPort(ports_id::IP_1_SETTINGS, this);
+    _input_port_2 = new InputPort(ports_id::IP_2_DATA, this);
+    _output_port_0 = new OutputPort(ports_id::OP_0_X, this);
+    _output_port_1 = new OutputPort(ports_id::OP_1_Y, this);
+    _output_port_2 = new OutputPort(ports_id::OP_2_Z, this);
+    _output_port_3 = new OutputPort(ports_id::OP_3_YAW, this);
+    _output_port_4 = new OutputPort(ports_id::OP_4_COUNTER, this);
 
-void RestrictedNormWaypointRefGenerator::receiveMsgData(DataMessage* t_msg){
-    if (t_msg->getType()==msg_type::POSES)
-    {
+    _ports = {_input_port_0, _input_port_1, _input_port_2, _output_port_0, _output_port_1, _output_port_2, _output_port_3, _output_port_4};
+}
+
+void RestrictedNormWaypointRefGenerator::process(DataMessage* t_msg, Port* t_port){
+    if (t_port->getID() == ports_id::IP_0_WAYPOINT){
         PosesMsg* t_pos_msg=(PosesMsg*) t_msg;
    
         for(int i=0;i<t_pos_msg->p.poses.size();i++){
@@ -19,8 +30,7 @@ void RestrictedNormWaypointRefGenerator::receiveMsgData(DataMessage* t_msg){
             Waypoints.push_back(t_waypoint);
         }
     }
-    else if(t_msg->getType()==msg_type::RESTNORMREF_SETTINGS)
-    {
+    else if(t_port->getID() == ports_id::IP_1_SETTINGS){
         RestrictedNormRefSettingsMsg* t_settings_msg=(RestrictedNormRefSettingsMsg*) t_msg;
         max_norm=t_settings_msg->getMaxNorm();
         enabled=t_settings_msg->enabled;
@@ -31,7 +41,7 @@ void RestrictedNormWaypointRefGenerator::receiveMsgData(DataMessage* t_msg){
             Waypoints.clear();
         }
     }
-    else if(t_msg->getType()==msg_type::VECTOR3D)
+    else if(t_port->getID() == ports_id::IP_2_DATA)
     {
         Vector3DMessage* t_current_pos=(Vector3DMessage*) t_msg;
         Vector3D<double> t_current_pos_vec;
@@ -78,12 +88,25 @@ void RestrictedNormWaypointRefGenerator::receiveMsgData(DataMessage* t_msg){
 
         FloatMsg num_waypoints;
         num_waypoints.data = Waypoints.size();
-        this->emitMsgUnicastDefault((DataMessage*) &num_waypoints);
+        this->emitMsgUnicastDefault((DataMessage*) &num_waypoints); //TODO REMOVE
+        this->_output_port_4->receiveMsgData(&num_waypoints);
+
     }
 }
 
-void RestrictedNormWaypointRefGenerator::receiveMsgData(DataMessage* t_msg, int t_channel){
+std::vector<Port*> RestrictedNormWaypointRefGenerator::getPorts(){
+    return this->_ports;
+}
 
+DataMessage* RestrictedNormWaypointRefGenerator::runTask(DataMessage*){
+
+}
+
+void RestrictedNormWaypointRefGenerator::receiveMsgData(DataMessage* t_msg){
+    
+}
+
+void RestrictedNormWaypointRefGenerator::receiveMsgData(DataMessage* t_msg, int t_channel){
     
 }
 
@@ -92,17 +115,22 @@ void RestrictedNormWaypointRefGenerator::updateControlSystemsReferences(Vector3D
     
     FloatMsg x_cont_ref;
     x_cont_ref.data = t_pos_ref.x;
-    this->emitMsgUnicast(&x_cont_ref, RestrictedNormWaypointRefGenerator::unicast_addresses::x);
+    this->emitMsgUnicast(&x_cont_ref, RestrictedNormWaypointRefGenerator::unicast_addresses::x); //TODO REMOVE
+    this->_output_port_0->receiveMsgData(&x_cont_ref);
 
     FloatMsg y_cont_ref;
     y_cont_ref.data = t_pos_ref.y;
     this->emitMsgUnicast(&y_cont_ref, RestrictedNormWaypointRefGenerator::unicast_addresses::y);
+    this->_output_port_1->receiveMsgData(&y_cont_ref);
 
     FloatMsg z_cont_ref;
     z_cont_ref.data = t_pos_ref.z;
     this->emitMsgUnicast(&z_cont_ref, RestrictedNormWaypointRefGenerator::unicast_addresses::z);
+    this->_output_port_2->receiveMsgData(&z_cont_ref);
 
     FloatMsg yaw_cont_ref;
     yaw_cont_ref.data = t_yaw;
     this->emitMsgUnicast(&yaw_cont_ref, RestrictedNormWaypointRefGenerator::unicast_addresses::yaw);
+    this->_output_port_3->receiveMsgData(&yaw_cont_ref);
+
 }

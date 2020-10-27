@@ -19,16 +19,9 @@ class ROSUnit_BroadcastData : public ROSUnit{
 private:
     ros::Publisher _pos_prov_pub;
     ros::Publisher _ori_prov_pub;
-    ros::Publisher _xpv_prov_pub;
-    ros::Publisher _ypv_prov_pub;
-    ros::Publisher _zpv_prov_pub;
-    ros::Publisher _rollpv_prov_pub;
-    ros::Publisher _pitchpv_prov_pub;
-    ros::Publisher _yawpv_prov_pub;
     ros::Publisher _cs_prov_pub;
     ros::Publisher _csr_prov_pub;
     ros::Publisher _act_prov_pub;
-    ros::Publisher _yawratepv_prov_pub;
     ros::Publisher _info_prov_pub;
     ros::Publisher _error_prov_pub;
     bool roll_received = false, pitch_received = false, yaw_received = false,
@@ -50,12 +43,35 @@ private:
     Vector3D<double> _position;
     Vector3D<double> _att;
     double _head;
+    
     Port* _input_port_0;
+    Port* _input_port_1;
+    Port* _input_port_2;
+    Port* _input_port_3;
+    Port* _input_port_4;
+    Port* _input_port_5;
+    Port* _input_port_6;
+    Port* _input_port_7;
+    Port* _input_port_8;
+    Port* _input_port_9;
+    Port* _input_port_10;
+    Port* _input_port_11;
+    Port* _input_port_12;
+    Port* _input_port_13;
+    Port* _input_port_14;
+    Port* _input_port_15;
+    Port* _input_port_16;
+    Port* _input_port_17;
+    Port* _input_port_18;
+    Port* _input_port_19;
+
     std::vector<Port*> _ports;
 
 public:
 
-    enum ports_id {IP_0_DATA};
+    enum ports_id {IP_0_X_OUTPUT, IP_1_Y_OUTPUT, IP_2_Z_OUTPUT, IP_3_ROLL_OUTPUT, IP_4_PITCH_OUTPUT, IP_5_YAW_OUTPUT, IP_6_YAWRATE_OUTPUT,
+                    IP_7_X_REF, IP_8_Y_REF, IP_9_Z_REF, IP_10_ROLL_REF, IP_11_PITCH_REF, IP_12_YAW_REF, IP_13_YAWRATE_REF,
+                    IP_14_MOTORS, IP_15_ARMED};
     void process(DataMessage* t_msg, Port* t_port);
     std::vector<Port*> getPorts();
 

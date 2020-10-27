@@ -24,6 +24,7 @@ private:
 	const int num_of_peak_conf_samples = 5;
 	Port* _input_port_0;
 	Port* _input_port_1;
+	Port* _input_port_2;
 	Port* _output_port;
 	std::vector<Port*> _ports;
    	// NEW ALGO
@@ -36,7 +37,7 @@ private:
 	float peak_conf_counter;
 	//
 public:
-	enum ports_id {IP_0_DATA, IP_1_UPDATE, OP_0_DATA};
+	enum ports_id {IP_0_DATA, IP_1_UPDATE, IP_2_RESET, OP_0_DATA};
 	void process(DataMessage* t_msg, Port* t_port);
 	std::vector<Port*> getPorts();
     MRFT_parameters parameters;

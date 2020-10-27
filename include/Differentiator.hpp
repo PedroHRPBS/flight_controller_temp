@@ -14,12 +14,10 @@
 class Differentiator : public Block, public MsgEmitter {
 
 private:
-    float _old_float_data;
-    Vector3D<float> _old_vector3d_data, _curr_vector3d_data;
+    float _prev = 0.0;
     Timer timer;
     float _dt;
-    Vector3D<float> diff_values;
-    ButterFilter_120hz low_pass_filter_x, low_pass_filter_y, low_pass_filter_z;
+    float diff;
     Port* _input_port;
     Port* _output_port;
     std::vector<Port*> _ports;
@@ -28,7 +26,7 @@ public:
     
 //    void receiveMsgData(DataMessage*, int);
     Differentiator(float);
-    enum ports_id {IP_DATA, OP_DATA};
+    enum ports_id {IP_0_DATA, OP_0_DATA};
     DataMessage* runTask(DataMessage*);
     void process(DataMessage* t_msg, Port* t_port);
     std::vector<Port*> getPorts();

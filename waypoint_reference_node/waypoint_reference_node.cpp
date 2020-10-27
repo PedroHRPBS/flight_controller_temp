@@ -38,17 +38,18 @@ int main(int argc, char **argv){
 
     RestrictedNormWaypointRefGenerator* waypoint_generator = new RestrictedNormWaypointRefGenerator();
 
-    rosunit_g2i_position->addCallbackMsgReceiver((MsgReceiver*)waypoint_generator); 
-    rosunit_uav_control_set_path->addCallbackMsgReceiver((MsgReceiver*)waypoint_generator);
-    rosunit_restricted_norm_settings->addCallbackMsgReceiver((MsgReceiver*)waypoint_generator);
-    waypoint_generator->addCallbackMsgReceiver((MsgReceiver*)rosunit_waypoint_counter);
+    rosunit_uav_control_set_path->addCallbackMsgReceiver((MsgReceiver*)waypoint_generator->getPorts()[(int)RestrictedNormWaypointRefGenerator::ports_id::IP_0_WAYPOINT]);
+    rosunit_restricted_norm_settings->getPorts()[(int)ROSUnit_RestNormSettings::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)waypoint_generator->getPorts()[(int)RestrictedNormWaypointRefGenerator::ports_id::IP_1_SETTINGS]);
+    rosunit_g2i_position->addCallbackMsgReceiver((MsgReceiver*)waypoint_generator->getPorts()[(int)RestrictedNormWaypointRefGenerator::ports_id::IP_2_DATA]); 
+
+    waypoint_generator->getPorts()[(int)RestrictedNormWaypointRefGenerator::ports_id::OP_4_COUNTER]->addCallbackMsgReceiver((MsgReceiver*)rosunit_waypoint_counter);
 
     //******************SETTING TRAJECTORY GENERATION TOOL******************
 
-    waypoint_generator->addCallbackMsgReceiver((MsgReceiver*)rosunit_waypoint_x, (int)RestrictedNormWaypointRefGenerator::unicast_addresses::x);
-    waypoint_generator->addCallbackMsgReceiver((MsgReceiver*)rosunit_waypoint_y, (int)RestrictedNormWaypointRefGenerator::unicast_addresses::y);
-    waypoint_generator->addCallbackMsgReceiver((MsgReceiver*)rosunit_waypoint_z, (int)RestrictedNormWaypointRefGenerator::unicast_addresses::z);
-    waypoint_generator->addCallbackMsgReceiver((MsgReceiver*)rosunit_waypoint_yaw, (int)RestrictedNormWaypointRefGenerator::unicast_addresses::yaw);
+    waypoint_generator->getPorts()[(int)RestrictedNormWaypointRefGenerator::ports_id::OP_0_X]->addCallbackMsgReceiver((MsgReceiver*)rosunit_waypoint_x);
+    waypoint_generator->getPorts()[(int)RestrictedNormWaypointRefGenerator::ports_id::OP_1_Y]->addCallbackMsgReceiver((MsgReceiver*)rosunit_waypoint_y);
+    waypoint_generator->getPorts()[(int)RestrictedNormWaypointRefGenerator::ports_id::OP_2_Z]->addCallbackMsgReceiver((MsgReceiver*)rosunit_waypoint_z);
+    waypoint_generator->getPorts()[(int)RestrictedNormWaypointRefGenerator::ports_id::OP_3_YAW]->addCallbackMsgReceiver((MsgReceiver*)rosunit_waypoint_yaw);
 
     std::cout  << "###### WAYPOINT REFERENCE NODE ######" "\n";
 

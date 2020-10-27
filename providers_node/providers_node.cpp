@@ -84,31 +84,31 @@ int main(int argc, char **argv){
 //     // Differentiator* yawRateFromYaw = new Differentiator(1./OPTITRACK_FREQUENCY);
 //     // yawRateFromYaw->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv);
     
-//     rosunit_g2i_position->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv);
-//     // rosunit_g2i_x->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv);
-//     // rosunit_g2i_y->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv);
-//     // rosunit_g2i_z->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv);
+    rosunit_g2i_position->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv);
+    // rosunit_g2i_x->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv);
+    // rosunit_g2i_y->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv);
+    // rosunit_g2i_z->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv);
 
-//     rosunit_g2i_orientation->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv);
+    rosunit_g2i_orientation->setEmittingChannel((int)PVConcatenator::receiving_channels::ch_pv);
 
-//     rosunit_g2i_position->addCallbackMsgReceiver((MsgReceiver*)velocityFromPosition);
-//     // rosunit_g2i_orientation->addCallbackMsgReceiver((MsgReceiver*)yawRateFromYaw);
-//     velocityFromPosition->addCallbackMsgReceiver((MsgReceiver*)CsX_PVConcatenator);
-//     velocityFromPosition->addCallbackMsgReceiver((MsgReceiver*)CsY_PVConcatenator);
-//     velocityFromPosition->addCallbackMsgReceiver((MsgReceiver*)CsZ_PVConcatenator);
-//     // yawRateFromYaw->addCallbackMsgReceiver((MsgReceiver*)CsYawRate_PVConcatenator);
-//     rosunit_g2i_position->addCallbackMsgReceiver((MsgReceiver*)CsX_PVConcatenator);
-//     rosunit_g2i_position->addCallbackMsgReceiver((MsgReceiver*)CsY_PVConcatenator);
-//     rosunit_g2i_position->addCallbackMsgReceiver((MsgReceiver*)CsZ_PVConcatenator);
-//     rosunit_g2i_orientation->addCallbackMsgReceiver((MsgReceiver*)wrap_around_yaw);
+    rosunit_g2i_position->addCallbackMsgReceiver((MsgReceiver*)velocityFromPosition);
+    // rosunit_g2i_orientation->addCallbackMsgReceiver((MsgReceiver*)yawRateFromYaw);
+    velocityFromPosition->addCallbackMsgReceiver((MsgReceiver*)CsX_PVConcatenator);
+    velocityFromPosition->addCallbackMsgReceiver((MsgReceiver*)CsY_PVConcatenator);
+    velocityFromPosition->addCallbackMsgReceiver((MsgReceiver*)CsZ_PVConcatenator);
+    // yawRateFromYaw->addCallbackMsgReceiver((MsgReceiver*)CsYawRate_PVConcatenator);
+    rosunit_g2i_position->addCallbackMsgReceiver((MsgReceiver*)CsX_PVConcatenator);
+    rosunit_g2i_position->addCallbackMsgReceiver((MsgReceiver*)CsY_PVConcatenator);
+    rosunit_g2i_position->addCallbackMsgReceiver((MsgReceiver*)CsZ_PVConcatenator);
+    rosunit_g2i_orientation->addCallbackMsgReceiver((MsgReceiver*)wrap_around_yaw);
 
-//     myROSUnit_Xsens->addCallbackMsgReceiver((MsgReceiver*)CsYawRate_PVConcatenator, (int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_yaw_rate);
-//     wrap_around_yaw->addCallbackMsgReceiver((MsgReceiver*)CsYaw_PVConcatenator);
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_4_YAW_RATE]->addCallbackMsgReceiver((MsgReceiver*)CsYawRate_PVConcatenator);
+    wrap_around_yaw->addCallbackMsgReceiver((MsgReceiver*)CsYaw_PVConcatenator);
     
-//     myROSUnit_Xsens->addCallbackMsgReceiver((MsgReceiver*)CsRoll_PVConcatenator,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_attitude_rate);
-//     myROSUnit_Xsens->addCallbackMsgReceiver((MsgReceiver*)CsPitch_PVConcatenator,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_attitude_rate);
-//     myROSUnit_Xsens->addCallbackMsgReceiver((MsgReceiver*)CsRoll_PVConcatenator,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_orientation);
-//     myROSUnit_Xsens->addCallbackMsgReceiver((MsgReceiver*)CsPitch_PVConcatenator,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_orientation);
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_2_ROLL_RATE]->addCallbackMsgReceiver((MsgReceiver*)CsRoll_PVConcatenator);
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_3_PITCH_RATE]->addCallbackMsgReceiver((MsgReceiver*)CsPitch_PVConcatenator);
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_0_ROLL]->addCallbackMsgReceiver((MsgReceiver*)CsRoll_PVConcatenator);
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_1_PITCH]->addCallbackMsgReceiver((MsgReceiver*)CsPitch_PVConcatenator);
 
 //     //TODO after adding G2I
 //     //
