@@ -15,18 +15,6 @@ PIDController::~PIDController() {
 
 }
 
-// void PIDController::switchIn(DataMessage* data){
-// 	Logger::getAssignedLogger()->log("SWITCH IN PID CONTROLLER",LoggerLevel::Warning);
-// }
-
-// DataMessage* PIDController::switchOut(){
-
-//     m_switchout_msg.setSwitchOutMsg(0.0);
-// 	Logger::getAssignedLogger()->log("SWITCH OUT PID CONTROLLER",LoggerLevel::Warning);
-
-//     return (DataMessage*)&m_switchout_msg;
-// } 
-
 void PIDController::process(DataMessage* t_msg, Port* t_port) {
     if(t_port->getID() == ports_id::IP_0_DATA){
         this->runTask(t_msg);
@@ -52,18 +40,9 @@ DataMessage* PIDController::runTask(DataMessage* t_msg){
 
     Vector3D<float> data = controller_msg->getData();
 	float command = pid_direct(data.x, data.y, data.z);
-	// _filter_y = _filter.perform(command);
 
 	_command_msg.data = command;
 
-	// if (this->_id == block_id::PID_Z_ID){
-	// 	std::cout << "accum_I: " << accum_I << std::endl;
-	// 	std::cout << "_parameters.kp: " << _parameters.kp << std::endl;
-	// 	std::cout << "_parameters.ki: " << _parameters.ki << std::endl;
-	// 	std::cout << "data.x: " << data.x << std::endl;
-	// 	std::cout << "dt: " << _dt << std::endl;
-		
-	// }
     this->_output_port->receiveMsgData(&_command_msg);
 
 	return (DataMessage*) &_command_msg;
@@ -76,27 +55,27 @@ void PIDController::reset(){
 
 void PIDController::update_params(PID_parameters* para){
     
-	PID_parameters tmp_parameters;
-	tmp_parameters = *para; 
+	if(para->kp >= 0.0){
+		_parameters.kp = para->kp;
+	}
+	if(para->ki >= 0.0){
+		_parameters.ki = para->ki;
+	}
+	if(para->kd >= 0.0){
+		_parameters.kd = para->kd;
+	}
+	if(para->kdd >= 0.0){
+		_parameters.kdd = para->kdd;
+	}
+	if(para->en_pv_derivation >= 0.0){
+		_parameters.en_pv_derivation = para->en_pv_derivation;
+	}
+	if(para->anti_windup >= 0.0){
+		_parameters.anti_windup = para->anti_windup;
+	}
 
-	if(tmp_parameters.kp >= 0.0){
-		_parameters.kp = tmp_parameters.kp;
-	}
-	if(tmp_parameters.ki >= 0.0){
-		_parameters.ki = tmp_parameters.ki;
-	}
-	if(tmp_parameters.kd >= 0.0){
-		_parameters.kd = tmp_parameters.kd;
-	}
-	if(tmp_parameters.kdd >= 0.0){
-		_parameters.kdd = tmp_parameters.kdd;
-	}
-	if(tmp_parameters.en_pv_derivation >= 0.0){
-		_parameters.en_pv_derivation = tmp_parameters.en_pv_derivation;
-	}
-	if(tmp_parameters.anti_windup >= 0.0){
-		_parameters.anti_windup = tmp_parameters.anti_windup;
-	}
+	_parameters.id = para->id;
+	_parameters.dt = para->dt;
 
 	set_internal_sw(_parameters);
 	

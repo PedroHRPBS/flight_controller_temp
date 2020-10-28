@@ -107,8 +107,8 @@ void ROSUnit_Xsens::callbackXsensAttitude( const geometry_msgs::QuaternionStampe
     roll.data = orientation_euler.x;
     pitch.data = orientation_euler.y;
 
-    _instance_ptr->_output_port_1->receiveMsgData(&roll);
-    _instance_ptr->_output_port_0->receiveMsgData(&pitch);
+    _instance_ptr->_output_port_0->receiveMsgData(&roll);
+    _instance_ptr->_output_port_1->receiveMsgData(&pitch);
 }
 
 void ROSUnit_Xsens::callbackXsensVelocity(const geometry_msgs::TwistStamped& msg_velocity){

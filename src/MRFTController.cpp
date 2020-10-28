@@ -86,15 +86,11 @@ void MRFTController::initialize(MRFT_parameters* para){
 	parameters.relay_amp = para->relay_amp;
 	parameters.bias = para->bias;
 	parameters.id = para->id;
-	if(para->dt > 0){
-		_dt = para->dt;
-	}
 
 	Logger::getAssignedLogger()->log("MRFT SETTINGS: ID_%.0f", static_cast<int>(parameters.id), LoggerLevel::Info);
 	Logger::getAssignedLogger()->log("Beta: %.2f", parameters.beta, LoggerLevel::Info);
 	Logger::getAssignedLogger()->log("Relay_amp: %.2f", parameters.relay_amp, LoggerLevel::Info);
 	Logger::getAssignedLogger()->log("Bias: %.6f", parameters.bias, LoggerLevel::Info);
-	Logger::getAssignedLogger()->log("dt: %.6f", _dt, LoggerLevel::Info);
 
 }
 

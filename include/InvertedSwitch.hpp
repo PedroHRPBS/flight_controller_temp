@@ -6,6 +6,7 @@
 #include <common_srv/OutputPort.hpp>
 #include "common_srv/Block.hpp"
 #include "common_srv/Vector3DMessage.hpp"
+#include "common_srv/IntegerMsg.hpp"
 
 class InvertedSwitch : public Block{
 

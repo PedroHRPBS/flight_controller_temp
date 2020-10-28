@@ -3,9 +3,9 @@
 ROSUnit_UpdateController* ROSUnit_UpdateController::_instance_ptr = NULL;
 ControllerMessage ROSUnit_UpdateController::_update_controller_msg;
 control_system ROSUnit_UpdateController::_id;
-Port* ROSUnit_UpdateController::_output_port_0;
-Port* ROSUnit_UpdateController::_output_port_1;
-Port* ROSUnit_UpdateController::_output_port_2;
+Port* ROSUnit_UpdateController::_output_port_0 = new OutputPort(ports_id::OP_0_PID, nullptr);
+Port* ROSUnit_UpdateController::_output_port_1 = new OutputPort(ports_id::OP_1_MRFT, nullptr);
+Port* ROSUnit_UpdateController::_output_port_2 = new OutputPort(ports_id::OP_2_BB, nullptr);
 
 ROSUnit_UpdateController::ROSUnit_UpdateController(ros::NodeHandle& t_main_handler) : ROSUnit(t_main_handler) {
     _srv_update_controller_pid = t_main_handler.advertiseService("update_controller/pid", callbackUpdateControllerPID);
@@ -13,10 +13,6 @@ ROSUnit_UpdateController::ROSUnit_UpdateController(ros::NodeHandle& t_main_handl
     _srv_update_controller_sm = t_main_handler.advertiseService("update_controller/sm", callbackUpdateControllerSM);
 
     _instance_ptr = this;
-
-    _output_port_0 = new OutputPort(ports_id::OP_0_PID, this);
-    _output_port_1 = new OutputPort(ports_id::OP_1_MRFT, this);
-    _output_port_2 = new OutputPort(ports_id::OP_2_BB, this);
     _ports = {_output_port_0, _output_port_1, _output_port_2};
 }   
 
@@ -36,6 +32,7 @@ bool ROSUnit_UpdateController::callbackUpdateControllerPID(flight_controller::Up
     pid_data.kdd = req.controller_parameters.pid_kdd;
     pid_data.anti_windup = req.controller_parameters.pid_anti_windup;
     pid_data.en_pv_derivation = req.controller_parameters.pid_en_pv_derivation;
+    pid_data.dt = req.controller_parameters.pid_dt;
     pid_data.id = _id;
     
     _update_controller_msg.setPIDParam(pid_data);
@@ -68,14 +65,14 @@ bool ROSUnit_UpdateController::callbackUpdateControllerSM(flight_controller::Upd
     
     block_id _id = static_cast<block_id>((int)req.controller_parameters.id);
     
-    BB_parameters sm_data;
-    sm_data.alpha1 = req.controller_parameters.sm_alpha1;
-    sm_data.alpha2 = req.controller_parameters.sm_alpha2;
-    sm_data.h1 = req.controller_parameters.sm_h1;
-    sm_data.h2 = req.controller_parameters.sm_h2;
-    sm_data.id = _id;
+    BB_parameters bb_param;
+    bb_param.alpha1 = req.controller_parameters.bb_alpha1;
+    bb_param.alpha2 = req.controller_parameters.bb_alpha2;
+    bb_param.h1 = req.controller_parameters.bb_h1;
+    bb_param.h2 = req.controller_parameters.bb_h2;
+    bb_param.id = _id;
 
-    _update_controller_msg.setSMParam(sm_data);
+    _update_controller_msg.setSMParam(bb_param);
 
     _instance_ptr->_output_port_2->receiveMsgData(&_update_controller_msg);
 

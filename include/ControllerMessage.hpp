@@ -12,7 +12,7 @@ private:
     msg_type _type;
     PID_parameters _pid_param;
     MRFT_parameters _mrft_param;
-    BB_parameters _sm_param;
+    BB_parameters _bb_param;
 
 public:
    
@@ -25,7 +25,7 @@ public:
     void setSMParam(BB_parameters);
     MRFT_parameters getMRFTParam(){ return _mrft_param; }
     PID_parameters getPIDParam(){ return _pid_param; }
-    BB_parameters getSMParam(){ return _sm_param; }
+    BB_parameters getSMParam(){ return _bb_param; }
 
     ControllerMessage();
     ~ControllerMessage();

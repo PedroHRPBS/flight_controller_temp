@@ -26,6 +26,7 @@ void ControllerMessage::setPIDParam(PID_parameters t_param){
     _pid_param.anti_windup = t_param.anti_windup;
     _pid_param.en_pv_derivation = t_param.en_pv_derivation;
     _pid_param.id = t_param.id;
+    _pid_param.dt = t_param.dt;
     
 }
 
@@ -40,16 +41,15 @@ void ControllerMessage::setMRFTParam(MRFT_parameters t_param){
 
 void ControllerMessage::setSMParam(BB_parameters t_param){
 
-    _sm_param.h1 = t_param.h1;
-    _sm_param.h2 = t_param.h2;
-    _sm_param.alpha1 = t_param.alpha1;
-    _sm_param.alpha2 = t_param.alpha2;
-    _sm_param.id = t_param.id;
+    _bb_param.h1 = t_param.h1;
+    _bb_param.h2 = t_param.h2;
+    _bb_param.alpha1 = t_param.alpha1;
+    _bb_param.alpha2 = t_param.alpha2;
+    _bb_param.id = t_param.id;
     
 }
 
 
 void ControllerMessage::set_dt(float t_dt){
-    _mrft_param.dt = t_dt;
     _pid_param.dt = t_dt;
 }
