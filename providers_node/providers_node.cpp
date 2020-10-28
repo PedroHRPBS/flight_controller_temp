@@ -96,30 +96,30 @@ int main(int argc, char **argv){
     // Setting Provider -> Always leave the pv connection last. Do pv_dot and pv_dot_dor first.
     // X Provider
     pos_demux->getPorts()[(int)Demux3D::ports_id::OP_0_DATA]->connect(optitrack_x_dot->getPorts()[(int)Differentiator::ports_id::IP_0_DATA]);
-    optitrack_x_dot->getPorts()[(int)Differentiator::ports_id::OP_0_DATA]->connect(filter_x_dot->getPorts()[(int)ButterFilter_120hz::ports_id::IP_0_DATA]);
-    filter_x_dot->getPorts()[(int)ButterFilter_120hz::ports_id::OP_0_DATA]->connect(mux_provider_x->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
+    optitrack_x_dot->getPorts()[(int)Differentiator::ports_id::OP_0_DATA]->connect(((Block*)filter_x_dot)->getPorts()[(int)ButterFilter_120hz::ports_id::IP_0_DATA]);
+    ((Block*)filter_x_dot)->getPorts()[(int)ButterFilter_120hz::ports_id::OP_0_DATA]->connect(mux_provider_x->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
     pos_demux->getPorts()[(int)Demux3D::ports_id::OP_0_DATA]->connect(mux_provider_x->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
 
     //Y Provider
     pos_demux->getPorts()[(int)Demux3D::ports_id::OP_1_DATA]->connect(optitrack_y_dot->getPorts()[(int)Differentiator::ports_id::IP_0_DATA]);
-    optitrack_y_dot->getPorts()[(int)Differentiator::ports_id::OP_0_DATA]->connect(filter_y_dot->getPorts()[(int)ButterFilter_120hz::ports_id::IP_0_DATA]);
-    filter_y_dot->getPorts()[(int)ButterFilter_120hz::ports_id::OP_0_DATA]->connect(mux_provider_y->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
+    optitrack_y_dot->getPorts()[(int)Differentiator::ports_id::OP_0_DATA]->connect(((Block*)filter_y_dot)->getPorts()[(int)ButterFilter_120hz::ports_id::IP_0_DATA]);
+    ((Block*)filter_y_dot)->getPorts()[(int)ButterFilter_120hz::ports_id::OP_0_DATA]->connect(mux_provider_y->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
     pos_demux->getPorts()[(int)Demux3D::ports_id::OP_1_DATA]->connect(mux_provider_y->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
 
     //Z Provider
     pos_demux->getPorts()[(int)Demux3D::ports_id::OP_2_DATA]->connect(optitrack_z_dot->getPorts()[(int)Differentiator::ports_id::IP_0_DATA]);
-    optitrack_z_dot->getPorts()[(int)Differentiator::ports_id::OP_0_DATA]->connect(filter_z_dot->getPorts()[(int)ButterFilter_120hz::ports_id::IP_0_DATA]);
-    filter_z_dot->getPorts()[(int)ButterFilter_120hz::ports_id::OP_0_DATA]->connect(mux_provider_z->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
+    optitrack_z_dot->getPorts()[(int)Differentiator::ports_id::OP_0_DATA]->connect(((Block*)filter_z_dot)->getPorts()[(int)ButterFilter_120hz::ports_id::IP_0_DATA]);
+    ((Block*)filter_z_dot)->getPorts()[(int)ButterFilter_120hz::ports_id::OP_0_DATA]->connect(mux_provider_z->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
     pos_demux->getPorts()[(int)Demux3D::ports_id::OP_2_DATA]->connect(mux_provider_z->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
 
     //Roll Provider
-    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_2_ROLL_RATE]->connect(filter_roll_dot->getPorts()[(int)ButterFilter_Xsens::ports_id::IP_0_DATA]);
-    filter_roll_dot->getPorts()[(int)ButterFilter_Xsens::ports_id::OP_0_DATA]->connect(mux_provider_roll->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_2_ROLL_RATE]->connect(((Block*)filter_roll_dot)->getPorts()[(int)ButterFilter_Xsens::ports_id::IP_0_DATA]);
+    ((Block*)filter_roll_dot)->getPorts()[(int)ButterFilter_Xsens::ports_id::OP_0_DATA]->connect(mux_provider_roll->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
     myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_0_ROLL]->connect(mux_provider_roll->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
 
     //Pitch Provider
-    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_3_PITCH_RATE]->connect(filter_pitch_dot->getPorts()[(int)ButterFilter_Xsens::ports_id::IP_0_DATA]);
-    filter_pitch_dot->getPorts()[(int)ButterFilter_Xsens::ports_id::OP_0_DATA]->connect(mux_provider_pitch->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_3_PITCH_RATE]->connect(((Block*)filter_pitch_dot)->getPorts()[(int)ButterFilter_Xsens::ports_id::IP_0_DATA]);
+    ((Block*)filter_pitch_dot)->getPorts()[(int)ButterFilter_Xsens::ports_id::OP_0_DATA]->connect(mux_provider_pitch->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
     myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_1_PITCH]->connect(mux_provider_pitch->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
 
     //Yaw Provider
@@ -127,8 +127,8 @@ int main(int argc, char **argv){
     wrap_around_yaw->getPorts()[(int)WrapAroundFunction::ports_id::OP_0_DATA]->connect(mux_provider_yaw->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
 
     //Yaw Rate Provider
-    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_4_YAW_RATE]->connect(filter_yaw_dot->getPorts()[(int)ButterFilter_Xsens::ports_id::IP_0_DATA]);
-    filter_yaw_dot->getPorts()[(int)ButterFilter_Xsens::ports_id::OP_0_DATA]->connect(mux_provider_yaw_rate->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
+    myROSUnit_Xsens->getPorts()[(int)ROSUnit_Xsens::ports_id::OP_4_YAW_RATE]->connect(((Block*)filter_yaw_dot)->getPorts()[(int)ButterFilter_Xsens::ports_id::IP_0_DATA]);
+    ((Block*)filter_yaw_dot)->getPorts()[(int)ButterFilter_Xsens::ports_id::OP_0_DATA]->connect(mux_provider_yaw_rate->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
     
 
     std::cout  << "###### PROVIDERS NODE ######" "\n";
