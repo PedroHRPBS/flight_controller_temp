@@ -151,46 +151,6 @@ int main(int argc, char** argv) {
     Saturation* Yaw_Saturation = new Saturation(SATURATION_VALUE_YAW);
     Saturation* YawRate_Saturation = new Saturation(SATURATION_VALUE_YAWRATE);
 
-    //***********************SETTING CONTROL SYSTEMS***************************
-
-    // ControlSystem* X_ControlSystem = new ControlSystem(control_system::x, block_frequency::hz120);
-    // X_ControlSystem->addBlock(PID_x);
-    // X_ControlSystem->addBlock(MRFT_x);
-    // X_ControlSystem->addBlock(BB_x);
-    // X_ControlSystem->addBlock(PV_Ref_x);
-
-    // ControlSystem* Pitch_ControlSystem = new ControlSystem(control_system::pitch, block_frequency::hz200);
-    // Pitch_ControlSystem->addBlock(PID_pitch);
-    // Pitch_ControlSystem->addBlock(MRFT_pitch);
-    // Pitch_ControlSystem->addBlock(PV_Ref_pitch);
-    
-    // ControlSystem* Y_ControlSystem = new ControlSystem(control_system::y, block_frequency::hz120);
-    // Y_ControlSystem->addBlock(PID_y);
-    // Y_ControlSystem->addBlock(MRFT_y);
-    // Y_ControlSystem->addBlock(BB_y);
-    // Y_ControlSystem->addBlock(PV_Ref_y);
-
-    // ControlSystem* Roll_ControlSystem = new ControlSystem(control_system::roll, block_frequency::hz200);
-    // Roll_ControlSystem->addBlock(PID_roll);
-    // Roll_ControlSystem->addBlock(MRFT_roll);
-    // Roll_ControlSystem->addBlock(PV_Ref_roll);
-    
-    // ControlSystem* Z_ControlSystem = new ControlSystem(control_system::z, block_frequency::hz120);
-    // Z_ControlSystem->addBlock(PID_z);
-    // Z_ControlSystem->addBlock(MRFT_z);
-    // Z_ControlSystem->addBlock(PIDplusMRFT_z);
-    // Z_ControlSystem->addBlock(PV_Ref_z);
-
-    // ControlSystem* Yaw_ControlSystem = new ControlSystem(control_system::yaw, block_frequency::hz120);
-    // Yaw_ControlSystem->addBlock(PID_yaw);
-    // Yaw_ControlSystem->addBlock(MRFT_yaw);
-    // Yaw_ControlSystem->addBlock(PV_Ref_yaw);
-
-    // ControlSystem* YawRate_ControlSystem = new ControlSystem(control_system::yaw_rate, block_frequency::hz200);
-    // YawRate_ControlSystem->addBlock(PID_yaw_rate);
-    // YawRate_ControlSystem->addBlock(MRFT_yaw_rate);
-    // YawRate_ControlSystem->addBlock(PV_Ref_yaw_rate);
-
     //*********************SETTING ACTUATION SYSTEMS************************
     
     Actuator* M1 = new ESCMotor(0, PWM_FREQUENCY);
@@ -205,7 +165,6 @@ int main(int argc, char** argv) {
     ActuationSystem* myActuationSystem = new HexaActuationSystem(actuators);
     // ActuationSystem* myActuationSystem = new QuadActuationSystem(actuators);
 
-
     // //***********************************SETTING CONNECTIONS***********************************
     // //========                                                                             =============
     // //|      |-------------->X_Control_System-->RM_X-->Saturation-->Roll_Control_System--->|           |
@@ -213,30 +172,6 @@ int main(int argc, char** argv) {
     // //|      |-------------->Z_Control_System--------------------------------------------->|  System   |
     // //|      |-------------->Yaw_Control_System-->Saturation--->YawRate_Control_System---->|           |
     // //========                                                                             =============
-    
-    // rosunit_waypoint_x->setEmittingChannel((int)ControlSystem::receiving_channels::ch_reference);
-    // rosunit_waypoint_y->setEmittingChannel((int)ControlSystem::receiving_channels::ch_reference);
-    // // rosunit_waypoint_z->setEmittingChannel((int)ControlSystem::receiving_channels::ch_reference);
-    // rosunit_waypoint_yaw->setEmittingChannel((int)ControlSystem::receiving_channels::ch_reference);
-    // Roll_ControlSystem->setEmittingChannel((int)HexaActuationSystem::receiving_channels::ch_roll);
-    // Pitch_ControlSystem->setEmittingChannel((int)HexaActuationSystem::receiving_channels::ch_pitch);
-    // // Z_ControlSystem->setEmittingChannel((int)HexaActuationSystem::receiving_channels::ch_throttle);
-    // YawRate_ControlSystem->setEmittingChannel((int)HexaActuationSystem::receiving_channels::ch_yaw);
-
-    // rosunit_waypoint_x->connect(X_ControlSystem);
-    // X_ControlSystem->connect(transform_X_InertialToBody, (int)ControlSystem::unicast_addresses::unicast_control_system);
-    // transform_X_InertialToBody->connect(X_Saturation);
-    // X_Saturation->connect(Roll_ControlSystem);
-    // Roll_ControlSystem->connect(myActuationSystem, (int)ControlSystem::unicast_addresses::unicast_actuation_system);
-    
-    // rosunit_waypoint_y->connect(Y_ControlSystem);
-    // Y_ControlSystem->connect(transform_Y_InertialToBody, (int)ControlSystem::unicast_addresses::unicast_control_system);
-    // transform_Y_InertialToBody->connect(Y_Saturation);
-    // Y_Saturation->connect(Pitch_ControlSystem);
-    // Pitch_ControlSystem->connect(myActuationSystem, (int)ControlSystem::unicast_addresses::unicast_actuation_system);
-    
-    // // rosunit_waypoint_z->connect(Z_ControlSystem);
-    // // Z_ControlSystem->connect(myActuationSystem, (int)ControlSystem::unicast_addresses::unicast_actuation_system);
     
     //*******************************************************************************************************************
     // X CHANNEL ->  Multirotors From Takeoff to Real-Time Full Identification Using the Modified Relay Feedback Test and Deep Neural Networks //
@@ -268,8 +203,10 @@ int main(int argc, char** argv) {
     
 
     PID_x->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(ID_switch_x->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
-    ((MRFTController*)MRFT_x)->getPorts()[(int)MRFTController::ports_id::OP_0_DATA]->connect(ID_switch_x->getPorts()[(int)InvertedSwitch::ports_id::IP_0_DATA_DEFAULT]);
-    ((BoundingBoxController*)BB_x)->getPorts()[(int)BoundingBoxController::ports_id::OP_0_DATA]->connect(bounding_box_switch_x->getPorts()[(int)InvertedSwitch::ports_id::IP_0_DATA_DEFAULT]);
+    //TODO SEG FAULT HERE
+    MRFT_x->getPorts()[(int)MRFTController::ports_id::OP_0_DATA]->connect(ID_switch_x->getPorts()[(int)InvertedSwitch::ports_id::IP_0_DATA_DEFAULT]);
+    
+    BB_x->getPorts()[(int)BoundingBoxController::ports_id::OP_0_DATA]->connect(bounding_box_switch_x->getPorts()[(int)InvertedSwitch::ports_id::IP_0_DATA_DEFAULT]);
     ID_switch_x->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(bounding_box_switch_x->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
 
     // Rotation Matrix
@@ -460,35 +397,7 @@ int main(int argc, char** argv) {
     ID_switch_roll->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(((Block*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_3_ROLL_OUTPUT]);
     ID_switch_pitch->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(((Block*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_4_PITCH_OUTPUT]);
     Yaw_Saturation->getPorts()[(int)Saturation::ports_id::OP_0_DATA]->connect(((Block*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_5_YAW_OUTPUT]);
-    PID_yaw_rate->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(((Block*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_6_YAWRATE_OUTPUT]);
-    
-
-    //******************PROVIDERS TO CONTROL SYSTEMS******************************
-
-    // rosunit_x_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::x);
-    // rosunit_y_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::y);
-    // rosunit_z_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::z);
-    // rosunit_roll_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::roll);  
-    // rosunit_pitch_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::pitch);
-    // rosunit_yaw_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::yaw);
-    // rosunit_yaw_rate_provider->setEmittingChannel((int)ROSUnit_BroadcastData::ros_broadcast_channels::yaw_rate);
-
-    // rosunit_x_provider->connect(X_ControlSystem);
-    // rosunit_y_provider->connect(Y_ControlSystem);
-    // // rosunit_z_provider->connect(Z_ControlSystem);
-    // rosunit_pitch_provider->connect(Pitch_ControlSystem);
-    // rosunit_roll_provider->connect(Roll_ControlSystem);
-    // rosunit_yaw_provider->connect(Yaw_ControlSystem);
-    // rosunit_yaw_rate_provider->connect(YawRate_ControlSystem);
-
-    //This is only needed for the /uav_control/uav_position. Refactor.
-    // rosunit_x_provider->connect(myROSBroadcastData);
-    // rosunit_y_provider->connect(myROSBroadcastData);
-    // rosunit_z_provider->connect(myROSBroadcastData);
-    // rosunit_roll_provider->connect(myROSBroadcastData);
-    // rosunit_pitch_provider->connect(myROSBroadcastData);
-    // rosunit_yaw_provider->connect(myROSBroadcastData);
-    // rosunit_yaw_rate_provider->connect(myROSBroadcastData);
+    PID_yaw_rate->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(((Block*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_6_YAWRATE_OUTPUT]);   
 
     //***********************SETTING FLIGHT SCENARIO INPUTS****************************
     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(PID_x->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
@@ -534,100 +443,22 @@ int main(int argc, char** argv) {
     ((Block*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::OP_0_CMD]->connect(((Block*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_14_MOTORS]);
     ((Block*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::OP_1_ARM]->connect(((Block*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_15_ARMED]);
     
-    // pid_para_init.id = block_id::PID_ROLL;
-    // ctrl_msg.setPIDParam(pid_para_init);
-    // ctrl_msg.set_dt(Roll_ControlSystem->get_dt());
-    // ((PIDController*)PID_roll)->initialize(ctrl_msg.getPIDParam());
 
-    // pid_para_init.id = block_id::PID_PITCH;
-    // ctrl_msg.setPIDParam(pid_para_init);
-    // ctrl_msg.set_dt(Pitch_ControlSystem->get_dt());
-    // ((PIDController*)PID_pitch)->initialize(ctrl_msg.getPIDParam());
-    
-    // pid_para_init.id = block_id::PID_YAW;
-    // ctrl_msg.setPIDParam(pid_para_init);
-    // ctrl_msg.set_dt(Yaw_ControlSystem->get_dt());
-    // ((PIDController*)PID_yaw)->initialize(ctrl_msg.getPIDParam());
-    
-    // pid_para_init.id = block_id::PID_YAW_RATE;
-    // ctrl_msg.setPIDParam(pid_para_init);
-    // ctrl_msg.set_dt(YawRate_ControlSystem->get_dt());
-    // ((PIDController*)PID_yaw_rate)->initialize(ctrl_msg.getPIDParam());
-    
-    // //***********************SETTING MRFT INITIAL VALUES*****************************
+    set_realtime_priority();
 
-    // MRFT_parameters mrft_para_init;
+    Timer tempo;
+    while(ros::ok()){
+        tempo.tick();
 
-    // mrft_para_init.id = block_id::MRFT_X;
-    // ctrl_msg.setMRFTParam(mrft_para_init);
-    // ctrl_msg.set_dt(X_ControlSystem->get_dt());
-    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
-    // 
-// 
-    // mrft_para_init.id = block_id::MRFT_Y;
-    // ctrl_msg.setMRFTParam(mrft_para_init);
-    // ctrl_msg.set_dt(Y_ControlSystem->get_dt());
-    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
-// 
-// 
-    // mrft_para_init.id = block_id::MRFT_Z;
-    // ctrl_msg.setMRFTParam(mrft_para_init);
-    // ctrl_msg.set_dt(1/120);
-    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
-// 
-// 
-    // mrft_para_init.id = block_id::MRFT_ROLL;
-    // ctrl_msg.setMRFTParam(mrft_para_init);
-    // ctrl_msg.set_dt(Roll_ControlSystem->get_dt());
-    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
-// 
-    // mrft_para_init.id = block_id::MRFT_PITCH;
-    // ctrl_msg.setMRFTParam(mrft_para_init);
-    // ctrl_msg.set_dt(Pitch_ControlSystem->get_dt());
-    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
-// 
-    // mrft_para_init.id = block_id::MRFT_YAW;
-    // ctrl_msg.setMRFTParam(mrft_para_init);
-    // ctrl_msg.set_dt(Yaw_ControlSystem->get_dt());
-    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
-// 
-    // mrft_para_init.id = block_id::MRFT_YAW_RATE;
-    // ctrl_msg.setMRFTParam(mrft_para_init);
-    // ctrl_msg.set_dt(YawRate_ControlSystem->get_dt());
-    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->receiveMsgData((DataMessage*) &ctrl_msg);
-// 
-    //***********************SETTING SM INITIAL VALUES*****************************
-// 
-    // BB_parameters bb_para_init;
+        ros::spinOnce();
 
-    // bb_para_init.id = block_id::BB_X;
-    // ctrl_msg.setSMParam(bb_para_init);
-    // ctrl_msg.set_dt(X_ControlSystem->get_dt());
-    // myROSUpdateController->emitMsgUnicast((DataMessage*) &ctrl_msg, (int)ROSUnit_UpdateController::unicast_addresses::sm);
+        int gone = tempo.tockMicroSeconds();
+        if(gone > 5000) {
+            std::cout  << "FC over 5000: " << gone << "\n";
+        }
+        rate.sleep();
 
-    // bb_para_init.id = block_id::BB_Y;
-    // ctrl_msg.setSMParam(bb_para_init);
-    // ctrl_msg.set_dt(Y_ControlSystem->get_dt());
-    // myROSUpdateController->emitMsgUnicast((DataMessage*) &ctrl_msg, (int)ROSUnit_UpdateController::unicast_addresses::sm);
-
-    //***********************SETTING PID+MRFT BLOCK*******************************
-    // rosunit_z_provider->connect(PIDplusMRFT_z);
-
-    // set_realtime_priority();
-
-    // Timer tempo;
-    // while(ros::ok()){
-    //     tempo.tick();
-
-    //     ros::spinOnce();
-
-    //     int gone = tempo.tockMicroSeconds();
-    //     if(gone > 5000) {
-    //         std::cout  << "FC over 5000: " << gone << "\n";
-    //     }
-    //     rate.sleep();
-
-    // }
+    }
 
     return 0;
 

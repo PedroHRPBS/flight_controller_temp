@@ -5,8 +5,9 @@ MRFTController::MRFTController(block_id t_id) {
 	_id = t_id;
 	_input_port_0 = new InputPort(ports_id::IP_0_DATA, this);
 	_input_port_1 = new InputPort(ports_id::IP_1_UPDATE, this);
+	_input_port_2 = new InputPort(ports_id::IP_2_RESET, this);
 	_output_port = new OutputPort(ports_id::OP_0_DATA, this);
-    _ports = {_input_port_0, _input_port_1, _output_port};
+    _ports = {_input_port_0, _input_port_1, _input_port_2, _output_port};
 }
 
 MRFTController::~MRFTController() {

@@ -27,7 +27,7 @@ void InvertedSwitch::triggerCallback(float t_current_value){
 }
 
 void InvertedSwitch::process(DataMessage* t_msg, Port* t_port) {
-    
+    std::cout << ((int)(_active_input_port->getID())) << std::endl;
     if(t_port->getID() == _active_input_port->getID()){
         _output_port->receiveMsgData(t_msg);
 

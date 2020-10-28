@@ -40,11 +40,9 @@ public:
 	void process(DataMessage* t_msg, Port* t_port);
     MRFT_parameters parameters;
 	void initialize(MRFT_parameters*);
-    	//---------------
+	//---------------
 	float mrft_anti_false_switching(float err, float beta, float h);
 	//---------------
-	// void switchIn(DataMessage*);
-    // DataMessage* switchOut();
     void reset();
 	DataMessage* runTask(DataMessage*);
     controller_type getControllerType(){ return _controller_type; }
