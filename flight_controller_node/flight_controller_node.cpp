@@ -431,7 +431,7 @@ int main(int argc, char** argv) {
     //*******************************************************************************************************************
     // YAW CHANNEL ->  Multirotors From Takeoff to Real-Time Full Identification Using the Modified Relay Feedback Test and Deep Neural Networks //
 
-    Sum* sum_ref_yaw = new Sum(std::minus<float>());
+    CircularProcessVariableReference* sum_ref_yaw = new CircularProcessVariableReference();
     Sum* sum_ref_dot_yaw = new Sum(std::minus<float>());
     Sum* sum_ref_dot_dot_yaw = new Sum(std::minus<float>());
     Demux3D* prov_demux_yaw = new Demux3D();
