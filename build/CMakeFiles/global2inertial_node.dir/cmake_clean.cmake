@@ -28,7 +28,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/global2inertial_node.dir/src/ROSUnit_RTK.cpp.o"
   "CMakeFiles/global2inertial_node.dir/src/ROSUnit_ResetController.cpp.o"
   "CMakeFiles/global2inertial_node.dir/src/ROSUnit_RestNormSettings.cpp.o"
-  "CMakeFiles/global2inertial_node.dir/src/ROSUnit_SwitchBlock.cpp.o"
   "CMakeFiles/global2inertial_node.dir/src/ROSUnit_UpdateController.cpp.o"
   "CMakeFiles/global2inertial_node.dir/src/ROSUnit_Xsens.cpp.o"
   "CMakeFiles/global2inertial_node.dir/src/Reference.cpp.o"

@@ -28,7 +28,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/flight_controller.dir/src/ROSUnit_RTK.cpp.o"
   "CMakeFiles/flight_controller.dir/src/ROSUnit_ResetController.cpp.o"
   "CMakeFiles/flight_controller.dir/src/ROSUnit_RestNormSettings.cpp.o"
-  "CMakeFiles/flight_controller.dir/src/ROSUnit_SwitchBlock.cpp.o"
   "CMakeFiles/flight_controller.dir/src/ROSUnit_UpdateController.cpp.o"
   "CMakeFiles/flight_controller.dir/src/ROSUnit_Xsens.cpp.o"
   "CMakeFiles/flight_controller.dir/src/Reference.cpp.o"

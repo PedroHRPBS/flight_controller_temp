@@ -2517,42 +2517,6 @@ src/ROSUnit_RestNormSettings.cpp.s:
 	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/ROSUnit_RestNormSettings.cpp.s
 .PHONY : src/ROSUnit_RestNormSettings.cpp.s
 
-src/ROSUnit_SwitchBlock.o: src/ROSUnit_SwitchBlock.cpp.o
-
-.PHONY : src/ROSUnit_SwitchBlock.o
-
-# target to build an object file
-src/ROSUnit_SwitchBlock.cpp.o:
-	$(MAKE) -f CMakeFiles/global2inertial_node.dir/build.make CMakeFiles/global2inertial_node.dir/src/ROSUnit_SwitchBlock.cpp.o
-	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/ROSUnit_SwitchBlock.cpp.o
-	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/src/ROSUnit_SwitchBlock.cpp.o
-	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/ROSUnit_SwitchBlock.cpp.o
-.PHONY : src/ROSUnit_SwitchBlock.cpp.o
-
-src/ROSUnit_SwitchBlock.i: src/ROSUnit_SwitchBlock.cpp.i
-
-.PHONY : src/ROSUnit_SwitchBlock.i
-
-# target to preprocess a source file
-src/ROSUnit_SwitchBlock.cpp.i:
-	$(MAKE) -f CMakeFiles/global2inertial_node.dir/build.make CMakeFiles/global2inertial_node.dir/src/ROSUnit_SwitchBlock.cpp.i
-	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/ROSUnit_SwitchBlock.cpp.i
-	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/src/ROSUnit_SwitchBlock.cpp.i
-	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/ROSUnit_SwitchBlock.cpp.i
-.PHONY : src/ROSUnit_SwitchBlock.cpp.i
-
-src/ROSUnit_SwitchBlock.s: src/ROSUnit_SwitchBlock.cpp.s
-
-.PHONY : src/ROSUnit_SwitchBlock.s
-
-# target to generate assembly for a file
-src/ROSUnit_SwitchBlock.cpp.s:
-	$(MAKE) -f CMakeFiles/global2inertial_node.dir/build.make CMakeFiles/global2inertial_node.dir/src/ROSUnit_SwitchBlock.cpp.s
-	$(MAKE) -f CMakeFiles/flight_controller.dir/build.make CMakeFiles/flight_controller.dir/src/ROSUnit_SwitchBlock.cpp.s
-	$(MAKE) -f CMakeFiles/waypoint_reference_node.dir/build.make CMakeFiles/waypoint_reference_node.dir/src/ROSUnit_SwitchBlock.cpp.s
-	$(MAKE) -f CMakeFiles/providers_node.dir/build.make CMakeFiles/providers_node.dir/src/ROSUnit_SwitchBlock.cpp.s
-.PHONY : src/ROSUnit_SwitchBlock.cpp.s
-
 src/ROSUnit_UpdateController.o: src/ROSUnit_UpdateController.cpp.o
 
 .PHONY : src/ROSUnit_UpdateController.o
@@ -3434,9 +3398,6 @@ help:
 	@echo "... src/ROSUnit_RestNormSettings.o"
 	@echo "... src/ROSUnit_RestNormSettings.i"
 	@echo "... src/ROSUnit_RestNormSettings.s"
-	@echo "... src/ROSUnit_SwitchBlock.o"
-	@echo "... src/ROSUnit_SwitchBlock.i"
-	@echo "... src/ROSUnit_SwitchBlock.s"
 	@echo "... src/ROSUnit_UpdateController.o"
 	@echo "... src/ROSUnit_UpdateController.i"
 	@echo "... src/ROSUnit_UpdateController.s"

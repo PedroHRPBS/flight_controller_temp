@@ -46,7 +46,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ROSUnit_RTK.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/ROSUnit_RTK.cpp.o"
   "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ROSUnit_ResetController.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/ROSUnit_ResetController.cpp.o"
   "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ROSUnit_RestNormSettings.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/ROSUnit_RestNormSettings.cpp.o"
-  "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ROSUnit_SwitchBlock.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/ROSUnit_SwitchBlock.cpp.o"
   "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ROSUnit_UpdateController.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/ROSUnit_UpdateController.cpp.o"
   "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/ROSUnit_Xsens.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/ROSUnit_Xsens.cpp.o"
   "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/src/Reference.cpp" "/home/pedrohrpbs/catkin_ws_NAVIO/src/flight_controller/build/CMakeFiles/global2inertial_node.dir/src/Reference.cpp.o"
