@@ -263,11 +263,15 @@ int main(int argc, char** argv) {
     sum_ref_x->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_x->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
     sum_ref_dot_x->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_x->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
     sum_ref_dot_dot_x->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_x->getPorts()[(int)Mux3D::ports_id::IP_2_DATA]);
-    error_mux_x->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_x)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
+    // WAHBAH
+    //error_mux_x->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_x)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
+    error_mux_x->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(PID_x->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
     error_mux_x->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_x)->getPorts()[(int)MRFTController::ports_id::IP_0_DATA]);
     error_mux_x->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((BoundingBoxController*)BB_x)->getPorts()[(int)BoundingBoxController::ports_id::IP_0_DATA]);
     
-    ((PIDController*)PID_x)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(ID_switch_x->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
+    // WAHABAH
+    //((PIDController*)PID_x)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(ID_switch_x->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
+    PID_x->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(ID_switch_x->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
     ((MRFTController*)MRFT_x)->getPorts()[(int)MRFTController::ports_id::OP_0_DATA]->connect(ID_switch_x->getPorts()[(int)InvertedSwitch::ports_id::IP_0_DATA_DEFAULT]);
     ((BoundingBoxController*)BB_x)->getPorts()[(int)BoundingBoxController::ports_id::OP_0_DATA]->connect(bounding_box_switch_x->getPorts()[(int)InvertedSwitch::ports_id::IP_0_DATA_DEFAULT]);
     ID_switch_x->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(bounding_box_switch_x->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
@@ -297,13 +301,18 @@ int main(int argc, char** argv) {
     sum_ref_roll->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_roll->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
     sum_ref_dot_roll->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_roll->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
     sum_ref_dot_dot_roll->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_roll->getPorts()[(int)Mux3D::ports_id::IP_2_DATA]);
-    error_mux_roll->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_roll)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
+    // WAHBAH
+    // error_mux_roll->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_roll)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
+    error_mux_roll->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(PID_roll->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
     error_mux_roll->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_roll)->getPorts()[(int)MRFTController::ports_id::IP_0_DATA]);
     
-    ((PIDController*)PID_roll)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(ID_switch_roll->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
+    // WAHBAH
+    //((PIDController*)PID_roll)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(ID_switch_roll->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
+    PID_roll->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(ID_switch_roll->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
     ((MRFTController*)MRFT_roll)->getPorts()[(int)MRFTController::ports_id::OP_0_DATA]->connect(ID_switch_roll->getPorts()[(int)InvertedSwitch::ports_id::IP_0_DATA_DEFAULT]);
-    
-    ID_switch_roll->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_0_DATA_ROLL]);
+
+    //ID_switch_roll->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_0_DATA_ROLL]);
+    ID_switch_roll->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(((Block*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_0_DATA_ROLL]);
     
     //*******************************************************************************************************************
     // Y CHANNEL ->  Multirotors From Takeoff to Real-Time Full Identification Using the Modified Relay Feedback Test and Deep Neural Networks //
@@ -328,11 +337,15 @@ int main(int argc, char** argv) {
     sum_ref_y->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_y->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
     sum_ref_dot_y->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_y->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
     sum_ref_dot_dot_y->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_y->getPorts()[(int)Mux3D::ports_id::IP_2_DATA]);
-    error_mux_y->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_y)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
+    // WAHBAH
+    //error_mux_y->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_y)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
+    error_mux_y->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(PID_y->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
     error_mux_y->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_y)->getPorts()[(int)MRFTController::ports_id::IP_0_DATA]);
     error_mux_y->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((BoundingBoxController*)BB_y)->getPorts()[(int)BoundingBoxController::ports_id::IP_0_DATA]);
     
-    ((PIDController*)PID_y)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(ID_switch_y->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
+    // WAHBAH
+    //((PIDController*)PID_y)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(ID_switch_y->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
+    PID_y->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(ID_switch_y->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
     ((MRFTController*)MRFT_y)->getPorts()[(int)MRFTController::ports_id::OP_0_DATA]->connect(ID_switch_y->getPorts()[(int)InvertedSwitch::ports_id::IP_0_DATA_DEFAULT]);
     ((BoundingBoxController*)BB_y)->getPorts()[(int)BoundingBoxController::ports_id::OP_0_DATA]->connect(bounding_box_switch_y->getPorts()[(int)InvertedSwitch::ports_id::IP_0_DATA_DEFAULT]);
     ID_switch_y->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(bounding_box_switch_y->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
@@ -361,13 +374,17 @@ int main(int argc, char** argv) {
     sum_ref_pitch->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_pitch->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
     sum_ref_dot_pitch->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_pitch->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
     sum_ref_dot_dot_pitch->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_pitch->getPorts()[(int)Mux3D::ports_id::IP_2_DATA]);
-    error_mux_pitch->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_pitch)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
+    // WAHBAH
+    //error_mux_pitch->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_pitch)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
+    error_mux_pitch->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(PID_pitch->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
     error_mux_pitch->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_pitch)->getPorts()[(int)MRFTController::ports_id::IP_0_DATA]);
     
-    ((PIDController*)PID_pitch)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(ID_switch_pitch->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
+    // WAHBAH
+    //((PIDController*)PID_pitch)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(ID_switch_pitch->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
+    PID_pitch->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(ID_switch_pitch->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
     ((MRFTController*)MRFT_pitch)->getPorts()[(int)MRFTController::ports_id::OP_0_DATA]->connect(ID_switch_pitch->getPorts()[(int)InvertedSwitch::ports_id::IP_0_DATA_DEFAULT]);
-    
-    ID_switch_pitch->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_1_DATA_PITCH]);
+    // WAHBAH
+    ID_switch_pitch->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(((Block*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_1_DATA_PITCH]);
     
     //*******************************************************************************************************************
     // Z CHANNEL ->  Multirotors From Takeoff to Real-Time Full Identification Using the Modified Relay Feedback Test and Deep Neural Networks //
@@ -392,17 +409,24 @@ int main(int argc, char** argv) {
     sum_ref_z->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_z->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
     sum_ref_dot_z->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_z->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
     sum_ref_dot_dot_z->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_z->getPorts()[(int)Mux3D::ports_id::IP_2_DATA]);
-    error_mux_z->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_z)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
-    error_mux_z->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_z_identification)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
+    // WAHBAH
+    // error_mux_z->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_z)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
+    // error_mux_z->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_z_identification)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
+    error_mux_z->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(PID_z->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
+    error_mux_z->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(PID_z_identification->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
     error_mux_z->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_z)->getPorts()[(int)MRFTController::ports_id::IP_0_DATA]);
     
-    ((PIDController*)PID_z)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(ID_switch_z->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
-    ((PIDController*)PID_z_identification)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(PID_MRFT_switch_z->getPorts()[(int)Switch::ports_id::IP_0_DATA]);
+    // WAHBAH
+    //((PIDController*)PID_z)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(ID_switch_z->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
+    //((PIDController*)PID_z_identification)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(PID_MRFT_switch_z->getPorts()[(int)Switch::ports_id::IP_0_DATA]);
+    PID_z->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(ID_switch_z->getPorts()[(int)InvertedSwitch::ports_id::IP_2_DATA]);
+    PID_z_identification->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(PID_MRFT_switch_z->getPorts()[(int)Switch::ports_id::IP_0_DATA]);
     prov_demux_z->getPorts()[(int)Demux3D::ports_id::OP_0_DATA]->connect(PID_MRFT_switch_z->getPorts()[(int)Switch::ports_id::IP_1_TRIGGER]);
     PID_MRFT_switch_z->getPorts()[(int)Switch::ports_id::OP_0_DATA_DEFAULT]->connect(sum_PID_MRFT_z->getPorts()[(int)Sum::ports_id::IP_0_DATA]);
     ((MRFTController*)MRFT_z)->getPorts()[(int)MRFTController::ports_id::OP_0_DATA]->connect(sum_PID_MRFT_z->getPorts()[(int)Sum::ports_id::IP_1_DATA]);
     sum_PID_MRFT_z->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(ID_switch_z->getPorts()[(int)InvertedSwitch::ports_id::IP_0_DATA_DEFAULT]);
-    ID_switch_z->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_3_DATA_Z]);
+    // WAHBAH
+    ID_switch_z->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(((Block*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_3_DATA_Z]);
     
     //*******************************************************************************************************************
     // YAW CHANNEL ->  Multirotors From Takeoff to Real-Time Full Identification Using the Modified Relay Feedback Test and Deep Neural Networks //
@@ -423,10 +447,13 @@ int main(int argc, char** argv) {
     sum_ref_yaw->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_yaw->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
     sum_ref_dot_yaw->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_yaw->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
     sum_ref_dot_dot_yaw->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_yaw->getPorts()[(int)Mux3D::ports_id::IP_2_DATA]);
-    error_mux_yaw->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_yaw)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
+    // WAHBAH
+    //error_mux_yaw->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_yaw)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
+    error_mux_yaw->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(PID_yaw->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
     
-    ((PIDController*)PID_yaw)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(Yaw_Saturation->getPorts()[(int)Saturation::ports_id::IP_0_DATA]);
-    
+    //((PIDController*)PID_yaw)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(Yaw_Saturation->getPorts()[(int)Saturation::ports_id::IP_0_DATA]);
+    PID_yaw->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(Yaw_Saturation->getPorts()[(int)Saturation::ports_id::IP_0_DATA]);
+
     // Yaw Rate
     Sum* sum_ref_yaw_rate = new Sum(std::minus<float>());
     Sum* sum_ref_dot_yaw_rate = new Sum(std::minus<float>());
@@ -443,19 +470,25 @@ int main(int argc, char** argv) {
     sum_ref_yaw_rate->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_yaw_rate->getPorts()[(int)Mux3D::ports_id::IP_0_DATA]);
     sum_ref_dot_yaw_rate->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_yaw_rate->getPorts()[(int)Mux3D::ports_id::IP_1_DATA]);
     sum_ref_dot_dot_yaw_rate->getPorts()[(int)Sum::ports_id::OP_0_DATA]->connect(error_mux_yaw_rate->getPorts()[(int)Mux3D::ports_id::IP_2_DATA]);
-    error_mux_yaw_rate->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
+    // WAHBAH
+    //error_mux_yaw_rate->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
+    error_mux_yaw_rate->getPorts()[(int)Mux3D::ports_id::OP_0_DATA]->connect(PID_yaw_rate->getPorts()[(int)PIDController::ports_id::IP_0_DATA]);
     
-    ((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_2_DATA_YAW]);
+    //((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_2_DATA_YAW]);
+    PID_yaw_rate->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(((Block*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_2_DATA_YAW]);
     //*******************************************************************************************************************
     
     // ROS CONTROL OUTPUTS
-    X_Saturation->getPorts()[(int)Saturation::ports_id::OP_0_DATA]->connect(((ROSUnit_BroadcastData*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_0_X_OUTPUT]);
-    Y_Saturation->getPorts()[(int)Saturation::ports_id::OP_0_DATA]->connect(((ROSUnit_BroadcastData*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_1_Y_OUTPUT]);
-    ID_switch_z->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(((ROSUnit_BroadcastData*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_2_Z_OUTPUT]);
-    ID_switch_roll->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(((ROSUnit_BroadcastData*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_3_ROLL_OUTPUT]);
-    ID_switch_pitch->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(((ROSUnit_BroadcastData*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_4_PITCH_OUTPUT]);
-    Yaw_Saturation->getPorts()[(int)Saturation::ports_id::OP_0_DATA]->connect(((ROSUnit_BroadcastData*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_5_YAW_OUTPUT]);
-    ((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(((ROSUnit_BroadcastData*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_6_YAWRATE_OUTPUT]);
+    // WAHBAH
+    X_Saturation->getPorts()[(int)Saturation::ports_id::OP_0_DATA]->connect(((Block*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_0_X_OUTPUT]);
+    Y_Saturation->getPorts()[(int)Saturation::ports_id::OP_0_DATA]->connect(((Block*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_1_Y_OUTPUT]);
+    ID_switch_z->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(((Block*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_2_Z_OUTPUT]);
+    ID_switch_roll->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(((Block*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_3_ROLL_OUTPUT]);
+    ID_switch_pitch->getPorts()[(int)InvertedSwitch::ports_id::OP_0_DATA]->connect(((Block*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_4_PITCH_OUTPUT]);
+    Yaw_Saturation->getPorts()[(int)Saturation::ports_id::OP_0_DATA]->connect(((Block*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_5_YAW_OUTPUT]);
+    //WAHBAH
+    //((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(((ROSUnit_BroadcastData*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_6_YAWRATE_OUTPUT]);
+    PID_yaw_rate->getPorts()[(int)PIDController::ports_id::OP_0_DATA]->connect(((Block*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_6_YAWRATE_OUTPUT]);
     
     // rosunit_waypoint_yaw->connect(Yaw_ControlSystem);
     // Yaw_ControlSystem->connect(Yaw_Saturation, (int)ControlSystem::unicast_addresses::unicast_control_system);
@@ -490,12 +523,19 @@ int main(int argc, char** argv) {
     // rosunit_yaw_rate_provider->connect(myROSBroadcastData);
 
     //***********************SETTING FLIGHT SCENARIO INPUTS****************************
-    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_x)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
-    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_y)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
-    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_roll)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
-    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_pitch)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
-    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_yaw)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
-    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    // WAHBAH
+    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_x)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_y)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_roll)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_pitch)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_yaw)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    // myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(PID_x->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(PID_y->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(PID_roll->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(PID_pitch->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(PID_yaw->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
+    myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_0_PID]->connect(PID_yaw_rate->getPorts()[(int)PIDController::ports_id::IP_1_UPDATE]);
 
     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_x)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_1_MRFT]->connect(((MRFTController*)MRFT_y)->getPorts()[(int)MRFTController::ports_id::IP_1_UPDATE]);
@@ -508,15 +548,26 @@ int main(int argc, char** argv) {
     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_2_BB]->connect(((BoundingBoxController*)BB_x)->getPorts()[(int)BoundingBoxController::ports_id::IP_1_UPDATE]);
     myROSUpdateController->getPorts()[(int)ROSUnit_UpdateController::ports_id::OP_2_BB]->connect(((BoundingBoxController*)BB_y)->getPorts()[(int)BoundingBoxController::ports_id::IP_1_UPDATE]);
 
-    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_x)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
-    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_y)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
-    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_z)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
-    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_z_identification)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    // WAHBAH
+    // myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_x)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    // myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_y)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    // myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_z)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    // myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_z_identification)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
 
-    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_roll)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
-    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_pitch)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
-    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_yaw)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
-    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    // myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_roll)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    // myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_pitch)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    // myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_yaw)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    // myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((PIDController*)PID_yaw_rate)->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(PID_x->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(PID_y->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(PID_z->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(PID_z_identification->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(PID_roll->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(PID_pitch->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(PID_yaw->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
+    myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(PID_yaw_rate->getPorts()[(int)PIDController::ports_id::IP_2_RESET]);
 
     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_x)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_y)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
@@ -526,13 +577,16 @@ int main(int argc, char** argv) {
     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_yaw)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
     myROSResetController->getPorts()[(int)ROSUnit_ResetController::ports_id::OP_0_DATA]->connect(((MRFTController*)MRFT_yaw_rate)->getPorts()[(int)MRFTController::ports_id::IP_2_RESET]);
 
-   
-    myROSArm->getPorts()[(int)ROSUnit_Arm::ports_id::OP_0_DATA]->connect(((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_4_ARM]);
+    // WAHBAH
+    myROSArm->getPorts()[(int)ROSUnit_Arm::ports_id::OP_0_DATA]->connect(((Block*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::IP_4_ARM]);
     
     //********************SETTING FLIGHT SCENARIO OUTPUTS***************************
 
-    ((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::OP_0_CMD]->connect(myROSBroadcastData->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_14_MOTORS]);
-    ((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::OP_1_ARM]->connect(myROSBroadcastData->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_15_ARMED]);
+    // WAHBAH
+    // ((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::OP_0_CMD]->connect(myROSBroadcastData->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_14_MOTORS]);
+    // ((HexaActuationSystem*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::OP_1_ARM]->connect(myROSBroadcastData->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_15_ARMED]);
+    ((Block*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::OP_0_CMD]->connect(((Block*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_14_MOTORS]);
+    ((Block*)myActuationSystem)->getPorts()[(int)HexaActuationSystem::ports_id::OP_1_ARM]->connect(((Block*)myROSBroadcastData)->getPorts()[(int)ROSUnit_BroadcastData::ports_id::IP_15_ARMED]);
     
     // pid_para_init.id = block_id::PID_ROLL;
     // ctrl_msg.setPIDParam(pid_para_init);

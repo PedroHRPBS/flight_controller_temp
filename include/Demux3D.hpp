@@ -15,7 +15,6 @@ private:
     Port* _output_port_0;
     Port* _output_port_1;
     Port* _output_port_2;
-    std::vector<Port*> _ports;
     Vector3D<float> _ip;
 
 public:
@@ -24,12 +23,4 @@ public:
     void process(DataMessage* t_msg, Port* t_port);
     Demux3D();
     ~Demux3D();
-    std::vector<Port*> getPorts();
-
-    //TODO Refactor below
-    block_id getID() {}
-    block_type getType() {}
-    void switchIn(DataMessage*) {}
-    DataMessage* switchOut() {}
-    void receiveMsgData(DataMessage* t_msg) {}
 };

@@ -17,10 +17,6 @@ ROSUnit_Optitrack::~ROSUnit_Optitrack() {
 
 }
 
-std::vector<Port*> ROSUnit_Optitrack::getPorts(){
-    return this->_ports;
-}
-
 void ROSUnit_Optitrack::process(DataMessage* t_msg, Port* t_port){
 
 }

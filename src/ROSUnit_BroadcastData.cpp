@@ -114,10 +114,6 @@ void ROSUnit_BroadcastData::process(DataMessage* t_msg, Port* t_port) {
     }
 }
 
-std::vector<Port*> ROSUnit_BroadcastData::getPorts(){ //TODO move to Block
-    return _ports;
-}
-
 void ROSUnit_BroadcastData::receiveMsgData(DataMessage* t_msg){
     if(t_msg->getType() == msg_type::FLOAT){
         FloatMsg* voltage_msg = (FloatMsg*)t_msg;

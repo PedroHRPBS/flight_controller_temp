@@ -26,7 +26,6 @@ private:
 	Port* _input_port_1;
 	Port* _input_port_2;
 	Port* _output_port;
-	std::vector<Port*> _ports;
    	// NEW ALGO
 	bool first_run = true;
 	float last_output;
@@ -39,15 +38,13 @@ private:
 public:
 	enum ports_id {IP_0_DATA, IP_1_UPDATE, IP_2_RESET, OP_0_DATA};
 	void process(DataMessage* t_msg, Port* t_port);
-	std::vector<Port*> getPorts();
     MRFT_parameters parameters;
 	void initialize(MRFT_parameters*);
     	//---------------
 	float mrft_anti_false_switching(float err, float beta, float h);
 	//---------------
-	void switchIn(DataMessage*);
-    DataMessage* switchOut();
-	void receiveMsgData(DataMessage* t_msg); 
+	// void switchIn(DataMessage*);
+    // DataMessage* switchOut();
     void reset();
 	DataMessage* runTask(DataMessage*);
     controller_type getControllerType(){ return _controller_type; }

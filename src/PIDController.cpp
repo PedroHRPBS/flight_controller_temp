@@ -15,17 +15,17 @@ PIDController::~PIDController() {
 
 }
 
-void PIDController::switchIn(DataMessage* data){
-	Logger::getAssignedLogger()->log("SWITCH IN PID CONTROLLER",LoggerLevel::Warning);
-}
+// void PIDController::switchIn(DataMessage* data){
+// 	Logger::getAssignedLogger()->log("SWITCH IN PID CONTROLLER",LoggerLevel::Warning);
+// }
 
-DataMessage* PIDController::switchOut(){
+// DataMessage* PIDController::switchOut(){
 
-    m_switchout_msg.setSwitchOutMsg(0.0);
-	Logger::getAssignedLogger()->log("SWITCH OUT PID CONTROLLER",LoggerLevel::Warning);
+//     m_switchout_msg.setSwitchOutMsg(0.0);
+// 	Logger::getAssignedLogger()->log("SWITCH OUT PID CONTROLLER",LoggerLevel::Warning);
 
-    return (DataMessage*)&m_switchout_msg;
-} 
+//     return (DataMessage*)&m_switchout_msg;
+// } 
 
 void PIDController::process(DataMessage* t_msg, Port* t_port) {
     if(t_port->getID() == ports_id::IP_0_DATA){
@@ -43,30 +43,6 @@ void PIDController::process(DataMessage* t_msg, Port* t_port) {
 			Logger::getAssignedLogger()->log("RESET CONTROLLER: %.0f", (int)this->_id, LoggerLevel::Warning);
 			this->reset();
 		}
-	}
-}
-
-std::vector<Port*> PIDController::getPorts(){
-    return _ports;
-}
-
-void PIDController::receiveMsgData(DataMessage* t_msg){
-
-	if(t_msg->getType() == msg_type::UPDATECONTROLLER){
-		ControllerMessage* pid_msg = (ControllerMessage*)t_msg;
-		PID_parameters params = pid_msg->getPIDParam();
-		if(params.id == this->_id){		
-			this->update_params(&params);	
-		}
-		
-	}else if(t_msg->getType() == msg_type::INTEGER){
-		IntegerMsg* integer_msg = (IntegerMsg*)t_msg;
-
-		if(static_cast<block_id>(integer_msg->data) == this->_id){
-			Logger::getAssignedLogger()->log("RESET CONTROLLER: %.0f", (int)this->_id, LoggerLevel::Warning);
-			this->reset();
-		}
-	
 	}
 }
 

@@ -30,18 +30,6 @@ ROSUnit_Xsens::~ROSUnit_Xsens() {
 
 }
 
-void ROSUnit_Xsens::process(DataMessage* t_msg, Port* t_port){
-
-}
-
-std::vector<Port*> ROSUnit_Xsens::getPorts(){
-    return this->_ports;
-}
-
-DataMessage* ROSUnit_Xsens::runTask(DataMessage*){
-    
-}
-
 void ROSUnit_Xsens::callbackXsensBodyRate(const geometry_msgs::Vector3Stamped& msg_bodyrate){
     
     Vector3DMessage pv_dot_msg;
@@ -51,9 +39,10 @@ void ROSUnit_Xsens::callbackXsensBodyRate(const geometry_msgs::Vector3Stamped& m
     angular_vel.z = msg_bodyrate.vector.z;
     
     //FILTERING
-    angular_vel.x = filter_gyro_x.perform(angular_vel.x);
-    angular_vel.y = filter_gyro_y.perform(angular_vel.y);
-    angular_vel.z = filter_gyro_z.perform(angular_vel.z);
+    // WAHBAH
+    // angular_vel.x = filter_gyro_x.perform(angular_vel.x);
+    // angular_vel.y = filter_gyro_y.perform(angular_vel.y);
+    // angular_vel.z = filter_gyro_z.perform(angular_vel.z);
 
     pv_dot_msg.setVector3DMessage(angular_vel);
 
@@ -137,11 +126,7 @@ void ROSUnit_Xsens::callbackXsensVelocity(const geometry_msgs::TwistStamped& msg
     velocity.z = msg_velocity.twist.linear.z;
 	velocity_msg.setVector3DMessage(velocity);
 
-
-	_instance_ptr->emitMsgUnicast(&velocity_msg,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_translation_rate,(int)Global2Inertial::receiving_channels::ch_XSens_vel);
+    // WAHBAH
+	//_instance_ptr->emitMsgUnicast(&velocity_msg,(int)ROSUnit_Xsens::unicast_addresses::unicast_XSens_translation_rate,(int)Global2Inertial::receiving_channels::ch_XSens_vel);
 		
-}
-
-void ROSUnit_Xsens::receiveMsgData(DataMessage*){
-
 }

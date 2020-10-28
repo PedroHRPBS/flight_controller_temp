@@ -26,22 +26,12 @@ void InvertedSwitch::triggerCallback(float t_current_value){
     }
 }
 
-DataMessage* InvertedSwitch::runTask(DataMessage* t_msg){
-
-    _output_port->receiveMsgData(t_msg);
-    return t_msg;
-}
-
 void InvertedSwitch::process(DataMessage* t_msg, Port* t_port) {
     
     if(t_port->getID() == _active_input_port->getID()){
-        this->runTask(t_msg);
+        _output_port->receiveMsgData(t_msg);
 
     }else if(t_port->getID() == ports_id::IP_1_TRIGGER){
         this->triggerCallback(((FloatMsg*)t_msg)->data);
     }
-}
-
-std::vector<Port*> InvertedSwitch::getPorts(){
-    return _ports;
 }

@@ -17,22 +17,11 @@ private:
     Port* _trigger_port;
     Port* _output_port;
     Port* _active_input_port;
-    std::vector<Port*> _ports;
-
 
 public:
     enum ports_id {IP_0_DATA_DEFAULT, IP_1_TRIGGER, IP_2_DATA, OP_0_DATA};
     void triggerCallback(float t_current_value);
-    DataMessage* runTask(DataMessage*);
     void process(DataMessage* t_msg, Port* t_port);
     InvertedSwitch(std::function<bool(float,float)> t_operation, float t_trigger_value);
-    std::vector<Port*> getPorts();
     ~InvertedSwitch();
-
-    //TODO Refactor below
-    block_id getID() {}
-    block_type getType() {}
-    void switchIn(DataMessage*) {}
-    DataMessage* switchOut() {}
-    void receiveMsgData(DataMessage* t_msg) {}
 };

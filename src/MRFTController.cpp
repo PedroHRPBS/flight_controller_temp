@@ -13,19 +13,19 @@ MRFTController::~MRFTController() {
 
 }
 
-void MRFTController::switchIn(DataMessage* t_msg){
-    if(t_msg->getType() == msg_type::SWITCHOUT){
-		SwitchOutMsg* switch_out_msg = (SwitchOutMsg*)t_msg;
-		// parameters.bias = switch_out_msg->getSwitchOutMsg();
-	}
-	Logger::getAssignedLogger()->log("SWITCH IN MRFT CONTROLLER - Bias: %f", parameters.bias, LoggerLevel::Warning);
-}
+// void MRFTController::switchIn(DataMessage* t_msg){
+//     if(t_msg->getType() == msg_type::SWITCHOUT){
+// 		SwitchOutMsg* switch_out_msg = (SwitchOutMsg*)t_msg;
+// 		// parameters.bias = switch_out_msg->getSwitchOutMsg();
+// 	}
+// 	Logger::getAssignedLogger()->log("SWITCH IN MRFT CONTROLLER - Bias: %f", parameters.bias, LoggerLevel::Warning);
+// }
 
-DataMessage* MRFTController::switchOut(){
-	Logger::getAssignedLogger()->log("SWITCH OUT MRFT CONTROLLER",LoggerLevel::Warning);
-    DataMessage* msg;
-    return msg;
-} 
+// DataMessage* MRFTController::switchOut(){
+// 	Logger::getAssignedLogger()->log("SWITCH OUT MRFT CONTROLLER",LoggerLevel::Warning);
+//     DataMessage* msg;
+//     return msg;
+// } 
 
 void MRFTController::process(DataMessage* t_msg, Port* t_port) {
     if(t_port->getID() == ports_id::IP_0_DATA){
@@ -47,32 +47,6 @@ void MRFTController::process(DataMessage* t_msg, Port* t_port) {
 	}
 }
 
-std::vector<Port*> MRFTController::getPorts(){
-    return _ports;
-}
-
-
-void MRFTController::receiveMsgData(DataMessage* t_msg){
-
-	if(t_msg->getType() == msg_type::UPDATECONTROLLER){
-		ControllerMessage* mrft_msg = (ControllerMessage*)t_msg;
-		MRFT_parameters params = mrft_msg->getMRFTParam();
-
-		if(params.id == this->_id){		
-			this->initialize(&params);	
-		}
-		
-	}else if(t_msg->getType() == msg_type::INTEGER){
-		IntegerMsg* integer_msg = (IntegerMsg*)t_msg;
-
-		if(static_cast<block_id>(integer_msg->data) == this->_id){
-			Logger::getAssignedLogger()->log("RESET CONTROLLER: %.0f", (int)this->_id, LoggerLevel::Warning);
-			this->reset();
-		}
-	
-	}
-
-}
 
 void MRFTController::reset(){
 	first_run = true;

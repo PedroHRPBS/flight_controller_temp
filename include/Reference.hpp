@@ -9,9 +9,6 @@ class Reference : public Block {
 
     public:
         block_type getType();
-        void switchIn(DataMessage*);
-        DataMessage* switchOut();
-        void receiveMsgData(DataMessage* t_msg);
         virtual block_id getID() = 0;
         virtual DataMessage* runTask(DataMessage*) = 0;
         virtual reference_type getReferenceType() = 0;

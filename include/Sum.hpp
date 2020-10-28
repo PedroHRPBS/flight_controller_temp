@@ -16,7 +16,6 @@ private:
     Port* _input_port_0;
     Port* _input_port_1;
     Port* _output_port;
-    std::vector<Port*> _ports;
     float _v1=0.0, _v2=0.0;
 
 public:
@@ -24,13 +23,6 @@ public:
     DataMessage* runTask(DataMessage*);
     void process(DataMessage* t_msg, Port* t_port);
     Sum(std::function<float(float,float)> t_operation);
-    std::vector<Port*> getPorts();
     ~Sum();
 
-    //TODO Refactor below
-    block_id getID() {}
-    block_type getType() {}
-    void switchIn(DataMessage*) {}
-    DataMessage* switchOut() {}
-    void receiveMsgData(DataMessage* t_msg) {}
 };

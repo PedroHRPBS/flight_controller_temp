@@ -18,7 +18,6 @@ private:
     Port* _input_port_1;
     Port* _input_port_2;
     Port* _output_port;
-    std::vector<Port*> _ports;
 
 	Timer _timer;
 	block_id _id;

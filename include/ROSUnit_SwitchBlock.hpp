@@ -19,7 +19,6 @@ class ROSUnit_SwitchBlock :  public ROSUnit{
                                          flight_controller::SwitchBlock::Response &res);
     
     public:
-        void receiveMsgData(DataMessage* t_msg); 
         ROSUnit_SwitchBlock(ros::NodeHandle&);
         ~ROSUnit_SwitchBlock();
 };

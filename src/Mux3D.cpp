@@ -43,7 +43,3 @@ void Mux3D::process(DataMessage* t_msg, Port* t_port) {
         _ip_2 = float_msg->data;
     }
 }
-
-std::vector<Port*> Mux3D::getPorts(){
-    return _ports;
-}

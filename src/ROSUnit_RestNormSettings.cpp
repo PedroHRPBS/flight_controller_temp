@@ -18,10 +18,6 @@ void ROSUnit_RestNormSettings::process(DataMessage* t_msg, Port* t_port){
 
 }
 
-std::vector<Port*> ROSUnit_RestNormSettings::getPorts(){
-    return this->_ports;
-}
-
 DataMessage* ROSUnit_RestNormSettings::runTask(DataMessage* t_msg){
     this->_output_port->receiveMsgData(t_msg);
 }

@@ -1,26 +1,26 @@
 #include "CircularProcessVariableReference.hpp"
 #include <math.h>
 
-CircularProcessVariableReference::CircularProcessVariableReference(block_id t_id) {
-    _reference_type = reference_type::process_variable_ref;
-    _reference_value = 0.0;
-    _id = t_id;
+CircularProcessVariableReference::CircularProcessVariableReference() {
+
+    this->_input_port_0 = new InputPort(ports_id::IP_0_DATA, this);
+    this->_input_port_1 = new InputPort(ports_id::IP_1_DATA, this);
+    this->_output_port = new OutputPort(ports_id::OP_0_DATA, this);
+    _ports = {_input_port_0, _input_port_1,_output_port};
 }
 
 CircularProcessVariableReference::~CircularProcessVariableReference() {
 
 }
 
-reference_type CircularProcessVariableReference::getReferenceType(){
-    return _reference_type;
-}
 
 DataMessage* CircularProcessVariableReference::runTask(DataMessage* t_msg){
 
-    Vector3DMessage* pos_msg = (Vector3DMessage*)t_msg;
-    Vector3D<float> error;
+    FloatMsg* yaw_msg = (FloatMsg*)t_msg;
+
+    FloatMsg* error_msg = new FloatMsg();
     
-    float pv = pos_msg->getData().x;
+    float pv = yaw_msg->data;
 
     //Adjust the reference to be between +PI and -PI
     if(fabs(_reference_value - pv) > M_PI){
@@ -33,19 +33,24 @@ DataMessage* CircularProcessVariableReference::runTask(DataMessage* t_msg){
             sign_a = -1;
         }
         float ref_a = pv + b * sign_a;
-        error.x = ref_a - pv;
+        error_msg->data = ref_a - pv;
     }else{
-        error.x = _reference_value - pv;
+        error_msg->data = _reference_value - pv;
     }
-
-    error.y = 0.0 - pos_msg->getData().y;
-    error.z = 0.0 - pos_msg->getData().z;
     
-    m_error_msg.setVector3DMessage(error);
+    this->_output_port->receiveMsgData(error_msg);
+    return t_msg;
 
-    return (DataMessage*) &m_error_msg;
 }
 
-void CircularProcessVariableReference::setReferenceValue(float t_reference_value){
-    _reference_value = t_reference_value;
+void CircularProcessVariableReference::process(DataMessage* t_msg, Port* t_port) {
+    
+    if(t_port->getID() == ports_id::IP_0_DATA){
+        FloatMsg* float_msg = (FloatMsg*)t_msg;
+        _ip_0 = float_msg->data;
+        this->runTask(t_msg);
+    }else if(t_port->getID() == ports_id::IP_1_DATA){
+        FloatMsg* float_msg = (FloatMsg*)t_msg;
+        _ip_1 = float_msg->data;
+    }
 }

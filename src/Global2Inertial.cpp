@@ -145,32 +145,6 @@ void Global2Inertial::process(DataMessage* t_msg, Port* t_port)
     }
 }
 
-std::vector<Port*> Global2Inertial::getPorts(){ //TODO move to Block
-    return _ports;
-}
-
-// void Global2Inertial::receiveMsgData(DataMessage* t_msg,int ch){
-//     if (t_msg->getType()==msg_type::VECTOR3D){
-//         if (ch==Global2Inertial::receiving_channels::ch_RTK_pos){
-            
-//         }
-//         else if (ch==Global2Inertial::receiving_channels::ch_XSens_pos){
-            
-//         }
-//         else if (ch==Global2Inertial::receiving_channels::ch_XSens_vel){
-//              }
-//         else if (ch==Global2Inertial::receiving_channels::ch_XSens_ori){
-//             }
-//     }
-//     else if(t_msg->getType()==msg_type::FLOAT){
-        
-//     }
-//     else if(t_msg->getType()==msg_type::INTEGER){
-        
-//     }
-
-// }
-
 Vector3D<double> Global2Inertial::translatePoint(Vector3D<double> t_input_point){
         
 
@@ -188,7 +162,6 @@ Vector3D<double> Global2Inertial::offsetElevation(Vector3D<double> t_input,doubl
     t_res.z=t_res.z+elev_offset;
     return t_res;
 }
-
 
 Vector3D<double> Global2Inertial::rotatePoint(Vector3D<double> t_input_point){
         

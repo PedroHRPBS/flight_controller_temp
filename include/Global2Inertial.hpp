@@ -32,7 +32,6 @@ private:
     Port* _output_port_3;
     Port* _output_port_4;
     Port* _output_port_5;
-    std::vector<Port*> _ports;
 
     Vector3D<double> calib_point1, calib_point2,calib_point3,calib_point4,calib_point3_true_SI,calib_point4_true_SI;
     const double Earth_R=6371000.;
@@ -63,15 +62,5 @@ public:
     Global2Inertial();
 
     void process(DataMessage* t_msg, Port* t_port);
-    std::vector<Port*> getPorts();
-    
-    // void receiveMsgData(DataMessage* t_msg,int ch);
-
-    block_id getID() { };
-    block_type getType() {};
-    void switchIn(DataMessage*) {};
-    DataMessage* switchOut() {};
-    DataMessage* runTask(DataMessage*) {};
-    void receiveMsgData(DataMessage* t_msg) {};
 
 };

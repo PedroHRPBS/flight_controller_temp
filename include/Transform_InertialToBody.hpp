@@ -10,7 +10,7 @@
 #include "common_srv/InputPort.hpp"
 #include "common_srv/OutputPort.hpp"
 
-class Transform_InertialToBody : public MsgEmitter, public Block {
+class Transform_InertialToBody : public Block {
 
 private:
     static std::atomic<float>  _inertial_command_x;
@@ -23,23 +23,12 @@ private:
     Port* _input_port_1;
     Port* _input_port_2;
     Port* _output_port;
-    std::vector<Port*> _ports;
 
 public:
 
     enum ports_id {IP_0_X, IP_1_Y, IP_2_YAW, OP_0_DATA};
-    DataMessage* runTask(DataMessage*);
     void process(DataMessage* t_msg, Port* t_port);
-    std::vector<Port*> getPorts();
 
-    void receiveMsgData(DataMessage*);
-    void receiveMsgData(DataMessage*, int);
     Transform_InertialToBody();
     ~Transform_InertialToBody();
-
-    //TODO Refactor below
-    block_id getID() {}
-    block_type getType() {}
-    void switchIn(DataMessage*) {}
-    DataMessage* switchOut() {}
 };

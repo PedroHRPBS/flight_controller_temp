@@ -19,10 +19,6 @@ void ROSUnit_Arm::receiveMsgData(DataMessage* t_msg){
 
 }
 
-std::vector<Port*> ROSUnit_Arm::getPorts(){
-    return this->_ports;
-}
-
 void ROSUnit_Arm::process(DataMessage* t_msg, Port* t_port){
 }
 
