@@ -42,9 +42,6 @@ DataMessage* HexaActuationSystem::runTask(DataMessage* t_msg) {
     return t_msg;
 } 
 
-std::vector<Port*> HexaActuationSystem::getPorts(){
-    return _ports;
-}
 
 void HexaActuationSystem::command(){
 

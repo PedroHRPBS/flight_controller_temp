@@ -15,7 +15,6 @@ class ROSUnit_Arm :  public ROSUnit{
         static bool callbackArm(flight_controller::Arm::Request  &req, flight_controller::Arm::Response &res);
         void receiveMsgData(DataMessage* t_msg);  
         static Port* _output_port;
-        std::vector<Port*> _ports;
     
     public:
         enum ports_id {OP_0_DATA};

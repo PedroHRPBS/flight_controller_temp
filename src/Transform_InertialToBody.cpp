@@ -16,14 +16,6 @@ Transform_InertialToBody::~Transform_InertialToBody() {
 
 }
 
-void Transform_InertialToBody::receiveMsgData(DataMessage* t_msg){
-
-    
-}
-
-DataMessage* Transform_InertialToBody::runTask(DataMessage*){
-
-}
 
 void Transform_InertialToBody::process(DataMessage* t_msg, Port* t_port){
     if(t_port->getID() == ports_id::IP_0_X){
@@ -68,12 +60,4 @@ void Transform_InertialToBody::process(DataMessage* t_msg, Port* t_port){
 
         _rotation_matrix.Update(yaw_rotation);
     }
-}
-
-std::vector<Port*> Transform_InertialToBody::getPorts(){
-    return _ports;
-}
-
-void Transform_InertialToBody::receiveMsgData(DataMessage* t_msg, int t_channel) { 
-
 }

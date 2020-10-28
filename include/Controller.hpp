@@ -12,13 +12,7 @@ private:
 public:
 
     block_type getType();
-    virtual void switchIn(DataMessage*) = 0;
-    virtual DataMessage* switchOut() = 0;
-    virtual block_id getID() = 0;
-    virtual controller_type getControllerType() = 0;
-    virtual DataMessage* runTask(DataMessage*) = 0;
-    virtual void receiveMsgData(DataMessage* t_msg) = 0;
-    void process(DataMessage* t_msg, Port* t_port) {}
+    virtual void process(DataMessage* t_msg, Port* t_port) = 0;
     
     Controller();
     ~Controller();

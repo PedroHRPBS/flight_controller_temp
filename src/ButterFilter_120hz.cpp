@@ -36,7 +36,3 @@ void ButterFilter_120hz::process(DataMessage* t_msg, Port* t_port) {
         this->runTask(t_msg);
     }
 }
-
-std::vector<Port*> ButterFilter_120hz::getPorts(){
-    return _ports;
-}

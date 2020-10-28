@@ -48,7 +48,3 @@ void Switch::process(DataMessage* t_msg, Port* t_port) {
         this->triggerCallback(data) ;
     }
 }
-
-std::vector<Port*> Switch::getPorts(){
-    return _ports;
-}

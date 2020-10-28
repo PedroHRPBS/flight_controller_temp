@@ -18,11 +18,9 @@ private:
     bool _PID_enabled = true;
     float _last_PID;
 public:
-    void switchIn(DataMessage*);
-    DataMessage* switchOut();
+    // void switchIn(DataMessage*);
+    // DataMessage* switchOut();
     DataMessage* runTask(DataMessage*);
-    void receiveMsgData(DataMessage* t_msg);
-    void receiveMsgData(DataMessage* t_msg, int t_channel);
     controller_type getControllerType(){ return _controller_type; }
     block_id getID(){ return _id; }
 

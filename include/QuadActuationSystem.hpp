@@ -46,7 +46,6 @@ private:
     Port* _input_port_3;
     Port* _output_port_0;
     Port* _output_port_1;
-    std::vector<Port*> _ports;
 
 public:
     enum ports_id {IP_0_DATA_ROLL, IP_1_DATA_PITCH, IP_2_DATA_YAW, IP_3_DATA_Z, OP_0_CMD, OP_1_ARM};

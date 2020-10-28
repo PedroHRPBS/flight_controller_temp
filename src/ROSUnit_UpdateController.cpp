@@ -24,23 +24,6 @@ ROSUnit_UpdateController::~ROSUnit_UpdateController() {
 
 }
 
-void ROSUnit_UpdateController::process(DataMessage* t_msg, Port* t_port){
-
-}
-
-std::vector<Port*> ROSUnit_UpdateController::getPorts(){
-
-}
-
-DataMessage* ROSUnit_UpdateController::runTask(DataMessage*){
-
-}
-
-void ROSUnit_UpdateController::receiveMsgData(DataMessage* t_msg){
-
-
-}
-
 bool ROSUnit_UpdateController::callbackUpdateControllerPID(flight_controller::Update_Controller_PID::Request &req, 
                                                            flight_controller::Update_Controller_PID::Response &res){
 
@@ -73,7 +56,8 @@ bool ROSUnit_UpdateController::callbackUpdateControllerMRFT(flight_controller::U
     mrft_data.id = _id;
     
     _update_controller_msg.setMRFTParam(mrft_data);
-    _instance_ptr->emitMsgUnicast((DataMessage*) &_update_controller_msg, ROSUnit_UpdateController::unicast_addresses::mrft);
+    // WAHBAH
+    //_instance_ptr->emitMsgUnicast((DataMessage*) &_update_controller_msg, ROSUnit_UpdateController::unicast_addresses::mrft);
 
     _instance_ptr->_output_port_1->receiveMsgData(&_update_controller_msg);
 
@@ -94,7 +78,8 @@ bool ROSUnit_UpdateController::callbackUpdateControllerSM(flight_controller::Upd
     sm_data.id = _id;
 
     _update_controller_msg.setSMParam(sm_data);
-    _instance_ptr->emitMsgUnicast((DataMessage*) &_update_controller_msg, ROSUnit_UpdateController::unicast_addresses::sm);
+    // WAHBAH
+    //_instance_ptr->emitMsgUnicast((DataMessage*) &_update_controller_msg, ROSUnit_UpdateController::unicast_addresses::sm);
 
     _instance_ptr->_output_port_2->receiveMsgData(&_update_controller_msg);
 

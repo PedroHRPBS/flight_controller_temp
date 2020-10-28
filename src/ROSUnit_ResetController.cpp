@@ -14,10 +14,6 @@ ROSUnit_ResetController::~ROSUnit_ResetController() {
 
 }
 
-std::vector<Port*> ROSUnit_ResetController::getPorts(){
-    return this->_ports;
-}
-
 void ROSUnit_ResetController::process(DataMessage* t_msg, Port* t_port){
 
 }

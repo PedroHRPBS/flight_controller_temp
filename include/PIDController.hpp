@@ -27,7 +27,6 @@ class PIDController : public Controller{
         Port* _input_port_1;
         Port* _input_port_2;
         Port* _output_port;
-        std::vector<Port*> _ports;
         //Chehadeh's code
         PID_parameters _parameters;
         bool i_term, d_term, dd_term; //Comparing against booleans is faster
@@ -49,16 +48,13 @@ class PIDController : public Controller{
         //---------------
         void update_params(PID_parameters*);
         enum receiving_channels {ch_update, ch_reset};
-        void switchIn(DataMessage*);
-        DataMessage* switchOut();
-        void receiveMsgData(DataMessage* t_msg); 
+        // void switchIn(DataMessage*);
+        // DataMessage* switchOut();
         void reset();
         DataMessage* runTask(DataMessage*);
         controller_type getControllerType(){ return _controller_type; }
         block_id getID(){ return _id; }
        
-       
-
         PIDController(block_id t_id);
         ~PIDController();
 };

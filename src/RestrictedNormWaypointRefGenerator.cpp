@@ -93,23 +93,6 @@ void RestrictedNormWaypointRefGenerator::process(DataMessage* t_msg, Port* t_por
     }
 }
 
-std::vector<Port*> RestrictedNormWaypointRefGenerator::getPorts(){
-    return this->_ports;
-}
-
-DataMessage* RestrictedNormWaypointRefGenerator::runTask(DataMessage*){
-
-}
-
-void RestrictedNormWaypointRefGenerator::receiveMsgData(DataMessage* t_msg){
-    
-}
-
-void RestrictedNormWaypointRefGenerator::receiveMsgData(DataMessage* t_msg, int t_channel){
-    
-}
-
-
 void RestrictedNormWaypointRefGenerator::updateControlSystemsReferences(Vector3D<double> t_pos_ref, double t_yaw){
     
     FloatMsg x_cont_ref;

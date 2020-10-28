@@ -41,7 +41,3 @@ void Sum::process(DataMessage* t_msg, Port* t_port) {
 
     }
 }
-
-std::vector<Port*> Sum::getPorts(){
-    return _ports;
-}

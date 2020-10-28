@@ -11,10 +11,6 @@ Saturation::~Saturation() {
 
 }
 
-DataMessage* Saturation::runTask(DataMessage* t_msg){
-    return t_msg; //TODO no need for t_msg
-}
-
 void Saturation::process(DataMessage* t_msg, Port* t_port) {
     if(t_port->getID() == ports_id::IP_0_DATA){
         FloatMsg* float_msg = (FloatMsg*)t_msg;
@@ -29,8 +25,3 @@ void Saturation::process(DataMessage* t_msg, Port* t_port) {
         this->_output_port->receiveMsgData(float_msg);
     }
 }
-
-std::vector<Port*> Saturation::getPorts(){
-    return _ports;
-}
-

@@ -14,8 +14,7 @@ class ROSUnit_RestNormSettings :  public ROSUnit{
         static bool callbackSettings(flight_controller::Restricted_Norm_Settings::Request  &req, 
                                      flight_controller::Restricted_Norm_Settings::Response &res);
         Port* _output_port;
-        std::vector<Port*> _ports;
-
+        
     public:
         enum ports_id {OP_0_DATA};
         void process(DataMessage* t_msg, Port* t_port);

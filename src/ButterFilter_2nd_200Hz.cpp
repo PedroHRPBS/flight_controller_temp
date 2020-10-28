@@ -37,7 +37,3 @@ void ButterFilter_2nd_200Hz::process(DataMessage* t_msg, Port* t_port) {
         this->runTask(t_msg);
     }
 }
-
-std::vector<Port*> ButterFilter_2nd_200Hz::getPorts(){
-    return _ports;
-}

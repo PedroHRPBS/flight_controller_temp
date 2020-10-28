@@ -52,11 +52,5 @@ void CircularProcessVariableReference::process(DataMessage* t_msg, Port* t_port)
     }else if(t_port->getID() == ports_id::IP_1_DATA){
         FloatMsg* float_msg = (FloatMsg*)t_msg;
         _ip_1 = float_msg->data;
-        this->runTask(t_msg);
-
     }
-}
-
-std::vector<Port*> CircularProcessVariableReference::getPorts(){
-    return _ports;
 }

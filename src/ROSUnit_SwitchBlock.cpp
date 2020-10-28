@@ -13,10 +13,6 @@ ROSUnit_SwitchBlock::~ROSUnit_SwitchBlock() {
 
 }
 
-void ROSUnit_SwitchBlock::receiveMsgData(DataMessage* t_msg){
-
-}
-
 bool ROSUnit_SwitchBlock::callbackSwitchBlocks(flight_controller::SwitchBlock::Request &req, 
                                                flight_controller::SwitchBlock::Response &res){
 
@@ -25,10 +21,12 @@ bool ROSUnit_SwitchBlock::callbackSwitchBlocks(flight_controller::SwitchBlock::R
     block_out = req.block_out;
 
     _switch_msg.setSwitchBlockMsg(block_in, block_out);
-    _instance_ptr->emitMsgUnicastDefault((DataMessage*) &_switch_msg);
+    // WAHBAH
+    //_instance_ptr->emitMsgUnicastDefault((DataMessage*) &_switch_msg);
 
     _float_msg.data = (float)block_in;
-    _instance_ptr->emitMsgUnicastDefault((DataMessage*) &_float_msg);
+    // WAHBAH
+    //_instance_ptr->emitMsgUnicastDefault((DataMessage*) &_float_msg);
 
     return true;
 }

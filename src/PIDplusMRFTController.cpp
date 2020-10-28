@@ -11,15 +11,15 @@ PIDplusMRFTController::~PIDplusMRFTController() {
 
 }
 
-void PIDplusMRFTController::switchIn(DataMessage* t_msg){
-	Logger::getAssignedLogger()->log("SWITCH IN PID+MRFT CONTROLLER", LoggerLevel::Warning);
-}
+// void PIDplusMRFTController::switchIn(DataMessage* t_msg){
+// 	Logger::getAssignedLogger()->log("SWITCH IN PID+MRFT CONTROLLER", LoggerLevel::Warning);
+// }
 
-DataMessage* PIDplusMRFTController::switchOut(){
-    Logger::getAssignedLogger()->log("SWITCH OUT PID+MRFT CONTROLLER",LoggerLevel::Warning);
-    DataMessage* msg;
-    return msg;
-}
+// DataMessage* PIDplusMRFTController::switchOut(){
+//     Logger::getAssignedLogger()->log("SWITCH OUT PID+MRFT CONTROLLER",LoggerLevel::Warning);
+//     DataMessage* msg;
+//     return msg;
+// }
 
 DataMessage* PIDplusMRFTController::runTask(DataMessage* t_msg){
 
@@ -36,22 +36,4 @@ DataMessage* PIDplusMRFTController::runTask(DataMessage* t_msg){
     }
 
 	return (DataMessage*) &_command_msg;
-}
-
-void PIDplusMRFTController::receiveMsgData(DataMessage* t_msg){
-    
-    _pid_controller->receiveMsgData(t_msg);
-    _mrft_controller->receiveMsgData(t_msg);
-    
-}
-
-void PIDplusMRFTController::receiveMsgData(DataMessage* t_msg, int t_channel){
-    // std::cout << "_current_pv " << _current_pv<<std::endl;
-    if(t_msg->getType() == msg_type::VECTOR3D){
-        Vector3DMessage* provider = (Vector3DMessage*)t_msg;
-        _current_pv = provider->getData().x;
-        _current_pv_dot = provider->getData().y;
-        _current_pv_dot_dot = provider->getData().z;
-
-    }
 }

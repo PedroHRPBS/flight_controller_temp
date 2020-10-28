@@ -38,12 +38,3 @@ void WrapAroundFunction::process(DataMessage* t_msg, Port* t_port) {
 
     }
 }
-
-DataMessage* WrapAroundFunction::runTask(DataMessage* t_msg){ //TODO handle cases for abs(input)>2span
-    return t_msg;
-}
-
-
-std::vector<Port*> WrapAroundFunction::getPorts(){
-    return _ports;
-}

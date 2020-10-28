@@ -1,7 +1,7 @@
 #pragma once
 #include <functional>
-#include <InputPort.hpp>
-#include <OutputPort.hpp>
+#include "common_srv/InputPort.hpp"
+#include "common_srv/OutputPort.hpp"
 #include "common_srv/Block.hpp"
 #include "common_srv/FloatMsg.hpp"
 
@@ -13,7 +13,6 @@ private:
     const float coeff_200Hz_2nd_butter_50hz[5] = {-1.561018075800718, 0.641351538057563, 0.020083365564211, 0.040166731128423, 0.020083365564211};
 	Port* _input_port_0;
     Port* _output_port;
-    std::vector<Port*> _ports;
     float _ip_0 = 0;
 
 public:
