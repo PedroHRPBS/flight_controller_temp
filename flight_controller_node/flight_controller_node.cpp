@@ -12,7 +12,6 @@
 #include "ROSUnit_UpdateController.hpp"
 #include "ROSUnit_ResetController.hpp"
 #include "ROSUnit_BroadcastData.hpp"
-#include "ROSUnit_SwitchBlock.hpp"
 #include "MRFTController.hpp"
 #include "ROSUnit_Xsens.hpp"
 #include "Transform_InertialToBody.hpp"
@@ -67,7 +66,6 @@ int main(int argc, char** argv) {
     ROSUnit* myROSUpdateController = new ROSUnit_UpdateController(nh);
     ROSUnit* myROSResetController = new ROSUnit_ResetController(nh);
     ROSUnit* myROSBroadcastData = new ROSUnit_BroadcastData(nh);
-    ROSUnit* myROSSwitchTrigger = new ROSUnit_SwitchBlock(nh);
     
     ROSUnit* rosunit_x_provider = ROSUnit_Factory_main.CreateROSUnit(ROSUnit_tx_rx_type::Subscriber, 
                                                                     ROSUnit_msg_type::ROSUnit_Point,
