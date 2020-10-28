@@ -56,8 +56,6 @@ bool ROSUnit_UpdateController::callbackUpdateControllerMRFT(flight_controller::U
     mrft_data.id = _id;
     
     _update_controller_msg.setMRFTParam(mrft_data);
-    // WAHBAH
-    //_instance_ptr->emitMsgUnicast((DataMessage*) &_update_controller_msg, ROSUnit_UpdateController::unicast_addresses::mrft);
 
     _instance_ptr->_output_port_1->receiveMsgData(&_update_controller_msg);
 
@@ -78,8 +76,6 @@ bool ROSUnit_UpdateController::callbackUpdateControllerSM(flight_controller::Upd
     sm_data.id = _id;
 
     _update_controller_msg.setSMParam(sm_data);
-    // WAHBAH
-    //_instance_ptr->emitMsgUnicast((DataMessage*) &_update_controller_msg, ROSUnit_UpdateController::unicast_addresses::sm);
 
     _instance_ptr->_output_port_2->receiveMsgData(&_update_controller_msg);
 

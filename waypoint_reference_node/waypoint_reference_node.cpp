@@ -38,11 +38,7 @@ int main(int argc, char **argv){
 
     RestrictedNormWaypointRefGenerator* waypoint_generator = new RestrictedNormWaypointRefGenerator();
 
-    // WAHBAH
-    //rosunit_uav_control_set_path->addCallbackMsgReceiver((MsgReceiver*)waypoint_generator->getPorts()[(int)RestrictedNormWaypointRefGenerator::ports_id::IP_0_WAYPOINT]);
     rosunit_restricted_norm_settings->getPorts()[(int)ROSUnit_RestNormSettings::ports_id::OP_0_DATA]->addCallbackMsgReceiver((MsgReceiver*)waypoint_generator->getPorts()[(int)RestrictedNormWaypointRefGenerator::ports_id::IP_1_SETTINGS]);
-    // WAHBAH
-    //rosunit_g2i_position->addCallbackMsgReceiver((MsgReceiver*)waypoint_generator->getPorts()[(int)RestrictedNormWaypointRefGenerator::ports_id::IP_2_DATA]); 
 
     waypoint_generator->getPorts()[(int)RestrictedNormWaypointRefGenerator::ports_id::OP_4_COUNTER]->addCallbackMsgReceiver((MsgReceiver*)rosunit_waypoint_counter);
 
